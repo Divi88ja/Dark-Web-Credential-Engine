@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DarkShield — Enterprise Credential Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #07080d;
+  --bg2:       #0d0f1a;
+  --bg3:       #131525;
+  --border:    #1e2138;
+  --border2:   #252840;
+  --txt:       #c8cce8;
+  --txt2:      #6b70a0;
+  --txt3:      #3a3f60;
+  --accent:    #4f6ef7;
+  --accent2:   #7c56f5;
+  --critical:  #ff3b5c;
+  --high:      #ff7b35;
+  --medium:    #f5c518;
+  --low:       #22d68a;
+  --glow-c:    rgba(255,59,92,0.15);
+  --glow-h:    rgba(255,123,53,0.12);
+  --glow-a:    rgba(79,110,247,0.15);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--txt);font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;}
+::selection{background:var(--accent);color:#fff;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg2);}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
+
+/* ── TOP BAR ── */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:1px solid var(--border);background:var(--bg2);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--critical),var(--accent2));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.logo-text{font-size:18px;font-weight:800;letter-spacing:-0.5px;}
+.logo-sub{font-family:'Space Mono',monospace;font-size:10px;color:var(--txt2);letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
+.topbar-right{display:flex;align-items:center;gap:20px;}
+.live-badge{display:flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:11px;color:var(--low);}
+.pulse{width:8px;height:8px;background:var(--low);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,214,138,0.4);}50%{opacity:.8;box-shadow:0 0 0 6px rgba(34,214,138,0);}}
+.nav-tabs{display:flex;gap:4px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:4px;}
+.nav-tab{padding:6px 16px;border-radius:5px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s;color:var(--txt2);border:none;background:none;}
+.nav-tab.active{background:var(--accent);color:#fff;}
+.nav-tab:hover:not(.active){color:var(--txt);background:var(--border);}
+
+/* ── DATA SOURCE BANNER ── */
+.source-banner{display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-bottom:20px;flex-wrap:wrap;}
+.source-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--txt3);}
+.source-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:6px;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.5px;}
+.source-pill.hibp{background:rgba(34,214,138,.12);color:var(--low);border:1px solid rgba(34,214,138,.25);}
+.source-pill.synthetic{background:rgba(79,110,247,.12);color:var(--accent);border:1px solid rgba(79,110,247,.25);}
+.source-pill.hybrid{background:rgba(245,197,24,.1);color:var(--medium);border:1px solid rgba(245,197,24,.25);}
+.source-pill-dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
+.source-divider{width:1px;height:20px;background:var(--border);margin:0 4px;}
+.source-stat{font-family:'Space Mono',monospace;font-size:10px;color:var(--txt2);}
+.source-stat b{color:var(--txt);}
+
+/* ── SOURCE TAGS (HIBP / SYN) ── */
+.src-tag{font-family:'Space Mono',monospace;font-size:9px;padding:2px 7px;border-radius:4px;letter-spacing:.5px;font-weight:700;}
+.src-tag.hibp{background:rgba(34,214,138,.12);color:var(--low);border:1px solid rgba(34,214,138,.2);}
+.src-tag.synthetic{background:rgba(79,110,247,.1);color:var(--accent);border:1px solid rgba(79,110,247,.2);}
+
+/* ── BREACH CHIPS in alerts ── */
+.breach-sources-row{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 4px;}
+.breach-chip{font-family:'Space Mono',monospace;font-size:9px;padding:2px 8px;border-radius:4px;letter-spacing:.3px;}
+.breach-chip.hibp{background:rgba(34,214,138,.1);color:var(--low);border:1px solid rgba(34,214,138,.2);}
+.breach-chip.synthetic{background:rgba(79,110,247,.08);color:var(--accent);border:1px solid rgba(79,110,247,.18);}
+
+/* ── LAYOUT ── */
+.main{padding:28px 32px;max-width:1600px;margin:0 auto;}
+.section{display:none;}
+.section.active{display:block;}
+
+/* ── KPI ROW ── */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;}
+.kpi{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px 24px;position:relative;overflow:hidden;transition:.3s;}
+.kpi:hover{border-color:var(--border2);transform:translateY(-2px);}
+.kpi::before{content:'';position:absolute;inset:0;opacity:0;transition:.3s;pointer-events:none;}
+.kpi.critical::before{background:radial-gradient(ellipse at top left,var(--glow-c),transparent 60%);}
+.kpi.high::before{background:radial-gradient(ellipse at top left,var(--glow-h),transparent 60%);}
+.kpi.accent::before{background:radial-gradient(ellipse at top left,var(--glow-a),transparent 60%);}
+.kpi:hover::before{opacity:1;}
+.kpi-label{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--txt2);margin-bottom:12px;}
+.kpi-value{font-size:36px;font-weight:800;line-height:1;letter-spacing:-2px;}
+.kpi-value.critical{color:var(--critical);}
+.kpi-value.high{color:var(--high);}
+.kpi-value.accent{color:var(--accent);}
+.kpi-value.low{color:var(--low);}
+.kpi-sub{font-size:12px;color:var(--txt2);margin-top:6px;}
+.kpi-icon{position:absolute;right:20px;top:20px;font-size:28px;opacity:.15;}
+
+/* ── GRID LAYOUTS ── */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;}
+.grid-13{display:grid;grid-template-columns:1fr 2.2fr;gap:16px;margin-bottom:16px;}
+
+/* ── CARD ── */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;}
+.card-title{font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--txt2);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.card-title span{font-family:'Space Mono',monospace;font-size:10px;}
+
+/* ── RISK BADGE ── */
+.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:4px;font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;}
+.badge.CRITICAL{background:rgba(255,59,92,.15);color:var(--critical);border:1px solid rgba(255,59,92,.3);}
+.badge.HIGH{background:rgba(255,123,53,.12);color:var(--high);border:1px solid rgba(255,123,53,.25);}
+.badge.MEDIUM{background:rgba(245,197,24,.1);color:var(--medium);border:1px solid rgba(245,197,24,.25);}
+.badge.LOW{background:rgba(34,214,138,.1);color:var(--low);border:1px solid rgba(34,214,138,.2);}
+.badge.P1{background:rgba(255,59,92,.18);color:var(--critical);}
+.badge.P2{background:rgba(255,123,53,.14);color:var(--high);}
+
+/* ── SCORE BAR ── */
+.score-bar-wrap{display:flex;align-items:center;gap:10px;margin:6px 0;}
+.score-bar-bg{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden;}
+.score-bar-fill{height:100%;border-radius:3px;transition:width 1s cubic-bezier(.4,0,.2,1);}
+.score-num{font-family:'Space Mono',monospace;font-size:11px;min-width:32px;text-align:right;}
+
+/* ── TABLE ── */
+.tbl{width:100%;border-collapse:collapse;font-size:13px;}
+.tbl th{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt3);padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:middle;}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl tr:hover td{background:rgba(255,255,255,.02);}
+.tbl .rank{font-family:'Space Mono',monospace;font-size:11px;color:var(--txt3);}
+.tbl .name{font-weight:700;font-size:14px;}
+.tbl .email{font-family:'Space Mono',monospace;font-size:11px;color:var(--txt2);}
+.tbl .dept-tag{font-size:11px;color:var(--txt2);}
+
+/* ── DONUT ── */
+.donut-wrap{display:flex;align-items:center;gap:28px;}
+.donut-svg{flex-shrink:0;}
+.donut-legend{display:flex;flex-direction:column;gap:10px;}
+.donut-row{display:flex;align-items:center;gap:10px;cursor:default;}
+.donut-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+.donut-label{font-size:13px;font-weight:600;}
+.donut-pct{font-family:'Space Mono',monospace;font-size:12px;color:var(--txt2);margin-left:auto;}
+.donut-count{font-family:'Space Mono',monospace;font-size:11px;color:var(--txt3);}
+
+/* ── BAR CHART ── */
+.bar-chart{display:flex;flex-direction:column;gap:10px;}
+.bar-row{display:grid;grid-template-columns:120px 1fr 44px;align-items:center;gap:10px;}
+.bar-label{font-size:12px;color:var(--txt);text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.bar-bg{height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:4px;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+.bar-val{font-family:'Space Mono',monospace;font-size:11px;color:var(--txt2);text-align:right;}
+
+/* ── HISTOGRAM ── */
+.histo{display:flex;align-items:flex-end;gap:4px;height:120px;padding-top:8px;}
+.histo-bar{flex:1;border-radius:3px 3px 0 0;cursor:pointer;transition:.2s;position:relative;}
+.histo-bar:hover{opacity:.8;}
+.histo-bar::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--bg3);border:1px solid var(--border2);border-radius:5px;padding:4px 8px;font-family:'Space Mono',monospace;font-size:10px;white-space:nowrap;pointer-events:none;opacity:0;transition:.2s;}
+.histo-bar:hover::after{opacity:1;}
+.histo-labels{display:flex;gap:4px;margin-top:4px;}
+.histo-lbl{flex:1;font-family:'Space Mono',monospace;font-size:8px;color:var(--txt3);text-align:center;}
+
+/* ── ALERTS ── */
+.alert-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:12px;transition:.2s;cursor:pointer;}
+.alert-card:hover{border-color:var(--border2);background:rgba(255,255,255,.02);}
+.alert-card.p1{border-left:3px solid var(--critical);}
+.alert-card.p2{border-left:3px solid var(--high);}
+.alert-header{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.alert-name{font-weight:700;font-size:15px;}
+.alert-role{font-size:12px;color:var(--txt2);}
+.alert-score{font-family:'Space Mono',monospace;font-size:22px;font-weight:700;margin-left:auto;}
+.alert-score.CRITICAL{color:var(--critical);}
+.alert-score.HIGH{color:var(--high);}
+.alert-reason{font-size:12px;color:var(--txt2);line-height:1.6;margin-bottom:10px;}
+.alert-actions{display:flex;flex-wrap:wrap;gap:6px;}
+.action-pill{font-size:11px;padding:3px 10px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--txt);}
+.alert-meta{display:flex;align-items:center;gap:12px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);}
+.meta-chip{font-family:'Space Mono',monospace;font-size:10px;color:var(--txt2);}
+.mfa-off{color:var(--critical);}
+.mfa-on{color:var(--low);}
+
+/* ── LOOKUP ── */
+.lookup-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;}
+.lookup-form{display:flex;gap:12px;margin-bottom:28px;}
+.lookup-input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:12px 18px;font-family:'Syne',sans-serif;font-size:15px;color:var(--txt);outline:none;transition:.2s;}
+.lookup-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(79,110,247,.12);}
+.lookup-btn{background:var(--accent);border:none;border-radius:8px;padding:12px 28px;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#fff;cursor:pointer;transition:.2s;}
+.lookup-btn:hover{background:#3d5ce0;transform:translateY(-1px);}
+.lookup-result{display:none;}
+.lookup-result.show{display:block;}
+.result-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;}
+.result-name{font-size:26px;font-weight:800;letter-spacing:-1px;}
+.result-email{font-family:'Space Mono',monospace;font-size:12px;color:var(--txt2);margin-top:4px;}
+.big-score{font-size:64px;font-weight:800;line-height:1;letter-spacing:-4px;}
+.big-score.CRITICAL{color:var(--critical);}
+.big-score.HIGH{color:var(--high);}
+.big-score.MEDIUM{color:var(--medium);}
+.big-score.LOW{color:var(--low);}
+.sub-scores-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0;}
+.sub-score-card{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px;}
+.sub-score-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt3);margin-bottom:8px;}
+.sub-score-val{font-size:24px;font-weight:700;letter-spacing:-1px;}
+.sources-list{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0;}
+.source-tag{font-family:'Space Mono',monospace;font-size:10px;padding:3px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;color:var(--txt2);}
+.actions-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin:12px 0;}
+.actions-list li{font-size:13px;color:var(--txt);line-height:1.5;}
+.not-found{text-align:center;padding:40px;color:var(--txt2);}
+.not-found .nf-icon{font-size:48px;margin-bottom:16px;}
+
+/* ── DEPT TABLE ── */
+.dept-bar-wrap{display:flex;gap:2px;height:8px;border-radius:4px;overflow:hidden;min-width:100px;}
+.dept-seg{height:100%;transition:.8s;}
+
+/* ── MFA CHART ── */
+.mfa-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.mfa-cell{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:14px;}
+.mfa-level{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
+.mfa-ring{display:flex;align-items:center;gap:12px;}
+.mfa-pct{font-size:28px;font-weight:800;}
+.mfa-detail{font-size:11px;color:var(--txt2);line-height:1.7;}
+
+/* ── RESPONSIVE SCORE COLOR ── */
+.sc-CRITICAL{color:var(--critical);}
+.sc-HIGH{color:var(--high);}
+.sc-MEDIUM{color:var(--medium);}
+.sc-LOW{color:var(--low);}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.section.active>*{animation:fadeIn .4s ease both;}
+.section.active>*:nth-child(2){animation-delay:.05s;}
+.section.active>*:nth-child(3){animation-delay:.1s;}
+.section.active>*:nth-child(4){animation-delay:.15s;}
+
+/* ── SCAN LINES ── */
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px);pointer-events:none;z-index:9999;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">
+    <div class="logo-icon">🛡</div>
+    <div>
+      <div class="logo-text">DarkShield</div>
+      <div class="logo-sub">Enterprise Credential Intelligence</div>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div class="live-badge"><div class="pulse"></div>Live Monitor</div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showSection('overview')">Overview</button>
+      <button class="nav-tab" onclick="showSection('employees')">Employees</button>
+      <button class="nav-tab" onclick="showSection('alerts')">Alerts</button>
+      <button class="nav-tab" onclick="showSection('lookup')">Email Lookup</button>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ════════ OVERVIEW ════════ -->
+<div class="section active" id="section-overview">
+  <div class="source-banner" id="source-banner"></div>
+  <div class="kpi-row">
+    <div class="kpi critical">
+      <div class="kpi-label">Critical Risk</div>
+      <div class="kpi-value critical" id="kpi-critical">—</div>
+      <div class="kpi-sub" id="kpi-critical-sub">—</div>
+      <div class="kpi-icon">🔴</div>
+    </div>
+    <div class="kpi high">
+      <div class="kpi-label">High Risk</div>
+      <div class="kpi-value high" id="kpi-high">—</div>
+      <div class="kpi-sub" id="kpi-high-sub">—</div>
+      <div class="kpi-icon">🟠</div>
+    </div>
+    <div class="kpi accent">
+      <div class="kpi-label">Active Alerts</div>
+      <div class="kpi-value accent" id="kpi-alerts">—</div>
+      <div class="kpi-sub" id="kpi-alerts-sub">—</div>
+      <div class="kpi-icon">⚡</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Exposed Employees</div>
+      <div class="kpi-value low" id="kpi-exposed">—</div>
+      <div class="kpi-sub" id="kpi-exposed-sub">—</div>
+      <div class="kpi-icon">👤</div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">🎯 Risk Distribution</div>
+      <div class="donut-wrap">
+        <svg class="donut-svg" width="140" height="140" viewBox="0 0 140 140" id="donut-svg"></svg>
+        <div class="donut-legend" id="donut-legend"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">📊 Score Distribution</div>
+      <div id="histogram-container"></div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">🏢 Top Risky Departments <span>avg risk score</span></div>
+      <div class="bar-chart" id="dept-bars"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🔓 Breach Sources <span>employee exposure</span></div>
+      <div class="bar-chart" id="source-bars"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">📱 MFA Adoption by Risk Level</div>
+    <div class="mfa-grid" id="mfa-grid"></div>
+  </div>
+</div>
+
+<!-- ════════ EMPLOYEES ════════ -->
+<div class="section" id="section-employees">
+  <div class="source-banner" id="source-banner-emp"></div>
+  <div class="card">
+    <div class="card-title">🏆 Top 10 Highest Risk Employees</div>
+    <table class="tbl" id="top10-table"></table>
+  </div>
+  <div style="margin-top:16px;" class="card">
+    <div class="card-title">🏢 Department Risk Summary</div>
+    <table class="tbl" id="dept-table"></table>
+  </div>
+</div>
+
+<!-- ════════ ALERTS ════════ -->
+<div class="section" id="section-alerts">
+  <div class="source-banner" id="source-banner-alerts"></div>
+  <div class="kpi-row">
+    <div class="kpi critical"><div class="kpi-label">P1 Critical</div><div class="kpi-value critical" id="a-p1">—</div><div class="kpi-sub">Response: 1 hour</div></div>
+    <div class="kpi high"><div class="kpi-label">P2 High</div><div class="kpi-value high" id="a-p2">—</div><div class="kpi-sub">Response: 4 hours</div></div>
+    <div class="kpi accent"><div class="kpi-label">No MFA (High Risk)</div><div class="kpi-value accent" id="a-nomfa">—</div><div class="kpi-sub">Immediate action</div></div>
+    <div class="kpi"><div class="kpi-label">Depts Impacted</div><div class="kpi-value low" id="a-depts">—</div><div class="kpi-sub">Across organization</div></div>
+  </div>
+  <div id="alerts-list"></div>
+</div>
+
+<!-- ════════ LOOKUP ════════ -->
+<div class="section" id="section-lookup">
+  <div class="lookup-box">
+    <div class="card-title" style="font-size:16px;margin-bottom:8px;">🔍 Employee Email Risk Lookup</div>
+    <p style="color:var(--txt2);font-size:13px;margin-bottom:20px;">Enter a corporate email to retrieve full breach exposure and risk profile — HIBP-style lookup powered by the internal risk engine.</p>
+    <div class="lookup-form">
+      <input class="lookup-input" id="lookup-email" type="email" placeholder="employee@corpmail.com">
+      <button class="lookup-btn" onclick="doLookup()">Look Up →</button>
+    </div>
+    <div class="lookup-result" id="lookup-result"></div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<script>
+// ════════════════════════════════════════════════
+//  EMBEDDED DATA
+// ════════════════════════════════════════════════
+const D = {"dist":{"counts":{"LOW":50,"MEDIUM":51,"HIGH":18,"CRITICAL":1},"percentages":{"LOW":41.7,"MEDIUM":42.5,"HIGH":15.0,"CRITICAL":0.8},"total":120},"depts":[{"department":"Operations","employee_count":15,"exposed_count":13,"exposure_rate":86.7,"avg_risk_score":54.6,"max_risk_score":87.1,"avg_breach_count":2.6,"critical_count":0,"high_count":4,"medium_count":8,"low_count":3},{"department":"Finance","employee_count":10,"exposed_count":8,"exposure_rate":80.0,"avg_risk_score":53.4,"max_risk_score":77.7,"avg_breach_count":2.1,"critical_count":0,"high_count":2,"medium_count":6,"low_count":2},{"department":"IT Security","employee_count":6,"exposed_count":6,"exposure_rate":100.0,"avg_risk_score":49.4,"max_risk_score":77.1,"avg_breach_count":1.33,"critical_count":0,"high_count":1,"medium_count":4,"low_count":1},{"department":"HR","employee_count":7,"exposed_count":5,"exposure_rate":71.4,"avg_risk_score":48.7,"max_risk_score":86.3,"avg_breach_count":2.14,"critical_count":0,"high_count":2,"medium_count":2,"low_count":3},{"department":"Marketing","employee_count":12,"exposed_count":10,"exposure_rate":83.3,"avg_risk_score":43.4,"max_risk_score":69.0,"avg_breach_count":1.67,"critical_count":0,"high_count":0,"medium_count":7,"low_count":5},{"department":"Executive","employee_count":4,"exposed_count":2,"exposure_rate":50.0,"avg_risk_score":42.5,"max_risk_score":80.3,"avg_breach_count":1.25,"critical_count":0,"high_count":1,"medium_count":1,"low_count":2},{"department":"Engineering","employee_count":20,"exposed_count":14,"exposure_rate":70.0,"avg_risk_score":41.7,"max_risk_score":75.9,"avg_breach_count":1.45,"critical_count":0,"high_count":4,"medium_count":9,"low_count":7},{"department":"Legal","employee_count":5,"exposed_count":3,"exposure_rate":60.0,"avg_risk_score":36.2,"max_risk_score":91.0,"avg_breach_count":2.0,"critical_count":1,"high_count":0,"medium_count":1,"low_count":3}],"top10":[{"rank":1,"name":"Fatima Rodriguez","email":"fatima.rodriguez@corpmail.com","department":"Legal","role":"Director","risk_score":91.0,"risk_level":"CRITICAL","breach_count":6,"risk_reason":"Exposed in 6 breaches | 2 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 5 source(s) | MFA not enabled","mfa_enabled":false},{"rank":2,"name":"David Brown","email":"david.brown@corpmail.com","department":"Operations","role":"Senior Manager","risk_score":87.1,"risk_level":"HIGH","breach_count":6,"risk_reason":"Exposed in 6 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 4 source(s)","mfa_enabled":true},{"rank":3,"name":"David Hassan","email":"david.hassan@corpmail.com","department":"HR","role":"Director","risk_score":86.3,"risk_level":"HIGH","breach_count":5,"risk_reason":"Exposed in 5 breaches | 3 critical-severity leak(s) | plaintext password in 2 source(s) | MFA not enabled","mfa_enabled":false},{"rank":4,"name":"Karan Gupta","email":"karan.gupta@corpmail.com","department":"Operations","role":"Senior Manager","risk_score":86.2,"risk_level":"HIGH","breach_count":5,"risk_reason":"Exposed in 5 breaches | 2 critical-severity leak(s) | recent exposure (<6 months) | plaintext password in 2 source(s) | MFA not enabled","mfa_enabled":false},{"rank":5,"name":"Carlos Lee","email":"carlos.lee@corpmail.com","department":"Customer Support","role":"Associate","risk_score":82.2,"risk_level":"HIGH","breach_count":6,"risk_reason":"Exposed in 6 breaches | 3 critical-severity leak(s) | recent exposure (<6 months) | plaintext password in 3 source(s) | MFA not enabled","mfa_enabled":false},{"rank":6,"name":"Lucas Tanaka","email":"ltanaka@corpmail.com","department":"Operations","role":"Senior Manager","risk_score":81.6,"risk_level":"HIGH","breach_count":5,"risk_reason":"Exposed in 5 breaches | 3 critical-severity leak(s) | plaintext password in 1 source(s)","mfa_enabled":true},{"rank":7,"name":"David Smith","email":"david.smith@corpmail.com","department":"Sales","role":"VP","risk_score":80.5,"risk_level":"HIGH","breach_count":2,"risk_reason":"Exposed in 2 breaches | 2 critical-severity leak(s) | recent exposure (<6 months) | high-privilege role (VP) | plaintext password in 1 source(s) | MFA not enabled","mfa_enabled":false},{"rank":8,"name":"James Sharma","email":"james.sharma@corpmail.com","department":"Executive","role":"CTO","risk_score":80.3,"risk_level":"HIGH","breach_count":3,"risk_reason":"Exposed in 3 breaches | 2 critical-severity leak(s) | high-privilege role (CTO) | plaintext password in 2 source(s)","mfa_enabled":true},{"rank":9,"name":"Vikram Wang","email":"vikram.wang@corpmail.com","department":"Finance","role":"Analyst","risk_score":77.7,"risk_level":"HIGH","breach_count":4,"risk_reason":"Exposed in 4 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | critical department (Finance) | plaintext password in 2 source(s) | MFA not enabled","mfa_enabled":false},{"rank":10,"name":"Aarav Williams","email":"awilliams@corpmail.com","department":"Customer Support","role":"Associate","risk_score":77.7,"risk_level":"HIGH","breach_count":6,"risk_reason":"Exposed in 6 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 3 source(s)","mfa_enabled":true}],"histogram":[{"range":"0\u201310","min":0.0,"max":10.0,"count":28},{"range":"10\u201320","min":10.0,"max":20.0,"count":8},{"range":"20\u201330","min":20.0,"max":30.0,"count":6},{"range":"30\u201340","min":30.0,"max":40.0,"count":8},{"range":"40\u201350","min":40.0,"max":50.0,"count":18},{"range":"50\u201360","min":50.0,"max":60.0,"count":13},{"range":"60\u201370","min":60.0,"max":70.0,"count":20},{"range":"70\u201380","min":70.0,"max":80.0,"count":11},{"range":"80\u201390","min":80.0,"max":90.0,"count":7},{"range":"90\u2013100","min":90.0,"max":100.0,"count":1}],"sources":[{"source":"Adobe2013","exposed_employees":27},{"source":"TelegramCombo24","exposed_employees":23},{"source":"LastPass2022","exposed_employees":21},{"source":"Gravatar2020","exposed_employees":18},{"source":"Dropbox2012","exposed_employees":18},{"source":"Collection1","exposed_employees":18},{"source":"LinkedIn2021","exposed_employees":17},{"source":"Trello2022","exposed_employees":17}],"mfa":{"CRITICAL":{"total":1,"mfa_enabled":0,"mfa_missing":1,"adoption_pct":0.0},"HIGH":{"total":18,"mfa_enabled":7,"mfa_missing":11,"adoption_pct":38.9},"MEDIUM":{"total":51,"mfa_enabled":23,"mfa_missing":28,"adoption_pct":45.1},"LOW":{"total":50,"mfa_enabled":19,"mfa_missing":31,"adoption_pct":38.0}},"alert_summary":{"total_alerts":19,"critical_alerts":1,"high_alerts":18,"departments_impacted":9,"top_dept_by_alerts":[["Operations",4],["Engineering",4],["HR",2],["Customer Support",2],["Sales",2]],"no_mfa_high_risk":12},"alerts":[{"alert_id":"ALT-EMP1081","priority":"P1","risk_level":"CRITICAL","risk_score":91.0,"name":"Fatima Rodriguez","email":"fatima.rodriguez@corpmail.com","department":"Legal","role":"Director","breach_count":6,"breach_sources":["DarkForumDump23","RockYou2024","Gravatar2020","TelegramCombo24","LinkedIn2021","Adobe2013"],"risk_reason":"Exposed in 6 breaches | 2 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 5 source(s) | MFA not enabled","escalation_triggers":["High plaintext password exposure","Very recent breach (<90 days)","Multiple breach appearances (6)","MFA not enabled \u2014 account at risk"],"recommended_actions":["\u26a0\ufe0f URGENT: Force password reset \u2014 plaintext credential exposed on dark web","\ud83d\udd34 Suspend account access pending security review","\ud83d\udd34 Notify CISO and direct manager immediately","\ud83d\udd34 Audit last 30 days of login activity","\ud83d\udcf1 Enforce MFA enrollment before next login","\ud83d\udccb Enroll in mandatory security awareness training","\ud83d\udd12 Consider temporary privilege reduction"],"sla_response_time":"1 hour","mfa_enabled":false,"status":"OPEN"},{"alert_id":"ALT-EMP1094","priority":"P2","risk_level":"HIGH","risk_score":87.1,"name":"David Brown","email":"david.brown@corpmail.com","department":"Operations","role":"Senior Manager","breach_count":6,"breach_sources":["Canva2019","LastPass2022","Twitter2022","LinkedIn2021","Adobe2013","Dropbox2012"],"risk_reason":"Exposed in 6 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 4 source(s)","escalation_triggers":["High plaintext password exposure","Very recent breach (<90 days)","Multiple breach appearances (6)"],"recommended_actions":["\u26a0\ufe0f URGENT: Force password reset \u2014 plaintext credential exposed on dark web","\ud83d\udfe0 Force password reset within 4 hours","\ud83d\udfe0 Review privileged access grants","\ud83d\udccb Enroll in mandatory security awareness training"],"sla_response_time":"4 hours","mfa_enabled":true,"status":"OPEN"},{"alert_id":"ALT-EMP1040","priority":"P2","risk_level":"HIGH","risk_score":86.3,"name":"David Hassan","email":"david.hassan@corpmail.com","department":"HR","role":"Director","breach_count":5,"breach_sources":["Canva2019","RockYou2024","LastPass2022","TelegramCombo24","Adobe2013"],"risk_reason":"Exposed in 5 breaches | 3 critical-severity leak(s) | plaintext password in 2 source(s) | MFA not enabled","escalation_triggers":["High plaintext password exposure","Multiple breach appearances (5)","MFA not enabled \u2014 account at risk"],"recommended_actions":["\u26a0\ufe0f URGENT: Force password reset \u2014 plaintext credential exposed on dark web","\ud83d\udfe0 Force password reset within 4 hours","\ud83d\udfe0 Review privileged access grants","\ud83d\udcf1 Enforce MFA enrollment before next login","\ud83d\udccb Enroll in mandatory security awareness training"],"sla_response_time":"4 hours","mfa_enabled":false,"status":"OPEN"},{"alert_id":"ALT-EMP1083","priority":"P2","risk_level":"HIGH","risk_score":86.2,"name":"Karan Gupta","email":"karan.gupta@corpmail.com","department":"Operations","role":"Senior Manager","breach_count":5,"breach_sources":["DarkForumDump23","RockYou2024","TelegramCombo24","Adobe2013","Dropbox2012"],"risk_reason":"Exposed in 5 breaches | 2 critical-severity leak(s) | recent exposure (<6 months) | plaintext password in 2 source(s) | MFA not enabled","escalation_triggers":["Very recent breach (<90 days)","Multiple breach appearances (5)","MFA not enabled \u2014 account at risk"],"recommended_actions":["\u26a0\ufe0f URGENT: Force password reset \u2014 plaintext credential exposed on dark web","\ud83d\udfe0 Force password reset within 4 hours","\ud83d\udfe0 Review privileged access grants","\ud83d\udcf1 Enforce MFA enrollment before next login","\ud83d\udccb Enroll in mandatory security awareness training"],"sla_response_time":"4 hours","mfa_enabled":false,"status":"OPEN"},{"alert_id":"ALT-EMP1117","priority":"P2","risk_level":"HIGH","risk_score":82.2,"name":"Carlos Lee","email":"carlos.lee@corpmail.com","department":"Customer Support","role":"Associate","breach_count":6,"breach_sources":["Collection1","DarkForumDump23","RockYou2024","TelegramCombo24","Gravatar2020","Adobe2013"],"risk_reason":"Exposed in 6 breaches | 3 critical-severity leak(s) | recent exposure (<6 months) | plaintext password in 3 source(s) | MFA not enabled","escalation_triggers":["High plaintext password exposure","Very recent breach (<90 days)","Multiple breach appearances (6)","MFA not enabled \u2014 account at risk"],"recommended_actions":["\u26a0\ufe0f URGENT: Force password reset \u2014 plaintext credential exposed on dark web","\ud83d\udfe0 Force password reset within 4 hours","\ud83d\udfe0 Review privileged access grants","\ud83d\udcf1 Enforce MFA enrollment before next login","\ud83d\udccb Enroll in mandatory security awareness training"],"sla_response_time":"4 hours","mfa_enabled":false,"status":"OPEN"},{"alert_id":"ALT-EMP1095","priority":"P2","risk_level":"HIGH","risk_score":81.6,"name":"Lucas Tanaka","email":"ltanaka@corpmail.com","department":"Operations","role":"Senior Manager","breach_count":5,"breach_sources":["RockYou2024","LastPass2022","TelegramCombo24","LinkedIn2021","Dropbox2012"],"risk_reason":"Exposed in 5 breaches | 3 critical-severity leak(s) | plaintext password in 1 source(s)","escalation_triggers":["Multiple breach appearances (5)"],"recommended_actions":["\u26a0\ufe0f URGENT: Force password reset \u2014 plaintext credential exposed on dark web","\ud83d\udfe0 Force password reset within 4 hours","\ud83d\udfe0 Review privileged access grants","\ud83d\udccb Enroll in mandatory security awareness training"],"sla_response_time":"4 hours","mfa_enabled":true,"status":"OPEN"},{"alert_id":"ALT-EMP1051","priority":"P2","risk_level":"HIGH","risk_score":80.5,"name":"David Smith","email":"david.smith@corpmail.com","department":"Sales","role":"VP","breach_count":2,"breach_sources":["TelegramCombo24","Collection1"],"risk_reason":"Exposed in 2 breaches | 2 critical-severity leak(s) | recent exposure (<6 months) | high-privilege role (VP) | plaintext password in 1 source(s) | MFA not enabled","escalation_triggers":["Very recent breach (<90 days)","Executive/privileged role: VP","MFA not enabled \u2014 account at risk"],"recommended_actions":["\u26a0\ufe0f URGENT: Force password reset \u2014 plaintext credential exposed on dark web","\ud83d\udfe0 Force password reset within 4 hours","\ud83d\udfe0 Review privileged access grants","\ud83d\udcf1 Enforce MFA enrollment before next login"],"sla_response_time":"4 hours","mfa_enabled":false,"status":"OPEN"},{"alert_id":"ALT-EMP1032","priority":"P2","risk_level":"HIGH","risk_score":80.3,"name":"James Sharma","email":"james.sharma@corpmail.com","department":"Executive","role":"CTO","breach_count":3,"breach_sources":["TelegramCombo24","Gravatar2020","LastPass2022"],"risk_reason":"Exposed in 3 breaches | 2 critical-severity leak(s) | high-privilege role (CTO) | plaintext password in 2 source(s)","escalation_triggers":["Executive/privileged role: CTO"],"recommended_actions":["\u26a0\ufe0f URGENT: Force password reset \u2014 plaintext credential exposed on dark web","\ud83d\udfe0 Force password reset within 4 hours","\ud83d\udfe0 Review privileged access grants","\ud83d\udccb Enroll in mandatory security awareness training"],"sla_response_time":"4 hours","mfa_enabled":true,"status":"OPEN"},{"alert_id":"ALT-EMP1029","priority":"P2","risk_level":"HIGH","risk_score":77.7,"name":"Vikram Wang","email":"vikram.wang@corpmail.com","department":"Finance","role":"Analyst","breach_count":4,"breach_sources":["LastPass2022","Trello2022","Gravatar2020","Twitter2022"],"risk_reason":"Exposed in 4 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | critical department (Finance) | plaintext password in 2 source(s) | MFA not enabled","escalation_triggers":["Very recent breach (<90 days)","Multiple breach appearances (4)","MFA not enabled \u2014 account at risk"],"recommended_actions":["\u26a0\ufe0f URGENT: Force password reset \u2014 plaintext credential exposed on dark web","\ud83d\udfe0 Force password reset within 4 hours","\ud83d\udfe0 Review privileged access grants","\ud83d\udcf1 Enforce MFA enrollment before next login","\ud83d\udccb Enroll in mandatory security awareness training"],"sla_response_time":"4 hours","mfa_enabled":false,"status":"OPEN"},{"alert_id":"ALT-EMP1098","priority":"P2","risk_level":"HIGH","risk_score":77.7,"name":"Aarav Williams","email":"awilliams@corpmail.com","department":"Customer Support","role":"Associate","breach_count":6,"breach_sources":["Trello2022","LastPass2022","Twitter2022","Gravatar2020","Adobe2013","Dropbox2012"],"risk_reason":"Exposed in 6 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 3 source(s)","escalation_triggers":["High plaintext password exposure","Very recent breach (<90 days)","Multiple breach appearances (6)"],"recommended_actions":["\u26a0\ufe0f URGENT: Force password reset \u2014 plaintext credential exposed on dark web","\ud83d\udfe0 Force password reset within 4 hours","\ud83d\udfe0 Review privileged access grants","\ud83d\udccb Enroll in mandatory security awareness training"],"sla_response_time":"4 hours","mfa_enabled":true,"status":"OPEN"}],"profiles":[{"email":"fatima.rodriguez@corpmail.com","name":"Fatima Rodriguez","department":"Legal","role":"Director","risk_score":91.0,"risk_level":"CRITICAL","breach_count":6,"breach_sources":["DarkForumDump23","RockYou2024","Gravatar2020","TelegramCombo24","LinkedIn2021","Adobe2013"],"risk_reason":"Exposed in 6 breaches | 2 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 5 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":75.11,"recency_score":88.22,"role_score":84.95,"exposure_score":76.0},{"email":"david.brown@corpmail.com","name":"David Brown","department":"Operations","role":"Senior Manager","risk_score":87.1,"risk_level":"HIGH","breach_count":6,"breach_sources":["Canva2019","LastPass2022","Twitter2022","LinkedIn2021","Adobe2013","Dropbox2012"],"risk_reason":"Exposed in 6 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 4 source(s)","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Review account access logs","mfa_enabled":true,"breach_score":71.78,"recency_score":88.72,"role_score":69.82,"exposure_score":68.0},{"email":"david.hassan@corpmail.com","name":"David Hassan","department":"HR","role":"Director","risk_score":86.3,"risk_level":"HIGH","breach_count":5,"breach_sources":["Canva2019","RockYou2024","LastPass2022","TelegramCombo24","Adobe2013"],"risk_reason":"Exposed in 5 breaches | 3 critical-severity leak(s) | plaintext password in 2 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":76.77,"recency_score":67.5,"role_score":80.99,"exposure_score":66.0},{"email":"karan.gupta@corpmail.com","name":"Karan Gupta","department":"Operations","role":"Senior Manager","risk_score":86.2,"risk_level":"HIGH","breach_count":5,"breach_sources":["DarkForumDump23","RockYou2024","TelegramCombo24","Adobe2013","Dropbox2012"],"risk_reason":"Exposed in 5 breaches | 2 critical-severity leak(s) | recent exposure (<6 months) | plaintext password in 2 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":76.77,"recency_score":82.55,"role_score":69.82,"exposure_score":58.0},{"email":"carlos.lee@corpmail.com","name":"Carlos Lee","department":"Customer Support","role":"Associate","risk_score":82.2,"risk_level":"HIGH","breach_count":6,"breach_sources":["Collection1","DarkForumDump23","RockYou2024","TelegramCombo24","Gravatar2020","Adobe2013"],"risk_reason":"Exposed in 6 breaches | 3 critical-severity leak(s) | recent exposure (<6 months) | plaintext password in 3 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":77.61,"recency_score":75.07,"role_score":42.43,"exposure_score":84.0},{"email":"ltanaka@corpmail.com","name":"Lucas Tanaka","department":"Operations","role":"Senior Manager","risk_score":81.6,"risk_level":"HIGH","breach_count":5,"breach_sources":["RockYou2024","LastPass2022","TelegramCombo24","LinkedIn2021","Dropbox2012"],"risk_reason":"Exposed in 5 breaches | 3 critical-severity leak(s) | plaintext password in 1 source(s)","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Review account access logs","mfa_enabled":true,"breach_score":79.77,"recency_score":65.98,"role_score":69.82,"exposure_score":45.0},{"email":"david.smith@corpmail.com","name":"David Smith","department":"Sales","role":"VP","risk_score":80.5,"risk_level":"HIGH","breach_count":2,"breach_sources":["TelegramCombo24","Collection1"],"risk_reason":"Exposed in 2 breaches | 2 critical-severity leak(s) | recent exposure (<6 months) | high-privilege role (VP) | plaintext password in 1 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":70.0,"recency_score":76.51,"role_score":73.48,"exposure_score":37.0},{"email":"james.sharma@corpmail.com","name":"James Sharma","department":"Executive","role":"CTO","risk_score":80.3,"risk_level":"HIGH","breach_count":3,"breach_sources":["TelegramCombo24","Gravatar2020","LastPass2022"],"risk_reason":"Exposed in 3 breaches | 2 critical-severity leak(s) | high-privilege role (CTO) | plaintext password in 2 source(s)","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Review account access logs","mfa_enabled":true,"breach_score":63.21,"recency_score":47.14,"role_score":98.99,"exposure_score":58.0},{"email":"vikram.wang@corpmail.com","name":"Vikram Wang","department":"Finance","role":"Analyst","risk_score":77.7,"risk_level":"HIGH","breach_count":4,"breach_sources":["LastPass2022","Trello2022","Gravatar2020","Twitter2022"],"risk_reason":"Exposed in 4 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | critical department (Finance) | plaintext password in 2 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":54.12,"recency_score":87.22,"role_score":67.53,"exposure_score":50.0},{"email":"awilliams@corpmail.com","name":"Aarav Williams","department":"Customer Support","role":"Associate","risk_score":77.7,"risk_level":"HIGH","breach_count":6,"breach_sources":["Trello2022","LastPass2022","Twitter2022","Gravatar2020","Adobe2013","Dropbox2012"],"risk_reason":"Exposed in 6 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 3 source(s)","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Review account access logs","mfa_enabled":true,"breach_score":65.95,"recency_score":85.09,"role_score":42.43,"exposure_score":68.0},{"email":"mdavis@corpmail.com","name":"Mia Davis","department":"Finance","role":"Associate","risk_score":77.1,"risk_level":"HIGH","breach_count":4,"breach_sources":["TelegramCombo24","Canva2019","Collection1","Twitter2022"],"risk_reason":"Exposed in 4 breaches | 2 critical-severity leak(s) | critical department (Finance) | plaintext password in 2 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":66.62,"recency_score":69.18,"role_score":61.64,"exposure_score":58.0},{"email":"ananya.taylor@corpmail.com","name":"Ananya Taylor","department":"IT Security","role":"Senior Engineer","risk_score":77.1,"risk_level":"HIGH","breach_count":1,"breach_sources":["RockYou2024"],"risk_reason":"Found in 1 breach | 1 critical-severity leak(s) | very recent exposure (<90 days) | critical department (IT Security) | MFA not enabled","recommended_action":"\ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":60.77,"recency_score":94.28,"role_score":74.7,"exposure_score":8.0},{"email":"kali@corpmail.com","name":"Kavya Ali","department":"Operations","role":"Coordinator","risk_score":76.8,"risk_level":"HIGH","breach_count":4,"breach_sources":["RockYou2024","Gravatar2020","Collection1","Dropbox2012"],"risk_reason":"Exposed in 4 breaches | 2 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 1 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":67.87,"recency_score":92.86,"role_score":47.7,"exposure_score":37.0},{"email":"layla.shah@corpmail.com","name":"Layla Shah","department":"Sales","role":"VP","risk_score":76.4,"risk_level":"HIGH","breach_count":4,"breach_sources":["DarkForumDump23","Canva2019","LinkedIn2021","Adobe2013"],"risk_reason":"Exposed in 4 breaches | 3 major leak(s) | recent exposure (<6 months) | high-privilege role (VP) | plaintext password in 1 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":62.87,"recency_score":82.7,"role_score":73.48,"exposure_score":21.0},{"email":"rohan.kumar@corpmail.com","name":"Rohan Kumar","department":"Engineering","role":"Director","risk_score":75.9,"risk_level":"HIGH","breach_count":2,"breach_sources":["LastPass2022","DarkForumDump23"],"risk_reason":"Exposed in 2 breaches | 1 critical-severity leak(s) | plaintext password in 1 source(s)","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Review account access logs","mfa_enabled":true,"breach_score":62.5,"recency_score":66.73,"role_score":83.49,"exposure_score":29.0},{"email":"priya.wang@corpmail.com","name":"Priya Wang","department":"HR","role":"Director","risk_score":74.7,"risk_level":"HIGH","breach_count":2,"breach_sources":["TelegramCombo24","Adobe2013"],"risk_reason":"Exposed in 2 breaches | 1 critical-severity leak(s) | recent exposure (<6 months) | MFA not enabled","recommended_action":"\ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":62.5,"recency_score":78.57,"role_score":80.99,"exposure_score":8.0},{"email":"ajoshi@corpmail.com","name":"Aiko Joshi","department":"Engineering","role":"Director","risk_score":73.1,"risk_level":"HIGH","breach_count":4,"breach_sources":["Canva2019","Trello2022","LinkedIn2021","Adobe2013"],"risk_reason":"Exposed in 4 breaches | 2 major leak(s) | plaintext password in 2 source(s)","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Review account access logs","mfa_enabled":true,"breach_score":56.62,"recency_score":59.55,"role_score":83.49,"exposure_score":42.0},{"email":"sarah.taylor@corpmail.com","name":"Sarah Taylor","department":"Engineering","role":"Director","risk_score":72.3,"risk_level":"HIGH","breach_count":3,"breach_sources":["Adobe2013","Trello2022","Twitter2022"],"risk_reason":"Exposed in 3 breaches | 1 major leak(s) | recent exposure (<6 months) | plaintext password in 1 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Enable MFA now | Review account access logs","mfa_enabled":false,"breach_score":48.21,"recency_score":81.92,"role_score":83.49,"exposure_score":21.0},{"email":"opatel@corpmail.com","name":"Omar Patel","department":"Engineering","role":"Senior Manager","risk_score":72.0,"risk_level":"HIGH","breach_count":2,"breach_sources":["Collection1","Dropbox2012"],"risk_reason":"Exposed in 2 breaches | 1 critical-severity leak(s) | plaintext password in 1 source(s)","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udd34 Force immediate password reset | Review account access logs","mfa_enabled":true,"breach_score":62.5,"recency_score":59.89,"role_score":79.84,"exposure_score":29.0},{"email":"ymehta@corpmail.com","name":"Yuki Mehta","department":"Customer Support","role":"Coordinator","risk_score":69.9,"risk_level":"MEDIUM","breach_count":5,"breach_sources":["Collection1","Canva2019","LastPass2022","Twitter2022","TelegramCombo24"],"risk_reason":"Exposed in 5 breaches | 3 critical-severity leak(s) | plaintext password in 1 source(s) | MFA not enabled","recommended_action":"\u26a0\ufe0f URGENT: Plaintext password exposed \u2014 reset immediately | \ud83d\udfe1 Schedule password reset within 7 days | Enroll in MFA program | Security awareness training","mfa_enabled":false,"breach_score":73.77,"recency_score":69.45,"role_score":39.69,"exposure_score":45.0}]};
+
+// ════════════════════════════════════════════════
+//  DATA SOURCE CONFIG
+//  Update these values to match your pipeline output.
+//  mode: "synthetic" | "hibp" | "hybrid"
+// ════════════════════════════════════════════════
+const DATA_SOURCE = {
+  mode: "synthetic",
+  hibp_records: 0,
+  synthetic_records: 120,
+  total_records: 120,
+  last_updated: new Date().toLocaleString()
+};
+
+// ════════════════════════════════════════════════
+//  SOURCE BANNER
+// ════════════════════════════════════════════════
+const SOURCE_LABELS = {
+  hibp:      { cls:'hibp',      icon:'🌐', text:'Real-Time (HIBP API)' },
+  synthetic: { cls:'synthetic', icon:'🧪', text:'Synthetic Data'       },
+  hybrid:    { cls:'hybrid',    icon:'🔀', text:'Hybrid (HIBP + Synthetic)' }
+};
+function buildSourceBannerHTML() {
+  const cfg = SOURCE_LABELS[DATA_SOURCE.mode] || SOURCE_LABELS.synthetic;
+  return `
+    <span class="source-label">Data Source</span>
+    <span class="source-pill ${cfg.cls}"><span class="source-pill-dot"></span>${cfg.icon} ${cfg.text}</span>
+    <div class="source-divider"></div>
+    <span class="source-stat"><b>${DATA_SOURCE.total_records}</b> total records</span>
+    ${DATA_SOURCE.hibp_records > 0 ? `<span class="source-stat">🌐 <b>${DATA_SOURCE.hibp_records}</b> HIBP</span>` : ''}
+    ${DATA_SOURCE.synthetic_records > 0 ? `<span class="source-stat">🧪 <b>${DATA_SOURCE.synthetic_records}</b> synthetic</span>` : ''}
+    <div class="source-divider"></div>
+    <span class="source-stat" style="margin-left:auto">Updated: ${DATA_SOURCE.last_updated}</span>`;
+}
+function renderSourceBanners() {
+  const h = buildSourceBannerHTML();
+  ['source-banner','source-banner-emp','source-banner-alerts'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.innerHTML = h;
+  });
+}
+
+// ════════════════════════════════════════════════
+//  BREACH SOURCE CLASSIFIER
+//  Known real HIBP breach names in this dataset
+// ════════════════════════════════════════════════
+const HIBP_SOURCES = new Set([
+  'linkedin2021','adobe2013','dropbox2012','lastpass2022',
+  'twitter2022','gravatar2020','canva2019','trello2022'
+]);
+function srcType(name){ return HIBP_SOURCES.has(name.toLowerCase()) ? 'hibp' : 'synthetic'; }
+
+// ════════════════════════════════════════════════
+//  NAVIGATION
+// ════════════════════════════════════════════════
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('section-'+id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ════════════════════════════════════════════════
+//  COLOR HELPERS
+// ════════════════════════════════════════════════
+const COLORS={CRITICAL:'#ff3b5c',HIGH:'#ff7b35',MEDIUM:'#f5c518',LOW:'#22d68a'};
+function scoreColor(s){return s>=90?COLORS.CRITICAL:s>=70?COLORS.HIGH:s>=40?COLORS.MEDIUM:COLORS.LOW;}
+function levelColor(l){return COLORS[l]||'#6b70a0';}
+
+// ════════════════════════════════════════════════
+//  KPI ROW
+// ════════════════════════════════════════════════
+function renderKPIs(){
+  const d=D.dist,as=D.alert_summary;
+  document.getElementById('kpi-critical').textContent=d.counts.CRITICAL;
+  document.getElementById('kpi-critical-sub').textContent=d.percentages.CRITICAL+'% of workforce';
+  document.getElementById('kpi-high').textContent=d.counts.HIGH;
+  document.getElementById('kpi-high-sub').textContent=d.percentages.HIGH+'% of workforce';
+  document.getElementById('kpi-alerts').textContent=as.total_alerts;
+  document.getElementById('kpi-alerts-sub').textContent='P1:'+as.critical_alerts+' P2:'+as.high_alerts;
+  const exposed=D.profiles.filter(p=>p.breach_count>0).length;
+  document.getElementById('kpi-exposed').textContent=exposed;
+  document.getElementById('kpi-exposed-sub').textContent='of '+d.total+' employees monitored';
+}
+
+// ════════════════════════════════════════════════
+//  DONUT
+// ════════════════════════════════════════════════
+function renderDonut(){
+  const levels=[['CRITICAL',D.dist.counts.CRITICAL,COLORS.CRITICAL],['HIGH',D.dist.counts.HIGH,COLORS.HIGH],['MEDIUM',D.dist.counts.MEDIUM,COLORS.MEDIUM],['LOW',D.dist.counts.LOW,COLORS.LOW]];
+  const total=D.dist.total,cx=70,cy=70,r=52,sw=18;
+  let angle=-Math.PI/2,svg='';
+  levels.forEach(([lbl,count,color])=>{
+    const slice=2*Math.PI*(count/total);
+    const x1=cx+r*Math.cos(angle),y1=cy+r*Math.sin(angle);
+    const x2=cx+r*Math.cos(angle+slice),y2=cy+r*Math.sin(angle+slice);
+    svg+=`<path d="M${cx} ${cy} L${x1} ${y1} A${r} ${r} 0 ${slice>Math.PI?1:0} 1 ${x2} ${y2} Z" fill="${color}" opacity="0.85"/>`;
+    angle+=slice;
+  });
+  svg+=`<circle cx="${cx}" cy="${cy}" r="${r-sw}" fill="#0d0f1a"/>`;
+  svg+=`<text x="${cx}" y="${cy-6}" text-anchor="middle" font-family="Space Mono" font-size="20" font-weight="bold" fill="#c8cce8">${total}</text>`;
+  svg+=`<text x="${cx}" y="${cy+12}" text-anchor="middle" font-family="Space Mono" font-size="8" fill="#6b70a0">TOTAL</text>`;
+  document.getElementById('donut-svg').innerHTML=svg;
+  document.getElementById('donut-legend').innerHTML=levels.map(([lbl,count,color])=>`
+    <div class="donut-row">
+      <div class="donut-dot" style="background:${color}"></div>
+      <div class="donut-label">${lbl}</div>
+      <div class="donut-count">${count}</div>
+      <div class="donut-pct">${D.dist.percentages[lbl]}%</div>
+    </div>`).join('');
+}
+
+// ════════════════════════════════════════════════
+//  HISTOGRAM
+// ════════════════════════════════════════════════
+function renderHistogram(){
+  const hist=D.histogram,max=Math.max(...hist.map(b=>b.count));
+  document.getElementById('histogram-container').innerHTML=`
+    <div class="histo">${hist.map(b=>`<div class="histo-bar" style="height:${b.count/max*100}%;background:${scoreColor((b.min+b.max)/2)};opacity:0.75" data-tip="${b.range}: ${b.count} employees"></div>`).join('')}</div>
+    <div class="histo-labels">${hist.map(b=>`<div class="histo-lbl">${b.min}</div>`).join('')}</div>
+    <p style="font-family:'Space Mono',monospace;font-size:10px;color:#3a3f60;margin-top:8px;text-align:center">RISK SCORE DISTRIBUTION — 120 EMPLOYEES</p>`;
+}
+
+// ════════════════════════════════════════════════
+//  DEPT BARS
+// ════════════════════════════════════════════════
+function renderDeptBars(){
+  const max=Math.max(...D.depts.map(d=>d.avg_risk_score));
+  document.getElementById('dept-bars').innerHTML=D.depts.map(d=>`
+    <div class="bar-row">
+      <div class="bar-label" title="${d.department}">${d.department}</div>
+      <div class="bar-bg"><div class="bar-fill" style="width:${d.avg_risk_score/max*100}%;background:${scoreColor(d.avg_risk_score)}"></div></div>
+      <div class="bar-val" style="color:${scoreColor(d.avg_risk_score)}">${d.avg_risk_score}</div>
+    </div>`).join('');
+}
+
+// ════════════════════════════════════════════════
+//  SOURCE BARS  ← tagged HIBP / SYN
+// ════════════════════════════════════════════════
+function renderSourceBars(){
+  const max=Math.max(...D.sources.map(s=>s.exposed_employees));
+  document.getElementById('source-bars').innerHTML=D.sources.map((s,i)=>`
+    <div class="bar-row" style="grid-template-columns:120px 1fr 40px 46px">
+      <div class="bar-label" title="${s.source}">${s.source}</div>
+      <div class="bar-bg"><div class="bar-fill" style="width:${s.exposed_employees/max*100}%;background:var(--accent${i<3?'2':''})"></div></div>
+      <div class="bar-val">${s.exposed_employees}</div>
+      <div><span class="src-tag ${srcType(s.source)}">${srcType(s.source)==='hibp'?'HIBP':'SYN'}</span></div>
+    </div>`).join('');
+}
+
+// ════════════════════════════════════════════════
+//  MFA GRID
+// ════════════════════════════════════════════════
+function renderMFA(){
+  document.getElementById('mfa-grid').innerHTML=Object.entries(D.mfa).map(([lv,m])=>`
+    <div class="mfa-cell">
+      <div class="mfa-level" style="color:${levelColor(lv)}">${lv}</div>
+      <div class="mfa-ring">
+        <div class="mfa-pct" style="color:${m.adoption_pct<50?'var(--critical)':'var(--low)'}">${m.adoption_pct}%</div>
+        <div class="mfa-detail"><b>MFA Enabled:</b> ${m.mfa_enabled}/${m.total}<br><b>Missing MFA:</b> <span style="color:var(--critical)">${m.mfa_missing}</span><br><b>Total:</b> ${m.total} employees</div>
+      </div>
+    </div>`).join('');
+}
+
+// ════════════════════════════════════════════════
+//  TOP 10 TABLE
+// ════════════════════════════════════════════════
+function renderTop10(){
+  document.getElementById('top10-table').innerHTML=`
+    <thead><tr><th>#</th><th>Employee</th><th>Department</th><th>Role</th><th>Risk Score</th><th>Breaches</th><th>MFA</th></tr></thead>
+    <tbody>${D.top10.map(e=>`<tr>
+      <td class="rank">#${e.rank}</td>
+      <td><div class="name">${e.name}</div><div class="email">${e.email}</div></td>
+      <td class="dept-tag">${e.department}</td>
+      <td class="dept-tag">${e.role}</td>
+      <td><div style="display:flex;align-items:center;gap:8px"><span class="badge ${e.risk_level}">${e.risk_level}</span><span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:${levelColor(e.risk_level)}">${e.risk_score}</span></div></td>
+      <td style="font-family:'Space Mono',monospace;font-size:12px">${e.breach_count}</td>
+      <td class="${e.mfa_enabled?'mfa-on':'mfa-off'}">${e.mfa_enabled?'✓ ON':'✗ OFF'}</td>
+    </tr>`).join('')}</tbody>`;
+}
+
+// ════════════════════════════════════════════════
+//  DEPT TABLE
+// ════════════════════════════════════════════════
+function renderDeptTable(){
+  document.getElementById('dept-table').innerHTML=`
+    <thead><tr><th>Department</th><th>Employees</th><th>Exposure Rate</th><th>Avg Risk</th><th>Avg Breaches</th><th>Risk Breakdown</th></tr></thead>
+    <tbody>${D.depts.map(d=>{
+      const tot=d.critical_count+d.high_count+d.medium_count+d.low_count;
+      const segs=tot>0?`<div class="dept-bar-wrap">
+        ${d.critical_count?`<div class="dept-seg" style="width:${d.critical_count/tot*100}%;background:var(--critical)" title="Critical:${d.critical_count}"></div>`:''}
+        ${d.high_count?`<div class="dept-seg" style="width:${d.high_count/tot*100}%;background:var(--high)" title="High:${d.high_count}"></div>`:''}
+        ${d.medium_count?`<div class="dept-seg" style="width:${d.medium_count/tot*100}%;background:var(--medium)" title="Med:${d.medium_count}"></div>`:''}
+        ${d.low_count?`<div class="dept-seg" style="width:${d.low_count/tot*100}%;background:var(--low)" title="Low:${d.low_count}"></div>`:''}
+      </div>`:'—';
+      return`<tr>
+        <td><b>${d.department}</b></td>
+        <td style="font-family:'Space Mono',monospace;font-size:12px">${d.employee_count}</td>
+        <td><div style="display:flex;align-items:center;gap:8px"><div class="bar-bg" style="width:70px"><div class="bar-fill" style="width:${d.exposure_rate}%;background:${scoreColor(d.exposure_rate)}"></div></div><span style="font-family:'Space Mono',monospace;font-size:11px">${d.exposure_rate}%</span></div></td>
+        <td style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:${scoreColor(d.avg_risk_score)}">${d.avg_risk_score}</td>
+        <td style="font-family:'Space Mono',monospace;font-size:12px">${d.avg_breach_count}</td>
+        <td>${segs}</td>
+      </tr>`;
+    }).join('')}</tbody>`;
+}
+
+// ════════════════════════════════════════════════
+//  ALERTS  ← breach chips tagged HIBP / SYN
+// ════════════════════════════════════════════════
+function renderAlerts(){
+  document.getElementById('a-p1').textContent=D.alert_summary.critical_alerts;
+  document.getElementById('a-p2').textContent=D.alert_summary.high_alerts;
+  document.getElementById('a-nomfa').textContent=D.alert_summary.no_mfa_high_risk;
+  document.getElementById('a-depts').textContent=D.alert_summary.departments_impacted;
+  document.getElementById('alerts-list').innerHTML=D.alerts.map(a=>`
+    <div class="alert-card ${a.priority.toLowerCase()}">
+      <div class="alert-header">
+        <span class="badge ${a.priority}">${a.priority}</span>
+        <span class="badge ${a.risk_level}">${a.risk_level}</span>
+        <div><div class="alert-name">${a.name}</div><div class="alert-role">${a.role} · ${a.department}</div></div>
+        <div class="alert-score ${a.risk_level}">${a.risk_score}</div>
+      </div>
+      <div class="alert-reason">${a.risk_reason}</div>
+      <div class="breach-sources-row">${a.breach_sources.map(s=>`<span class="breach-chip ${srcType(s)}">${s}</span>`).join('')}</div>
+      <div class="alert-actions">${a.recommended_actions.map(r=>`<span class="action-pill">${r}</span>`).join('')}</div>
+      <div class="alert-meta">
+        <span class="meta-chip">📧 ${a.email}</span>
+        <span class="meta-chip">🔓 ${a.breach_count} breaches</span>
+        <span class="meta-chip">⏱ SLA: ${a.sla_response_time}</span>
+        <span class="meta-chip ${a.mfa_enabled?'mfa-on':'mfa-off'}">MFA: ${a.mfa_enabled?'✓':'✗'}</span>
+        <span class="meta-chip" style="margin-left:auto;color:#3a3f60">${a.alert_id}</span>
+      </div>
+    </div>`).join('');
+}
+
+// ════════════════════════════════════════════════
+//  EMAIL LOOKUP  ← source tags on breach chips
+// ════════════════════════════════════════════════
+function doLookup(){
+  const email=document.getElementById('lookup-email').value.trim().toLowerCase();
+  const el=document.getElementById('lookup-result');
+  if(!email){el.innerHTML='<div class="not-found"><div class="nf-icon">📧</div><p>Enter an email address to search.</p></div>';el.classList.add('show');return;}
+  const p=D.profiles.find(x=>x.email.toLowerCase()===email);
+  if(!p){
+    el.innerHTML=`<div class="not-found" style="border-top:1px solid var(--border);padding-top:24px;margin-top:8px"><div class="nf-icon">🔍</div><div style="font-weight:700;font-size:18px;margin-bottom:8px">Not Found</div><p style="color:var(--txt2)">${email} was not found in the registry.</p></div>`;
+    el.classList.add('show');return;
+  }
+  const sourceTagsHtml=p.breach_sources.length
+    ?p.breach_sources.map(s=>`<span class="source-tag">${s} <span class="src-tag ${srcType(s)}">${srcType(s)==='hibp'?'HIBP':'SYN'}</span></span>`).join('')
+    :'<span style="color:var(--txt2);font-size:12px">No breaches found</span>';
+
+  el.innerHTML=`
+    <div style="border-top:1px solid var(--border);padding-top:24px;margin-top:8px">
+      <div class="result-header">
+        <div>
+          <div class="result-name">${p.name}</div>
+          <div class="result-email">${p.email}</div>
+          <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+            <span class="badge ${p.risk_level}">${p.risk_level}</span>
+            <span style="font-size:12px;color:var(--txt2)">${p.role} · ${p.department}</span>
+            <span class="meta-chip ${p.mfa_enabled?'mfa-on':'mfa-off'}">MFA ${p.mfa_enabled?'✓ ON':'✗ OFF'}</span>
+          </div>
+        </div>
+        <div style="text-align:right">
+          <div class="big-score ${p.risk_level}">${p.risk_score}</div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--txt2)">RISK SCORE /100</div>
+        </div>
+      </div>
+      <div class="sub-scores-grid">
+        ${[['Breach Score',p.breach_score,'🔓'],['Recency Score',p.recency_score,'⏱'],['Role Score',p.role_score,'👤'],['Exposure Score',p.exposure_score,'🕳']].map(([lbl,val,ico])=>`
+          <div class="sub-score-card">
+            <div class="sub-score-label">${ico} ${lbl}</div>
+            <div class="sub-score-val" style="color:${scoreColor(val)}">${Math.round(val)}</div>
+            <div style="margin-top:8px"><div class="bar-bg"><div class="bar-fill" style="width:${val}%;background:${scoreColor(val)}"></div></div></div>
+          </div>`).join('')}
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt3);margin-bottom:8px">Risk Reason</div>
+        <div style="font-size:14px;color:var(--txt);line-height:1.6">${p.risk_reason}</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px">
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt3);margin-bottom:10px">Breach Sources (${p.breach_count})</div>
+          <div class="sources-list">${sourceTagsHtml}</div>
+        </div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:16px">
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt3);margin-bottom:10px">Recommended Actions</div>
+          <ul class="actions-list">${p.recommended_action.split(' | ').map(a=>`<li>${a}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </div>`;
+  el.classList.add('show');
+}
+
+// ════════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════════
+renderSourceBanners();
+renderKPIs();
+renderDonut();
+renderHistogram();
+renderDeptBars();
+renderSourceBars();
+renderMFA();
+renderTop10();
+renderDeptTable();
+renderAlerts();
+document.getElementById('lookup-email').addEventListener('keydown',e=>{if(e.key==='Enter')doLookup();});
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+# =============================================================================
+# Dark Web Credential Exposure Detection System – Configuration
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# General
+# ---------------------------------------------------------------------------
+system:
+  name: "Dark Web Credential Exposure Detection System"
+  version: "2.0.0"
+  environment: "development"          # development | staging | production
+  log_level: "INFO"
+
+# ---------------------------------------------------------------------------
+# Data ingestion
+# ---------------------------------------------------------------------------
+ingestion:
+  synthetic:
+    enabled: true
+    num_employees: 100
+    num_breaches: 50
+    seed: 42                          # reproducible data generation
+
+  hibp:
+    enabled: true                     # flip to false → use synthetic only
+    api_key: "YOUR_API_KEY"           # https://haveibeenpwned.com/API/Key
+    rate_limit_per_min: 10            # HIBP free tier allows 10 req/min
+    use_cache: true                   # persist responses to cache/hibp/
+    cache_ttl_hours: 24               # hours before a cached result expires
+
+# Required top-level HIBP configuration (for modules expecting `config["hibp"]`)
+hibp:
+  enabled: true
+  api_key: "YOUR_API_KEY"
+  rate_limit_per_min: 10
+  use_cache: true
+
+# ---------------------------------------------------------------------------
+# NLP entity extraction
+# ---------------------------------------------------------------------------
+nlp:
+  model: "en_core_web_sm"
+  entities:
+    - "EMAIL"
+    - "PERSON"
+    - "ORG"
+    - "GPE"
+
+# ---------------------------------------------------------------------------
+# Correlation engine
+# ---------------------------------------------------------------------------
+correlation:
+  time_window_days: 90               # breaches within this window are correlated
+  min_shared_classes: 1              # minimum shared data_classes to link records
+
+# ---------------------------------------------------------------------------
+# ML risk scoring
+# ---------------------------------------------------------------------------
+ml:
+  model_path: "models/risk_scorer.pkl"
+  threshold:
+    low: 0.3
+    medium: 0.6
+    high: 0.85
+
+# ---------------------------------------------------------------------------
+# Alert generation
+# ---------------------------------------------------------------------------
+alerts:
+  channels:
+    - "log"                           # always log
+    # - "email"
+    # - "slack"
+  email:
+    smtp_host: "smtp.example.com"
+    smtp_port: 587
+    from_addr: "alerts@example.com"
+    to_addrs: ["security@example.com"]
+
+# ---------------------------------------------------------------------------
+# Dashboard (Streamlit)
+# ---------------------------------------------------------------------------
+dashboard:
+  title: "Dark Web Credential Monitor"
+  refresh_interval_sec: 300
+  show_source_badge: true            # "Data Source: Synthetic / Real (HIBP)"
+  show_breach_names: true            # LinkedIn, Adobe, etc.
+
+# ---------------------------------------------------------------------------
+# Privacy / data retention
+# ---------------------------------------------------------------------------
+privacy:
+  mask_emails_in_cache: true         # SHA-256 hash used as cache key
+  retention_days: 7                  # purge cache after N days

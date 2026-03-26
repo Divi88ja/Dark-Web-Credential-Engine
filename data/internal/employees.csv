@@ -1,0 +1,101 @@
+employee_id,full_name,email,username,department,role,role_sensitivity,account_created
+EMP0001,Mary Taylor,mary.taylor@acme-corp.com,mary.taylor,Support,Engineer,3,2023-08-26
+EMP0002,Henry Patel,henry.patel@acme-corp.com,henry.patel,Operations,VP,8,2020-04-12
+EMP0003,Rachel Jones,rachel.jones@acmehq.com,rachel.jones,Marketing,Senior Engineer,4,2021-07-03
+EMP0004,Tina Wilson,tina.wilson@acme-corp.com,tina.wilson,Legal,VP,8,2016-07-28
+EMP0005,Grace Patel,grace.patel@acme.internal,grace.patel,HR,DBA,9,2022-06-08
+EMP0006,Carol Davis,carol.davis@acmehq.com,carol.davis,Finance,C-Suite,10,2022-09-08
+EMP0007,Mary Smith,mary.smith@acme.internal,mary.smith,Executive,Intern,1,2021-06-19
+EMP0008,Grace Brown,grace.brown@acmehq.com,grace.brown,Finance,C-Suite,10,2020-06-01
+EMP0009,Grace Wilson,grace.wilson@acme.internal,grace.wilson,Engineering,Director,7,2024-10-14
+EMP0010,Grace Davis,grace.davis@acme-corp.com,grace.davis,Marketing,DBA,9,2024-03-29
+EMP0011,Quinn Martin,quinn.martin@acme-corp.com,quinn.martin,Engineering,Analyst,2,2025-12-21
+EMP0012,Frank Lee,frank.lee@acmehq.com,frank.lee,IT,Analyst,2,2021-06-18
+EMP0013,Carol Patel,carol.patel@acme.internal,carol.patel,Support,Intern,1,2021-12-17
+EMP0014,Karen Patel,karen.patel@acmehq.com,karen.patel,IT,Senior Engineer,4,2017-05-28
+EMP0015,Bob Martin,bob.martin@acme-corp.com,bob.martin,Marketing,Manager,5,2020-02-12
+EMP0016,Mary Patel,mary.patel@acme.internal,mary.patel,Marketing,Intern,1,2024-10-06
+EMP0017,Tina Davis,tina.davis@acme-corp.com,tina.davis,Support,VP,8,2024-11-02
+EMP0018,Dave Jones,dave.jones@acme-corp.com,dave.jones,Operations,Engineer,3,2024-03-29
+EMP0019,Nick Patel,nick.patel@acme-corp.com,nick.patel,Executive,Director,7,2017-08-04
+EMP0020,Peter Nguyen,peter.nguyen@acme.internal,peter.nguyen,Finance,Director,7,2024-02-24
+EMP0021,Carol Anderson,carol.anderson@acme.internal,carol.anderson,Engineering,DBA,9,2016-11-23
+EMP0022,Bob Brown,bob.brown@acme-corp.com,bob.brown,IT,VP,8,2022-06-16
+EMP0023,Mary Taylor,mary.taylor@acme.internal,mary.taylor,Legal,IT Admin,9,2025-03-12
+EMP0024,Frank Smith,frank.smith@acme.internal,frank.smith,IT,C-Suite,10,2023-08-27
+EMP0025,Jack Martin,jack.martin@acme-corp.com,jack.martin,Operations,Analyst,2,2016-06-06
+EMP0026,Karen Nguyen,karen.nguyen@acmehq.com,karen.nguyen,Sales,VP,8,2022-11-29
+EMP0027,Olivia Jones,olivia.jones@acme.internal,olivia.jones,IT,Manager,5,2025-06-14
+EMP0028,Quinn Garcia,quinn.garcia@acmehq.com,quinn.garcia,Legal,C-Suite,10,2020-04-02
+EMP0029,Eve Garcia,eve.garcia@acme.internal,eve.garcia,Operations,VP,8,2018-11-07
+EMP0030,Tina Patel,tina.patel@acme.internal,tina.patel,IT,DBA,9,2016-07-23
+EMP0031,Tina Martin,tina.martin@acmehq.com,tina.martin,Marketing,Senior Engineer,4,2021-12-22
+EMP0032,Karen Nguyen,karen.nguyen@acme.internal,karen.nguyen,Engineering,Director,7,2018-06-12
+EMP0033,Jack Nguyen,jack.nguyen@acmehq.com,jack.nguyen,HR,Manager,5,2018-11-12
+EMP0034,Nick Davis,nick.davis@acmehq.com,nick.davis,Sales,VP,8,2016-08-01
+EMP0035,Leo Martin,leo.martin@acme.internal,leo.martin,Engineering,Analyst,2,2020-08-10
+EMP0036,Rachel Nguyen,rachel.nguyen@acme-corp.com,rachel.nguyen,Executive,Manager,5,2018-09-11
+EMP0037,Frank Anderson,frank.anderson@acme.internal,frank.anderson,Sales,Manager,5,2017-11-02
+EMP0038,Nick Lee,nick.lee@acmehq.com,nick.lee,Executive,DBA,9,2017-08-15
+EMP0039,Tina Garcia,tina.garcia@acme-corp.com,tina.garcia,Engineering,Analyst,2,2017-03-11
+EMP0040,Jack Jones,jack.jones@acmehq.com,jack.jones,Engineering,Intern,1,2021-07-23
+EMP0041,Jack Brown,jack.brown@acmehq.com,jack.brown,Support,DBA,9,2022-12-03
+EMP0042,Grace Jones,grace.jones@acme.internal,grace.jones,IT,Engineer,3,2023-04-07
+EMP0043,Olivia Brown,olivia.brown@acme-corp.com,olivia.brown,HR,C-Suite,10,2016-07-01
+EMP0044,Mary Taylor,mary.taylor@acmehq.com,mary.taylor,HR,Director,7,2023-06-06
+EMP0045,Grace Garcia,grace.garcia@acme.internal,grace.garcia,Support,VP,8,2024-03-04
+EMP0046,Peter Wilson,peter.wilson@acmehq.com,peter.wilson,Marketing,Engineer,3,2025-05-24
+EMP0047,Rachel Nguyen,rachel.nguyen@acme.internal,rachel.nguyen,Executive,Intern,1,2024-12-11
+EMP0048,Karen Lee,karen.lee@acme-corp.com,karen.lee,Legal,Intern,1,2019-11-05
+EMP0049,Rachel Garcia,rachel.garcia@acmehq.com,rachel.garcia,Engineering,DBA,9,2022-08-28
+EMP0050,Nick Garcia,nick.garcia@acme-corp.com,nick.garcia,HR,DBA,9,2025-09-13
+EMP0051,Mary Smith,mary.smith@acme-corp.com,mary.smith,Legal,IT Admin,9,2023-08-28
+EMP0052,Rachel Garcia,rachel.garcia@acme-corp.com,rachel.garcia,Marketing,Intern,1,2018-06-08
+EMP0053,Nick Nguyen,nick.nguyen@acme-corp.com,nick.nguyen,Finance,C-Suite,10,2024-04-22
+EMP0054,Iris Garcia,iris.garcia@acmehq.com,iris.garcia,Legal,Analyst,2,2019-12-16
+EMP0055,Grace Anderson,grace.anderson@acme-corp.com,grace.anderson,Legal,IT Admin,9,2025-04-27
+EMP0056,Dave Davis,dave.davis@acme-corp.com,dave.davis,HR,Engineer,3,2020-02-13
+EMP0057,Carol Smith,carol.smith@acmehq.com,carol.smith,IT,Engineer,3,2022-04-07
+EMP0058,Henry Wilson,henry.wilson@acmehq.com,henry.wilson,Support,Engineer,3,2022-06-02
+EMP0059,Bob Brown,bob.brown@acmehq.com,bob.brown,IT,Senior Engineer,4,2022-10-14
+EMP0060,Frank Davis,frank.davis@acme-corp.com,frank.davis,HR,C-Suite,10,2019-01-09
+EMP0061,Quinn Davis,quinn.davis@acme-corp.com,quinn.davis,Sales,VP,8,2018-08-02
+EMP0062,Dave Nguyen,dave.nguyen@acmehq.com,dave.nguyen,Marketing,DBA,9,2016-06-06
+EMP0063,Carol Patel,carol.patel@acme-corp.com,carol.patel,Marketing,Director,7,2023-05-25
+EMP0064,Karen Wilson,karen.wilson@acme-corp.com,karen.wilson,Support,VP,8,2026-01-02
+EMP0065,Jack Patel,jack.patel@acme-corp.com,jack.patel,Engineering,Manager,5,2017-02-25
+EMP0066,Rachel Garcia,rachel.garcia@acme.internal,rachel.garcia,Finance,C-Suite,10,2021-06-09
+EMP0067,Carol Smith,carol.smith@acme.internal,carol.smith,HR,DBA,9,2018-07-27
+EMP0068,Karen Brown,karen.brown@acmehq.com,karen.brown,Legal,Intern,1,2022-01-04
+EMP0069,Iris Wilson,iris.wilson@acme-corp.com,iris.wilson,Executive,Engineer,3,2018-06-15
+EMP0070,Alice Garcia,alice.garcia@acmehq.com,alice.garcia,IT,VP,8,2020-06-27
+EMP0071,Henry Patel,henry.patel@acmehq.com,henry.patel,IT,Intern,1,2023-11-08
+EMP0072,Henry Martin,henry.martin@acme.internal,henry.martin,HR,DBA,9,2025-03-07
+EMP0073,Nick Smith,nick.smith@acmehq.com,nick.smith,Engineering,Senior Engineer,4,2024-10-03
+EMP0074,Frank Martin,frank.martin@acme.internal,frank.martin,Engineering,Manager,5,2024-03-06
+EMP0075,Steve Taylor,steve.taylor@acme-corp.com,steve.taylor,Engineering,Intern,1,2020-08-04
+EMP0076,Mary Lee,mary.lee@acme-corp.com,mary.lee,HR,DBA,9,2023-08-14
+EMP0077,Karen Taylor,karen.taylor@acme-corp.com,karen.taylor,Marketing,DBA,9,2025-03-19
+EMP0078,Leo Anderson,leo.anderson@acme-corp.com,leo.anderson,Sales,DBA,9,2020-10-18
+EMP0079,Grace Davis,grace.davis@acme-corp.com,grace.davis,IT,DBA,9,2023-12-21
+EMP0080,Frank Patel,frank.patel@acme.internal,frank.patel,Sales,Engineer,3,2016-10-20
+EMP0081,Iris Patel,iris.patel@acmehq.com,iris.patel,Executive,IT Admin,9,2016-06-20
+EMP0082,Rachel Jones,rachel.jones@acme-corp.com,rachel.jones,Sales,IT Admin,9,2023-09-10
+EMP0083,Nick Taylor,nick.taylor@acmehq.com,nick.taylor,Executive,Analyst,2,2023-07-11
+EMP0084,Iris Brown,iris.brown@acmehq.com,iris.brown,Legal,C-Suite,10,2024-02-11
+EMP0085,Dave Martin,dave.martin@acme-corp.com,dave.martin,Engineering,VP,8,2025-07-15
+EMP0086,Karen Nguyen,karen.nguyen@acme-corp.com,karen.nguyen,Operations,Engineer,3,2023-03-24
+EMP0087,Iris Smith,iris.smith@acmehq.com,iris.smith,Executive,Manager,5,2024-01-13
+EMP0088,Leo Jones,leo.jones@acme-corp.com,leo.jones,Legal,VP,8,2024-08-21
+EMP0089,Jack Anderson,jack.anderson@acme.internal,jack.anderson,Sales,C-Suite,10,2025-08-10
+EMP0090,Alice Brown,alice.brown@acme-corp.com,alice.brown,HR,DBA,9,2025-05-10
+EMP0091,Mary Smith,mary.smith@acme.internal,mary.smith,Legal,VP,8,2023-06-27
+EMP0092,Rachel Patel,rachel.patel@acme-corp.com,rachel.patel,Engineering,Intern,1,2024-04-05
+EMP0093,Grace Nguyen,grace.nguyen@acme.internal,grace.nguyen,Support,Manager,5,2017-09-14
+EMP0094,Carol Martin,carol.martin@acme-corp.com,carol.martin,IT,Analyst,2,2018-11-10
+EMP0095,Nick Jones,nick.jones@acmehq.com,nick.jones,Legal,C-Suite,10,2021-06-25
+EMP0096,Rachel Taylor,rachel.taylor@acmehq.com,rachel.taylor,Operations,Director,7,2018-04-01
+EMP0097,Leo Jones,leo.jones@acme.internal,leo.jones,Executive,Senior Engineer,4,2025-07-06
+EMP0098,Bob Nguyen,bob.nguyen@acme.internal,bob.nguyen,Legal,DBA,9,2025-01-31
+EMP0099,Iris Garcia,iris.garcia@acmehq.com,iris.garcia,Support,Senior Engineer,4,2023-11-07
+EMP0100,Olivia Martin,olivia.martin@acme.internal,olivia.martin,Executive,Intern,1,2019-06-26
