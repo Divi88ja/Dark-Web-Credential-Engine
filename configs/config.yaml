@@ -1,0 +1,94 @@
+
+# ============================================================
+# Dark Web Credential Exposure Correlation Engine
+# Central Configuration File
+# ============================================================
+
+project:
+  name: "Dark Web Credential Exposure Correlation Engine"
+  version: "1.0.0"
+  author: "Intern Project"
+
+paths:
+  raw_data:       "data/raw/"
+  processed_data: "data/processed/"
+  internal_data:  "data/internal/"
+  models:         "models/"
+  reports:        "reports/"
+  logs:           "logs/"
+
+ingestion:
+  supported_formats: ["csv", "txt", "json"]
+  encoding: "utf-8"
+  chunk_size: 10000         # rows per chunk for large files
+  max_file_size_mb: 500
+
+# Have I Been Pwned (HIBP) real-breach enrichment
+hibp:
+  enabled: true
+  api_key: "YOUR_API_KEY"
+  rate_limit_per_min: 10
+  use_cache: true
+
+preprocessing:
+  min_email_length: 6
+  max_email_length: 254
+  remove_duplicates: true
+  normalize_case: true
+
+nlp:
+  sensitive_keywords:
+    - "admin"
+    - "password"
+    - "login"
+    - "access"
+    - "root"
+    - "secret"
+    - "api_key"
+    - "token"
+    - "vpn"
+    - "internal"
+  spacy_model: "en_core_web_sm"
+
+correlation:
+  fuzzy_threshold: 95       # minimum fuzzy match score (0-100)
+  domain_match: true
+  exact_match: true
+  fuzzy_match: true
+
+ml:
+  model_type: "random_forest"  # or "logistic_regression"
+  test_size: 0.2
+  random_state: 42
+  risk_threshold: 60           # score above this = HIGH RISK alert
+  n_estimators: 100
+  features:
+    - "breach_count"
+    - "password_reuse_flag"
+    - "role_sensitivity_score"
+    - "leak_recency_days"
+    - "exposure_frequency"
+    - "domain_match_flag"
+    - "sensitive_keyword_flag"
+
+alerts:
+  risk_threshold: 60
+  email_enabled: false        # set true + configure SMTP for real alerts
+  output_path: "reports/alerts.json"
+  actions:
+    high_risk:
+      - "Immediate password reset"
+      - "Enable MFA"
+      - "Security team review"
+    medium_risk:
+      - "Password reset within 24h"
+      - "Account monitoring"
+    low_risk:
+      - "Notify user"
+      - "Schedule security review"
+
+dashboard:
+  title: "Dark Web Credential Exposure Dashboard"
+  host: "localhost"
+  port: 8501
+  refresh_interval: 300      # seconds

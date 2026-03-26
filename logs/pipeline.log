@@ -1,0 +1,289 @@
+[2026-03-23 23:08:54] INFO src.pipeline — ============================================================
+[2026-03-23 23:08:54] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-23 23:08:54] INFO src.pipeline — ============================================================
+[2026-03-23 23:08:54] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-23 23:08:54] INFO src.pipeline —   Breach records   : 500
+[2026-03-23 23:08:54] INFO src.pipeline —   Employee records : 100
+[2026-03-23 23:08:54] INFO src.pipeline — 
+[Step 2/6] Preprocessing
+[2026-03-23 23:08:54] INFO src.pipeline —   Stats: {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-23 23:08:54] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-23 23:08:58] INFO src.pipeline —   Top keywords: {'corp': 77, 'internal': 55}
+[2026-03-23 23:08:58] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-23 23:11:49] INFO src.pipeline — ============================================================
+[2026-03-23 23:11:49] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-23 23:11:49] INFO src.pipeline — ============================================================
+[2026-03-23 23:11:49] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-23 23:11:49] INFO src.pipeline —   Breach records   : 500
+[2026-03-23 23:11:49] INFO src.pipeline —   Employee records : 100
+[2026-03-23 23:11:49] INFO src.pipeline — 
+[Step 2/6] Preprocessing
+[2026-03-23 23:11:49] INFO src.pipeline —   Stats: {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-23 23:11:49] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-23 23:11:52] INFO src.pipeline —   Top keywords: {'corp': 77, 'internal': 55}
+[2026-03-23 23:11:52] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-23 23:11:53] INFO src.pipeline —   Compromised: 100/100
+[2026-03-23 23:11:53] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-23 23:11:55] INFO src.pipeline —   Accuracy: 1.0  AUC: 0.0
+[2026-03-23 23:11:55] INFO src.pipeline — 
+[Step 6/6] Alert Generation
+[2026-03-23 23:11:55] INFO src.pipeline — 
+============================================================
+[2026-03-23 23:11:55] INFO src.pipeline —   PIPELINE COMPLETE — outputs in data/processed/ and reports/
+[2026-03-23 23:11:55] INFO src.pipeline — ============================================================
+[2026-03-25 15:38:50] INFO src.pipeline — ============================================================
+[2026-03-25 15:38:50] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-25 15:38:50] INFO src.pipeline — ============================================================
+[2026-03-25 15:38:50] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-25 15:38:50] INFO src.pipeline —   Breach records   : 500
+[2026-03-25 15:38:50] INFO src.pipeline —   Employee records : 100
+[2026-03-25 15:38:50] INFO src.pipeline — 
+[Step 2/6] Preprocessing
+[2026-03-25 15:38:50] INFO src.pipeline —   Stats: {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-25 15:38:50] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-25 15:38:50] INFO src.pipeline —   Top keywords: {'corp': 77, 'internal': 55}
+[2026-03-25 15:38:50] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-25 15:38:53] INFO src.pipeline —   Compromised: 100/100
+[2026-03-25 15:38:53] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-25 15:38:57] INFO src.pipeline —   Accuracy: 1.0  AUC: 0.0
+[2026-03-25 15:38:57] INFO src.pipeline — 
+[Step 6/6] Alert Generation
+[2026-03-25 15:38:57] INFO src.pipeline — 
+============================================================
+[2026-03-25 15:38:57] INFO src.pipeline —   PIPELINE COMPLETE — outputs in data/processed/ and reports/
+[2026-03-25 15:38:57] INFO src.pipeline — ============================================================
+[2026-03-25 15:41:10] INFO src.pipeline — ============================================================
+[2026-03-25 15:41:10] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-25 15:41:10] INFO src.pipeline — ============================================================
+[2026-03-25 15:41:10] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-25 15:41:10] INFO src.pipeline —   Breach records   : 500
+[2026-03-25 15:41:10] INFO src.pipeline —   Employee records : 100
+[2026-03-25 15:41:10] INFO src.pipeline — 
+[Step 2/6] Preprocessing
+[2026-03-25 15:41:10] INFO src.pipeline —   Stats: {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-25 15:41:10] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-25 15:41:13] INFO src.pipeline —   Top keywords: {'corp': 77, 'internal': 55}
+[2026-03-25 15:41:13] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-25 15:41:14] INFO src.pipeline —   Compromised: 100/100
+[2026-03-25 15:41:14] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-25 15:41:16] INFO src.pipeline —   Accuracy: 1.0  AUC: 0.0
+[2026-03-25 15:41:16] INFO src.pipeline — 
+[Step 6/6] Alert Generation
+[2026-03-25 15:41:16] INFO src.pipeline — 
+============================================================
+[2026-03-25 15:41:16] INFO src.pipeline —   PIPELINE COMPLETE — outputs in data/processed/ and reports/
+[2026-03-25 15:41:16] INFO src.pipeline — ============================================================
+[2026-03-26 14:55:37] INFO src.pipeline — ============================================================
+[2026-03-26 14:55:37] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-26 14:55:37] INFO src.pipeline — ============================================================
+[2026-03-26 14:55:37] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-26 14:55:37] INFO src.pipeline —   Breach records   : 500
+[2026-03-26 14:55:37] INFO src.pipeline —   Employee records : 100
+[2026-03-26 14:55:37] INFO src.pipeline — 
+[Step 2/6] Preprocessing
+[2026-03-26 14:55:37] INFO src.pipeline —   Stats: {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-26 14:55:37] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-26 14:55:39] INFO src.pipeline —   Top keywords: {'corp': 77, 'internal': 55}
+[2026-03-26 14:55:39] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-26 14:55:40] INFO src.pipeline —   Compromised: 100/100
+[2026-03-26 14:55:40] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-26 14:55:41] INFO src.pipeline —   Accuracy: 1.0  AUC: 0.0
+[2026-03-26 14:55:41] INFO src.pipeline — 
+[Step 6/6] Alert Generation
+[2026-03-26 14:55:41] INFO src.pipeline — 
+============================================================
+[2026-03-26 14:55:41] INFO src.pipeline —   PIPELINE COMPLETE — outputs in data/processed/ and reports/
+[2026-03-26 14:55:41] INFO src.pipeline — ============================================================
+[2026-03-26 15:08:25] INFO src.pipeline — ============================================================
+[2026-03-26 15:08:25] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-26 15:08:25] INFO src.pipeline — ============================================================
+[2026-03-26 15:08:25] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-26 15:08:25] INFO src.pipeline —   Breach records   : 500
+[2026-03-26 15:08:25] INFO src.pipeline —   Employee records : 100
+[2026-03-26 15:08:25] INFO src.pipeline — 
+[Step 2/6] Preprocessing
+[2026-03-26 15:08:25] INFO src.pipeline —   Stats: {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-26 15:08:25] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-26 15:08:28] INFO src.pipeline —   Top keywords: {'corp': 77, 'internal': 55}
+[2026-03-26 15:08:28] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-26 15:08:28] INFO src.pipeline —   Compromised: 100/100
+[2026-03-26 15:08:28] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-26 15:35:19] INFO src.pipeline — ============================================================
+[2026-03-26 15:35:19] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-26 15:35:19] INFO src.pipeline — ============================================================
+[2026-03-26 15:35:19] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-26 15:35:19] INFO src.pipeline — [HIBP] Hybrid ingestion enabled.
+[2026-03-26 15:35:19] WARNING src.pipeline — [HIBP] Client unavailable (missing api_key or disabled). Using base data only.
+[2026-03-26 15:35:19] INFO src.pipeline — 
+[Step 2/6] Data Cleaning
+[2026-03-26 15:35:19] INFO src.pipeline — [Cleaning] {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-26 15:35:19] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-26 15:35:23] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-26 15:35:24] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-26 15:35:24] INFO src.pipeline — [ML] Training metrics: {'accuracy': 1.0}
+[2026-03-26 15:37:53] INFO src.pipeline — ============================================================
+[2026-03-26 15:37:53] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-26 15:37:53] INFO src.pipeline — ============================================================
+[2026-03-26 15:37:53] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-26 15:37:53] INFO src.pipeline — 
+[Step 2/6] Data Cleaning
+[2026-03-26 15:37:54] INFO src.pipeline — [Cleaning] {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-26 15:37:54] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-26 15:37:54] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-26 15:37:57] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-26 15:37:57] INFO src.pipeline — [ML] Training metrics: {'accuracy': 1.0}
+[2026-03-26 15:39:30] INFO src.pipeline — ============================================================
+[2026-03-26 15:39:30] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-26 15:39:30] INFO src.pipeline — ============================================================
+[2026-03-26 15:39:30] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-26 15:39:30] INFO src.pipeline — [HIBP] Hybrid ingestion enabled.
+[2026-03-26 15:39:30] WARNING src.pipeline — [HIBP] Client unavailable (missing api_key or disabled). Using base data only.
+[2026-03-26 15:39:30] INFO src.pipeline — 
+[Step 2/6] Data Cleaning
+[2026-03-26 15:39:30] INFO src.pipeline — [Cleaning] {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-26 15:39:30] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-26 15:39:34] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-26 15:39:35] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-26 15:39:35] INFO src.pipeline — [ML] Training metrics: {'accuracy': 0.6}
+[2026-03-26 15:39:35] INFO src.pipeline — 
+[Step 6/6] Alert Generation
+[2026-03-26 15:39:36] INFO src.pipeline — 
+[Pipeline] Complete. Outputs in data/processed/ and reports/
+[2026-03-26 15:43:43] INFO src.pipeline — ============================================================
+[2026-03-26 15:43:43] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-26 15:43:43] INFO src.pipeline — ============================================================
+[2026-03-26 15:43:43] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-26 15:43:43] INFO src.pipeline — 
+[Step 2/6] Data Cleaning
+[2026-03-26 15:43:43] INFO src.pipeline — [Cleaning] {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-26 15:43:43] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-26 15:43:43] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-26 15:43:45] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-26 15:43:46] INFO src.pipeline — [ML] Training metrics: {'accuracy': 0.6}
+[2026-03-26 15:43:46] INFO src.pipeline — 
+[Step 6/6] Alert Generation
+[2026-03-26 15:43:46] INFO src.pipeline — 
+[Pipeline] Complete. Outputs in data/processed/ and reports/
+[2026-03-26 15:46:15] INFO src.pipeline — ============================================================
+[2026-03-26 15:46:15] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-26 15:46:15] INFO src.pipeline — ============================================================
+[2026-03-26 15:46:15] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-26 15:46:15] INFO src.pipeline — [HIBP] Hybrid ingestion enabled.
+[2026-03-26 15:46:15] WARNING src.pipeline — [HIBP] Client unavailable (missing api_key or disabled). Using base data only.
+[2026-03-26 15:46:15] INFO src.pipeline — 
+[Step 2/6] Data Cleaning
+[2026-03-26 15:46:15] INFO src.pipeline — [Cleaning] {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-26 15:46:15] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-26 15:46:15] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-26 15:46:16] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-26 15:46:16] INFO src.pipeline — [ML] Training metrics: {'accuracy': 1.0}
+[2026-03-26 15:46:16] INFO src.pipeline — 
+[Step 6/6] Alert Generation
+[2026-03-26 15:46:17] INFO src.pipeline — 
+[Pipeline] Complete. Outputs in data/processed/ and reports/
+[2026-03-26 15:47:25] INFO src.pipeline — ============================================================
+[2026-03-26 15:47:25] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-26 15:47:25] INFO src.pipeline — ============================================================
+[2026-03-26 15:47:25] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-26 15:47:25] INFO src.pipeline — [HIBP] Hybrid ingestion enabled.
+[2026-03-26 15:47:25] WARNING src.pipeline — [HIBP] Client unavailable (missing api_key or disabled). Using base data only.
+[2026-03-26 15:47:25] INFO src.pipeline — 
+[Step 2/6] Data Cleaning
+[2026-03-26 15:47:25] INFO src.pipeline — [Cleaning] {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-26 15:47:25] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-26 15:47:28] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-26 15:47:29] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-26 15:47:29] INFO src.pipeline — [ML] Training metrics: {'accuracy': 1.0}
+[2026-03-26 15:47:29] INFO src.pipeline — 
+[Step 6/6] Alert Generation
+[2026-03-26 15:47:29] INFO src.pipeline — 
+[Pipeline] Complete. Outputs in data/processed/ and reports/
+[2026-03-26 15:53:23] INFO src.pipeline — ============================================================
+[2026-03-26 15:53:23] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-26 15:53:23] INFO src.pipeline — ============================================================
+[2026-03-26 15:53:23] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-26 15:53:23] INFO src.pipeline — [HIBP] Hybrid ingestion enabled.
+[2026-03-26 15:53:23] WARNING src.pipeline — [HIBP] Client unavailable (missing api_key or disabled). Using base data only.
+[2026-03-26 15:53:23] INFO src.pipeline — 
+[Step 2/6] Data Cleaning
+[2026-03-26 15:53:23] INFO src.pipeline — [Cleaning] {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-26 15:53:23] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-26 15:53:24] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-26 15:53:25] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-26 15:53:25] INFO src.pipeline — [ML] Training metrics: {'accuracy': 1.0}
+[2026-03-26 15:53:25] INFO src.pipeline — 
+[Step 6/6] Alert Generation
+[2026-03-26 15:53:25] INFO src.pipeline — 
+[Pipeline] Complete. Outputs in data/processed/ and reports/
+[2026-03-26 15:53:37] INFO src.pipeline — ============================================================
+[2026-03-26 15:53:37] INFO src.pipeline —   DARK WEB CREDENTIAL EXPOSURE PIPELINE — START
+[2026-03-26 15:53:37] INFO src.pipeline — ============================================================
+[2026-03-26 15:53:37] INFO src.pipeline — 
+[Step 1/6] Data Ingestion
+[2026-03-26 15:53:37] INFO src.pipeline — [HIBP] Hybrid ingestion enabled.
+[2026-03-26 15:53:37] WARNING src.pipeline — [HIBP] Client unavailable (missing api_key or disabled). Using base data only.
+[2026-03-26 15:53:37] INFO src.pipeline — 
+[Step 2/6] Data Cleaning
+[2026-03-26 15:53:37] INFO src.pipeline — [Cleaning] {'initial_records': 500, 'final_records': 485, 'removed_records': 15, 'removal_rate': '3.0%'}
+[2026-03-26 15:53:37] INFO src.pipeline — 
+[Step 3/6] NLP Entity Extraction
+[2026-03-26 15:53:39] INFO src.pipeline — 
+[Step 4/6] Credential Correlation
+[2026-03-26 15:53:39] INFO src.pipeline — 
+[Step 5/6] ML Risk Scoring
+[2026-03-26 15:53:39] INFO src.pipeline — [ML] Training metrics: {'accuracy': 1.0}
+[2026-03-26 15:53:39] INFO src.pipeline — 
+[Step 6/6] Alert Generation
+[2026-03-26 15:53:39] INFO src.pipeline — 
+[Pipeline] Complete. Outputs in data/processed/ and reports/

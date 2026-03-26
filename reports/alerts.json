@@ -1,0 +1,1790 @@
+[
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0057",
+    "generated_at": "2026-03-26T15:53:39.631668",
+    "severity": "CRITICAL",
+    "risk_score": 94.7,
+    "employee": {
+      "id": "EMP0057",
+      "name": "Carol Smith",
+      "email": "c***@acmehq.com",
+      "department": "IT",
+      "role": "Engineer"
+    },
+    "breach_details": {
+      "breach_count": 5,
+      "breach_sources": "AntiPublicCombo, TwitterBreachQ2, AdobeLeaks2019, FacebookLeak2021",
+      "latest_breach_date": "2026-01-25",
+      "earliest_breach_date": "2022-07-19",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0094",
+    "generated_at": "2026-03-26T15:53:39.631668",
+    "severity": "CRITICAL",
+    "risk_score": 94.6,
+    "employee": {
+      "id": "EMP0094",
+      "name": "Carol Martin",
+      "email": "c***@acme-corp.com",
+      "department": "IT",
+      "role": "Analyst"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "FacebookLeak2021, AntiPublicCombo, Collection1Combo, InternalForumDump",
+      "latest_breach_date": "2025-07-01",
+      "earliest_breach_date": "2023-10-15",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0079",
+    "generated_at": "2026-03-26T15:53:39.631668",
+    "severity": "CRITICAL",
+    "risk_score": 93.9,
+    "employee": {
+      "id": "EMP0079",
+      "name": "Grace Davis",
+      "email": "g***@acme-corp.com",
+      "department": "IT",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "AntiPublicCombo, FacebookLeak2021",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2022-04-03",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0065",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 93.3,
+    "employee": {
+      "id": "EMP0065",
+      "name": "Jack Patel",
+      "email": "j***@acme-corp.com",
+      "department": "Engineering",
+      "role": "Manager"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "FacebookLeak2021, AntiPublicCombo, DropboxHack2012",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2023-07-24",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0024",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 93.3,
+    "employee": {
+      "id": "EMP0024",
+      "name": "Frank Smith",
+      "email": "f***@acme.internal",
+      "department": "IT",
+      "role": "C-Suite"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "AdobeLeaks2019, RockYou2024",
+      "latest_breach_date": "2024-12-24",
+      "earliest_breach_date": "2021-05-04",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0092",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 92.7,
+    "employee": {
+      "id": "EMP0092",
+      "name": "Rachel Patel",
+      "email": "r***@acme-corp.com",
+      "department": "Engineering",
+      "role": "Intern"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "TwitterBreachQ2, DropboxHack2012, AdobeLeaks2019",
+      "latest_breach_date": "2025-09-21",
+      "earliest_breach_date": "2024-02-24",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0017",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 92.2,
+    "employee": {
+      "id": "EMP0017",
+      "name": "Tina Davis",
+      "email": "t***@acme-corp.com",
+      "department": "Support",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "FacebookLeak2021, AntiPublicCombo",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2024-05-18",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0041",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 91.4,
+    "employee": {
+      "id": "EMP0041",
+      "name": "Jack Brown",
+      "email": "j***@acmehq.com",
+      "department": "Support",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "TwitterBreachQ2, AdobeLeaks2019",
+      "latest_breach_date": "2025-06-22",
+      "earliest_breach_date": "2021-11-17",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0039",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 91.4,
+    "employee": {
+      "id": "EMP0039",
+      "name": "Tina Garcia",
+      "email": "t***@acme-corp.com",
+      "department": "Engineering",
+      "role": "Analyst"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "InternalForumDump, RockYou2024, AdobeLeaks2019",
+      "latest_breach_date": "2025-07-26",
+      "earliest_breach_date": "2022-02-02",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0090",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 90.1,
+    "employee": {
+      "id": "EMP0090",
+      "name": "Alice Brown",
+      "email": "a***@acme-corp.com",
+      "department": "HR",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 5,
+      "breach_sources": "AdobeLeaks2019, FacebookLeak2021, AntiPublicCombo",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2022-11-02",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0053",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 89.7,
+    "employee": {
+      "id": "EMP0053",
+      "name": "Nick Nguyen",
+      "email": "n***@acme-corp.com",
+      "department": "Finance",
+      "role": "C-Suite"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "DropboxHack2012, AntiPublicCombo",
+      "latest_breach_date": "2022-12-07",
+      "earliest_breach_date": "2022-10-19",
+      "match_types": "fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0044",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 89.6,
+    "employee": {
+      "id": "EMP0044",
+      "name": "Mary Taylor",
+      "email": "m***@acmehq.com",
+      "department": "HR",
+      "role": "Director"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "TwitterBreachQ2, LinkedInBreach2021, RockYou2024",
+      "latest_breach_date": "2025-08-20",
+      "earliest_breach_date": "2023-12-08",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0005",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 89.1,
+    "employee": {
+      "id": "EMP0005",
+      "name": "Grace Patel",
+      "email": "g***@acme.internal",
+      "department": "HR",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 5,
+      "breach_sources": "Collection1Combo, AdobeLeaks2019, RockYou2024, TwitterBreachQ2",
+      "latest_breach_date": "2024-06-14",
+      "earliest_breach_date": "2021-05-04",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 5,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0095",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 88.9,
+    "employee": {
+      "id": "EMP0095",
+      "name": "Nick Jones",
+      "email": "n***@acmehq.com",
+      "department": "Legal",
+      "role": "C-Suite"
+    },
+    "breach_details": {
+      "breach_count": 5,
+      "breach_sources": "TwitterBreachQ2, AdobeLeaks2019",
+      "latest_breach_date": "2025-06-22",
+      "earliest_breach_date": "2021-05-28",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 5,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0061",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 88.8,
+    "employee": {
+      "id": "EMP0061",
+      "name": "Quinn Davis",
+      "email": "q***@acme-corp.com",
+      "department": "Sales",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "FacebookLeak2021, AntiPublicCombo, LinkedInBreach2021",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2023-02-28",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0045",
+    "generated_at": "2026-03-26T15:53:39.632667",
+    "severity": "CRITICAL",
+    "risk_score": 88.5,
+    "employee": {
+      "id": "EMP0045",
+      "name": "Grace Garcia",
+      "email": "g***@acme.internal",
+      "department": "Support",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "LinkedInBreach2021",
+      "latest_breach_date": "2021-03-29",
+      "earliest_breach_date": "2021-03-29",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 1,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0064",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 87.6,
+    "employee": {
+      "id": "EMP0064",
+      "name": "Karen Wilson",
+      "email": "k***@acme-corp.com",
+      "department": "Support",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "RockYou2024, LinkedInBreach2021",
+      "latest_breach_date": "2025-12-13",
+      "earliest_breach_date": "2022-10-13",
+      "match_types": "fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0073",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 87.4,
+    "employee": {
+      "id": "EMP0073",
+      "name": "Nick Smith",
+      "email": "n***@acmehq.com",
+      "department": "Engineering",
+      "role": "Senior Engineer"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "TwitterBreachQ2, AdobeLeaks2019, AntiPublicCombo",
+      "latest_breach_date": "2025-09-27",
+      "earliest_breach_date": "2022-07-19",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0033",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 87.1,
+    "employee": {
+      "id": "EMP0033",
+      "name": "Jack Nguyen",
+      "email": "j***@acmehq.com",
+      "department": "HR",
+      "role": "Manager"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "TwitterBreachQ2, AdobeLeaks2019, LinkedInBreach2021, InternalForumDump",
+      "latest_breach_date": "2025-06-22",
+      "earliest_breach_date": "2022-01-09",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0019",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 86.8,
+    "employee": {
+      "id": "EMP0019",
+      "name": "Nick Patel",
+      "email": "n***@acme-corp.com",
+      "department": "Executive",
+      "role": "Director"
+    },
+    "breach_details": {
+      "breach_count": 5,
+      "breach_sources": "RockYou2024, FacebookLeak2021, AntiPublicCombo, InternalForumDump",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2021-09-30",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0077",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 86.5,
+    "employee": {
+      "id": "EMP0077",
+      "name": "Karen Taylor",
+      "email": "k***@acme-corp.com",
+      "department": "Marketing",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "Collection1Combo, RockYou2024",
+      "latest_breach_date": "2025-01-27",
+      "earliest_breach_date": "2023-12-28",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0087",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 86.2,
+    "employee": {
+      "id": "EMP0087",
+      "name": "Iris Smith",
+      "email": "i***@acmehq.com",
+      "department": "Executive",
+      "role": "Manager"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "Collection1Combo, TwitterBreachQ2, AdobeLeaks2019",
+      "latest_breach_date": "2025-06-22",
+      "earliest_breach_date": "2022-07-19",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0098",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 86.0,
+    "employee": {
+      "id": "EMP0098",
+      "name": "Bob Nguyen",
+      "email": "b***@acme.internal",
+      "department": "Legal",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 5,
+      "breach_sources": "DropboxHack2012, AdobeLeaks2019, RockYou2024, InternalForumDump",
+      "latest_breach_date": "2025-09-14",
+      "earliest_breach_date": "2021-05-04",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0010",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 85.7,
+    "employee": {
+      "id": "EMP0010",
+      "name": "Grace Davis",
+      "email": "g***@acme-corp.com",
+      "department": "Marketing",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "AntiPublicCombo",
+      "latest_breach_date": "2023-08-06",
+      "earliest_breach_date": "2022-04-03",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0085",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 85.7,
+    "employee": {
+      "id": "EMP0085",
+      "name": "Dave Martin",
+      "email": "d***@acme-corp.com",
+      "department": "Engineering",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 5,
+      "breach_sources": "AdobeLeaks2019, FacebookLeak2021, AntiPublicCombo, TwitterBreachQ2",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2024-04-30",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0072",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 85.5,
+    "employee": {
+      "id": "EMP0072",
+      "name": "Henry Martin",
+      "email": "h***@acme.internal",
+      "department": "HR",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "InternalForumDump, FacebookLeak2021",
+      "latest_breach_date": "2022-03-28",
+      "earliest_breach_date": "2021-12-06",
+      "match_types": "fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0025",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 85.3,
+    "employee": {
+      "id": "EMP0025",
+      "name": "Jack Martin",
+      "email": "j***@acme-corp.com",
+      "department": "Operations",
+      "role": "Analyst"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "FacebookLeak2021, AntiPublicCombo",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2023-08-28",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0040",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 84.9,
+    "employee": {
+      "id": "EMP0040",
+      "name": "Jack Jones",
+      "email": "j***@acmehq.com",
+      "department": "Engineering",
+      "role": "Intern"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "LinkedInBreach2021, AntiPublicCombo, Collection1Combo",
+      "latest_breach_date": "2024-05-31",
+      "earliest_breach_date": "2023-08-17",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0067",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 84.8,
+    "employee": {
+      "id": "EMP0067",
+      "name": "Carol Smith",
+      "email": "c***@acme.internal",
+      "department": "HR",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "AntiPublicCombo, FacebookLeak2021",
+      "latest_breach_date": "2026-01-25",
+      "earliest_breach_date": "2025-06-25",
+      "match_types": "fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0062",
+    "generated_at": "2026-03-26T15:53:39.633663",
+    "severity": "CRITICAL",
+    "risk_score": 84.7,
+    "employee": {
+      "id": "EMP0062",
+      "name": "Dave Nguyen",
+      "email": "d***@acmehq.com",
+      "department": "Marketing",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "TwitterBreachQ2, AdobeLeaks2019, DropboxHack2012",
+      "latest_breach_date": "2025-11-15",
+      "earliest_breach_date": "2022-07-19",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0083",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 84.5,
+    "employee": {
+      "id": "EMP0083",
+      "name": "Nick Taylor",
+      "email": "n***@acmehq.com",
+      "department": "Executive",
+      "role": "Analyst"
+    },
+    "breach_details": {
+      "breach_count": 5,
+      "breach_sources": "FacebookLeak2021, TwitterBreachQ2, AdobeLeaks2019",
+      "latest_breach_date": "2025-06-22",
+      "earliest_breach_date": "2022-07-19",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 5,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0050",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 84.4,
+    "employee": {
+      "id": "EMP0050",
+      "name": "Nick Garcia",
+      "email": "n***@acme-corp.com",
+      "department": "HR",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "FacebookLeak2021, AntiPublicCombo",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2024-05-18",
+      "match_types": "domain_email",
+      "password_reuse": 2,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0034",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 84.4,
+    "employee": {
+      "id": "EMP0034",
+      "name": "Nick Davis",
+      "email": "n***@acmehq.com",
+      "department": "Sales",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "FacebookLeak2021, AntiPublicCombo",
+      "latest_breach_date": "2026-03-10",
+      "earliest_breach_date": "2025-02-11",
+      "match_types": "fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0091",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 84.3,
+    "employee": {
+      "id": "EMP0091",
+      "name": "Mary Smith",
+      "email": "m***@acme.internal",
+      "department": "Legal",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "AdobeLeaks2019, RockYou2024, LinkedInBreach2021",
+      "latest_breach_date": "2022-07-10",
+      "earliest_breach_date": "2021-05-04",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0054",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 84.1,
+    "employee": {
+      "id": "EMP0054",
+      "name": "Iris Garcia",
+      "email": "i***@acmehq.com",
+      "department": "Legal",
+      "role": "Analyst"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "TwitterBreachQ2, AdobeLeaks2019, DropboxHack2012",
+      "latest_breach_date": "2025-06-22",
+      "earliest_breach_date": "2022-07-19",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0015",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 83.9,
+    "employee": {
+      "id": "EMP0015",
+      "name": "Bob Martin",
+      "email": "b***@acme-corp.com",
+      "department": "Marketing",
+      "role": "Manager"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "InternalForumDump, Collection1Combo, RockYou2024",
+      "latest_breach_date": "2025-10-16",
+      "earliest_breach_date": "2023-07-21",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0003",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 83.7,
+    "employee": {
+      "id": "EMP0003",
+      "name": "Rachel Jones",
+      "email": "r***@acmehq.com",
+      "department": "Marketing",
+      "role": "Senior Engineer"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "TwitterBreachQ2, AdobeLeaks2019, RockYou2024",
+      "latest_breach_date": "2025-06-22",
+      "earliest_breach_date": "2021-10-28",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0029",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 83.6,
+    "employee": {
+      "id": "EMP0029",
+      "name": "Eve Garcia",
+      "email": "e***@acme.internal",
+      "department": "Operations",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "AdobeLeaks2019, RockYou2024, LinkedInBreach2021, DropboxHack2012",
+      "latest_breach_date": "2025-09-25",
+      "earliest_breach_date": "2021-03-31",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0070",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 83.2,
+    "employee": {
+      "id": "EMP0070",
+      "name": "Alice Garcia",
+      "email": "a***@acmehq.com",
+      "department": "IT",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "TwitterBreachQ2, AntiPublicCombo",
+      "latest_breach_date": "2025-09-16",
+      "earliest_breach_date": "2022-11-20",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0038",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 82.9,
+    "employee": {
+      "id": "EMP0038",
+      "name": "Nick Lee",
+      "email": "n***@acmehq.com",
+      "department": "Executive",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "TwitterBreachQ2, AdobeLeaks2019",
+      "latest_breach_date": "2025-06-22",
+      "earliest_breach_date": "2022-07-19",
+      "match_types": "domain_email",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0046",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 82.8,
+    "employee": {
+      "id": "EMP0046",
+      "name": "Peter Wilson",
+      "email": "p***@acmehq.com",
+      "department": "Marketing",
+      "role": "Engineer"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "FacebookLeak2021, Collection1Combo",
+      "latest_breach_date": "2026-02-25",
+      "earliest_breach_date": "2022-04-09",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0074",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 82.7,
+    "employee": {
+      "id": "EMP0074",
+      "name": "Frank Martin",
+      "email": "f***@acme.internal",
+      "department": "Engineering",
+      "role": "Manager"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "AdobeLeaks2019, RockYou2024, Collection1Combo",
+      "latest_breach_date": "2022-04-06",
+      "earliest_breach_date": "2021-05-04",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0030",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 82.6,
+    "employee": {
+      "id": "EMP0030",
+      "name": "Tina Patel",
+      "email": "t***@acme.internal",
+      "department": "IT",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "RockYou2024, TwitterBreachQ2",
+      "latest_breach_date": "2026-01-17",
+      "earliest_breach_date": "2022-06-23",
+      "match_types": "fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0056",
+    "generated_at": "2026-03-26T15:53:39.634662",
+    "severity": "CRITICAL",
+    "risk_score": 82.6,
+    "employee": {
+      "id": "EMP0056",
+      "name": "Dave Davis",
+      "email": "d***@acme-corp.com",
+      "department": "HR",
+      "role": "Engineer"
+    },
+    "breach_details": {
+      "breach_count": 5,
+      "breach_sources": "RockYou2024, FacebookLeak2021, AntiPublicCombo, TwitterBreachQ2",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2022-08-07",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0052",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "CRITICAL",
+    "risk_score": 81.3,
+    "employee": {
+      "id": "EMP0052",
+      "name": "Rachel Garcia",
+      "email": "r***@acme-corp.com",
+      "department": "Marketing",
+      "role": "Intern"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "FacebookLeak2021, AntiPublicCombo, TwitterBreachQ2",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2021-04-04",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0051",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "CRITICAL",
+    "risk_score": 81.3,
+    "employee": {
+      "id": "EMP0051",
+      "name": "Mary Smith",
+      "email": "m***@acme-corp.com",
+      "department": "Legal",
+      "role": "IT Admin"
+    },
+    "breach_details": {
+      "breach_count": 4,
+      "breach_sources": "LinkedInBreach2021, FacebookLeak2021, AntiPublicCombo",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2022-07-10",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0002",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "CRITICAL",
+    "risk_score": 81.1,
+    "employee": {
+      "id": "EMP0002",
+      "name": "Henry Patel",
+      "email": "h***@acme-corp.com",
+      "department": "Operations",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 5,
+      "breach_sources": "InternalForumDump, FacebookLeak2021, AntiPublicCombo, TwitterBreachQ2",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2021-08-18",
+      "match_types": "exact_email, domain_email, fuzzy_username",
+      "password_reuse": 4,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0078",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "CRITICAL",
+    "risk_score": 81.0,
+    "employee": {
+      "id": "EMP0078",
+      "name": "Leo Anderson",
+      "email": "l***@acme-corp.com",
+      "department": "Sales",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "InternalForumDump, TwitterBreachQ2",
+      "latest_breach_date": "2026-01-31",
+      "earliest_breach_date": "2022-08-02",
+      "match_types": "fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0021",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "CRITICAL",
+    "risk_score": 80.9,
+    "employee": {
+      "id": "EMP0021",
+      "name": "Carol Anderson",
+      "email": "c***@acme.internal",
+      "department": "Engineering",
+      "role": "DBA"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "AntiPublicCombo",
+      "latest_breach_date": "2023-06-26",
+      "earliest_breach_date": "2021-05-01",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0043",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "CRITICAL",
+    "risk_score": 80.7,
+    "employee": {
+      "id": "EMP0043",
+      "name": "Olivia Brown",
+      "email": "o***@acme-corp.com",
+      "department": "HR",
+      "role": "C-Suite"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "FacebookLeak2021",
+      "latest_breach_date": "2023-11-30",
+      "earliest_breach_date": "2021-11-20",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0047",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "CRITICAL",
+    "risk_score": 80.5,
+    "employee": {
+      "id": "EMP0047",
+      "name": "Rachel Nguyen",
+      "email": "r***@acme.internal",
+      "department": "Executive",
+      "role": "Intern"
+    },
+    "breach_details": {
+      "breach_count": 3,
+      "breach_sources": "AdobeLeaks2019, RockYou2024, DropboxHack2012",
+      "latest_breach_date": "2022-04-06",
+      "earliest_breach_date": "2021-05-04",
+      "match_types": "domain_email, fuzzy_username",
+      "password_reuse": 3,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0082",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "CRITICAL",
+    "risk_score": 79.5,
+    "employee": {
+      "id": "EMP0082",
+      "name": "Rachel Jones",
+      "email": "r***@acme-corp.com",
+      "department": "Sales",
+      "role": "IT Admin"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "RockYou2024",
+      "latest_breach_date": "2021-10-28",
+      "earliest_breach_date": "2021-10-28",
+      "match_types": "exact_email, fuzzy_username",
+      "password_reuse": 1,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0023",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "CRITICAL",
+    "risk_score": 78.5,
+    "employee": {
+      "id": "EMP0023",
+      "name": "Mary Taylor",
+      "email": "m***@acme.internal",
+      "department": "Legal",
+      "role": "IT Admin"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "LinkedInBreach2021, RockYou2024",
+      "latest_breach_date": "2025-07-26",
+      "earliest_breach_date": "2023-12-08",
+      "match_types": "fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0088",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "CRITICAL",
+    "risk_score": 77.8,
+    "employee": {
+      "id": "EMP0088",
+      "name": "Leo Jones",
+      "email": "l***@acme-corp.com",
+      "department": "Legal",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "FacebookLeak2021, AntiPublicCombo",
+      "latest_breach_date": "2025-03-26",
+      "earliest_breach_date": "2024-05-18",
+      "match_types": "domain_email",
+      "password_reuse": 2,
+      "sensitive_keywords": true
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "IMMEDIATE: Force password reset now",
+      "IMMEDIATE: Disable account pending review",
+      "Enable MFA if not already active",
+      "Notify security team for manual investigation",
+      "Review last 30 days of account activity",
+      "Check for unauthorized access or data exfiltration"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0089",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "HIGH",
+    "risk_score": 71.6,
+    "employee": {
+      "id": "EMP0089",
+      "name": "Jack Anderson",
+      "email": "j***@acme.internal",
+      "department": "Sales",
+      "role": "C-Suite"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "DropboxHack2012, AntiPublicCombo",
+      "latest_breach_date": "2025-01-14",
+      "earliest_breach_date": "2021-07-28",
+      "match_types": "fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "Force password reset within 4 hours",
+      "Enable MFA",
+      "Security team notification",
+      "Review account activity for anomalies"
+    ],
+    "status": "OPEN"
+  },
+  {
+    "alert_id": "ALERT-20260326_155339-EMP0026",
+    "generated_at": "2026-03-26T15:53:39.635662",
+    "severity": "HIGH",
+    "risk_score": 68.5,
+    "employee": {
+      "id": "EMP0026",
+      "name": "Karen Nguyen",
+      "email": "k***@acmehq.com",
+      "department": "Sales",
+      "role": "VP"
+    },
+    "breach_details": {
+      "breach_count": 2,
+      "breach_sources": "TwitterBreachQ2, Collection1Combo",
+      "latest_breach_date": "2023-03-20",
+      "earliest_breach_date": "2022-08-17",
+      "match_types": "fuzzy_username",
+      "password_reuse": 2,
+      "sensitive_keywords": false
+    },
+    "explanation": "",
+    "recommended_actions": [
+      "Force password reset within 4 hours",
+      "Enable MFA",
+      "Security team notification",
+      "Review account activity for anomalies"
+    ],
+    "status": "OPEN"
+  }
+]
