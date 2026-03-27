@@ -199,11 +199,10 @@ def _sigmoid_stretch(x: float, center: float = 50, steepness: float = 0.06) -> f
 
 
 def _risk_level(score: float) -> str:
-    if score >= 90: return "CRITICAL"
-    if score >= 70: return "HIGH"
+    if score >= 80: return "CRITICAL"   # ✅ THIS IS THE FIX
+    if score >= 65: return "HIGH"
     if score >= 40: return "MEDIUM"
     return "LOW"
-
 
 def _build_reason(employee: dict, breach_records: list[dict], scores: dict, composite: float) -> str:
     """
@@ -353,13 +352,26 @@ def get_user_risk(email: str, scored_profiles: list[dict]) -> dict:
 # PIPELINE RUNNER
 # ─────────────────────────────────────────────
 
-def run_scoring_pipeline(data_dir: str = "/home/claude/darkweb_intel/data") -> list[dict]:
-    with open(f"{data_dir}/employees.json")      as f: employees = json.load(f)
-    with open(f"{data_dir}/breach_records.json") as f: breaches  = json.load(f)
+def run_scoring_pipeline(data_dir=None) -> list[dict]:
+    from pathlib import Path
+
+    # ✅ FIX: correct cross-platform path
+    if data_dir is None:
+        data_dir = str(Path(__file__).parent.parent / "data")
+
+    # ✅ LOAD FILES
+    with open(f"{data_dir}/employees.json") as f:
+        employees = json.load(f)
+
+    # ✅ FIXED FILE NAME (THIS WAS THE BUG)
+    with open(f"{data_dir}/breach_data.json") as f:
+        breaches = json.load(f)
 
     print(f"[RiskEngine] Scoring {len(employees)} employees against {len(breaches)} breach records...")
+
     profiles = score_all_employees(employees, breaches)
 
+    # ✅ SAVE OUTPUT
     out_path = f"{data_dir}/risk_profiles.json"
     with open(out_path, "w") as f:
         json.dump(profiles, f, indent=2)
@@ -371,8 +383,8 @@ def run_scoring_pipeline(data_dir: str = "/home/claude/darkweb_intel/data") -> l
 
     print(f"[RiskEngine] Score distribution: {dist}")
     print(f"[RiskEngine] Profiles saved → {out_path}")
-    return profiles
 
+    return profiles
 
 if __name__ == "__main__":
     run_scoring_pipeline()

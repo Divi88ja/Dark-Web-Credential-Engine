@@ -1,18 +1,3 @@
-"""
-MODULE: nlp_extractor.py
-PURPOSE: Simulates an NLP pipeline that parses raw dark web forum text / paste dumps
-         to extract structured entities (emails, IPs, hashes).
-
-PRODUCTION EQUIVALENT:
-  - Replace regex with spaCy NER + custom entity ruler for emails/hashes
-  - Add BERT-based classifier to determine leak confidence score
-  - Feed extracted emails directly into the correlation engine
-
-INTERVIEW TALKING POINT:
-  "This module mimics how threat intelligence platforms parse raw paste sites —
-   turning noisy unstructured text into actionable indicators of compromise."
-"""
-
 import re
 import json
 from collections import defaultdict
@@ -20,7 +5,7 @@ from pathlib import Path
 
 
 # ─────────────────────────────────────────────
-# ENTITY PATTERNS (regex-based NER simulation)
+# ENTITY PATTERNS
 # ─────────────────────────────────────────────
 
 EMAIL_PATTERN    = re.compile(r"[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}")
@@ -35,12 +20,15 @@ PASSWORD_PATTERN = re.compile(r"(?:pass|password|passwd|pw)\s*[=:]\s*(\S+)", re.
 # ─────────────────────────────────────────────
 
 def extract_entities(text):
-    """
-    Extract structured entities from a raw unstructured breach text blob.
+    if not isinstance(text, str):   # ✅ safety fix
+        return {
+            "emails": [],
+            "ips": [],
+            "md5_hashes": [],
+            "sha_hashes": [],
+            "passwords": [],
+        }
 
-    Returns:
-        dict with keys: emails, ips, md5_hashes, sha_hashes, passwords
-    """
     return {
         "emails":     list(set(EMAIL_PATTERN.findall(text))),
         "ips":        list(set(IP_PATTERN.findall(text))),
@@ -51,15 +39,9 @@ def extract_entities(text):
 
 
 def classify_leak_confidence(text):
-    """
-    Heuristic-based confidence classifier for breach data quality.
-    In production: replace with a fine-tuned text classifier.
+    if not isinstance(text, str):   # ✅ safety fix
+        return "UNKNOWN"
 
-    Scoring logic:
-      - Contains plaintext passwords → HIGH
-      - Contains hashes + emails    → MEDIUM
-      - Contains only emails        → LOW
-    """
     has_pw    = bool(PASSWORD_PATTERN.search(text))
     has_hash  = bool(HASH_MD5_PATTERN.search(text) or HASH_SHA_PATTERN.search(text))
     has_email = bool(EMAIL_PATTERN.search(text))
@@ -74,31 +56,24 @@ def classify_leak_confidence(text):
 
 
 # ─────────────────────────────────────────────
-# PIPELINE INTEGRATION
+# FIXED PIPELINE CORE
 # ─────────────────────────────────────────────
 
 def process_blob_corpus(blobs, employee_emails):
-    """
-    Process a list of raw leak text blobs.
-    Cross-references extracted emails against known employee email set.
 
-    Returns:
-        {
-          "total_blobs": int,
-          "total_emails_found": int,
-          "employee_hits": {email: [blob_indices]},
-          "per_blob_results": [...]
-        }
-    """
     employee_hits    = defaultdict(list)
     per_blob_results = []
 
     for i, blob in enumerate(blobs):
-        entities   = extract_entities(blob)
-        confidence = classify_leak_confidence(blob)
 
-        # Cross-reference extracted emails with employee roster
+        # ✅ FIX: extract text safely
+        text = blob["text"] if isinstance(blob, dict) else blob
+
+        entities   = extract_entities(text)            # ✅ FIXED
+        confidence = classify_leak_confidence(text)    # ✅ FIXED
+
         matched_employees = [e for e in entities["emails"] if e in employee_emails]
+
         for email in matched_employees:
             employee_hits[email].append(i)
 
@@ -123,20 +98,11 @@ def process_blob_corpus(blobs, employee_emails):
 
 
 # ─────────────────────────────────────────────
-# PIPELINE RUNNER  ←  FIXED: cross-platform path
+# PIPELINE RUNNER
 # ─────────────────────────────────────────────
 
 def run_nlp_pipeline(data_dir=None):
-    """
-    Entry point: loads blobs + employees, runs NLP extraction, saves results.
 
-    Args:
-        data_dir: Path to the data folder.
-                  Defaults to <project_root>/data/
-                  Works on Windows, Mac, and Linux
-                  without any hardcoded paths.
-    """
-    # ── FIX: resolve path relative to THIS file, not a hardcoded Linux path ──
     if data_dir is None:
         data_dir = str(Path(__file__).parent.parent / "data")
 
@@ -149,19 +115,20 @@ def run_nlp_pipeline(data_dir=None):
     employee_emails = {e["email"] for e in employees}
 
     print(f"[NLP] Processing {len(blobs)} leak blobs against {len(employee_emails)} employee emails...")
+    
     results = process_blob_corpus(blobs, employee_emails)
 
-    out_path = f"{data_dir}/nlp_results.json"
-    with open(out_path, "w") as f:
-        json.dump(results, f, indent=2, default=list)
+    with open(f"{data_dir}/nlp_results.json", "w") as f:
+        json.dump(results, f, indent=2)
 
-    print(f"[NLP] Employee email hits in unstructured text: {len(results['employee_hits'])}")
-    print(f"[NLP] Total emails extracted across all blobs : {results['total_emails_found']}")
+    print(f"[NLP] Employee email hits: {len(results['employee_hits'])}")
+    print(f"[NLP] Total emails extracted: {results['total_emails_found']}")
+
     return results
 
 
 # ─────────────────────────────────────────────
-# STANDALONE TEST
+# TEST
 # ─────────────────────────────────────────────
 
 if __name__ == "__main__":

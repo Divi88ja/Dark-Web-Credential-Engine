@@ -3,8 +3,8 @@ import json
 import argparse
 from pathlib import Path
 
-# Ensure modules are importable
-sys.path.insert(0, str(Path(__file__).parent / "src"))
+# Ensure modules inside src are importable
+sys.path.insert(0, str(Path(__file__).parent))
 
 from data_generator import save_datasets
 from nlp_extractor import run_nlp_pipeline
@@ -12,7 +12,8 @@ from risk_engine import run_scoring_pipeline, get_user_risk
 from alert_engine import run_alert_pipeline
 from analytics import run_analytics_pipeline
 
-DATA_DIR = str(Path(__file__).parent / "data")
+# Correct data directory (points to project_root/data)
+DATA_DIR = str(Path(__file__).parent.parent / "data")
 
 
 # ─────────────────────────────────────────────
@@ -26,7 +27,7 @@ def run_full_pipeline():
 
     # Step 1: Data Ingestion
     print("── STEP 1: Data Ingestion ──────────────────────────────")
-    save_datasets(DATA_DIR)
+    save_datasets()
 
     # Step 2: NLP Extraction
     print("\n── STEP 2: NLP Entity Extraction ───────────────────────")
@@ -35,6 +36,8 @@ def run_full_pipeline():
     # Step 3: Risk Scoring
     print("\n── STEP 3: Risk Scoring Engine ─────────────────────────")
     profiles = run_scoring_pipeline(DATA_DIR)
+
+    print("DEBUG → MAX SCORE:", max(p["risk_score"] for p in profiles))
 
     # Step 4: Alert Generation
     print("\n── STEP 4: Alert Generation ────────────────────────────")
@@ -58,10 +61,8 @@ def run_full_pipeline():
     print(f"  LOW risk                 : {dist['counts']['LOW']} ({dist['percentages']['LOW']}%)")
 
     print(f"  Active alerts (P1+P2)    : {alerts['summary']['total_alerts']}")
-    print(f"  NLP email hits           : {nlp_results['total_emails_found']}")
-
+    print(f"  NLP employee hits        : {len(nlp_results['employee_hits'])}")
     print("\n  ✔ Data Source: Simulated + Public Breach Intelligence (HIBP-ready)")
-
     print("=" * 60 + "\n")
 
 
@@ -74,7 +75,7 @@ def lookup_email(email: str):
     profiles_path = f"{DATA_DIR}/risk_profiles.json"
 
     if not Path(profiles_path).exists():
-        print("[ERROR] Run full pipeline first: python main.py")
+        print("[ERROR] Run full pipeline first: python src/main.py")
         return
 
     with open(profiles_path) as f:
