@@ -1,0 +1,650 @@
+[
+  {
+    "employee_id": "EMP0001",
+    "email": "priya.sharma@company.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 74,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0008",
+    "email": "user4483@gmail.com",
+    "breach_source": "Canva2019",
+    "breach_severity": "moderate",
+    "days_since": 121,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0008",
+    "email": "rohan.shah@gmail.com",
+    "breach_source": "LastPass2022",
+    "breach_severity": "critical",
+    "days_since": 191,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0008",
+    "email": "rohan.shah@company.com",
+    "breach_source": "LinkedIn2021",
+    "breach_severity": "major",
+    "days_since": 303,
+    "plaintext_pw": true,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0009",
+    "email": "vikram.patel@company.com",
+    "breach_source": "LinkedIn2021",
+    "breach_severity": "major",
+    "days_since": 112,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0011",
+    "email": "priya.singh@company.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 272,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0011",
+    "email": "priya.singh@gmail.com",
+    "breach_source": "Gravatar2020",
+    "breach_severity": "minor",
+    "days_since": 346,
+    "plaintext_pw": true,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0013",
+    "email": "neha.gupta@gmail.com",
+    "breach_source": "LinkedIn2021",
+    "breach_severity": "major",
+    "days_since": 309,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0013",
+    "email": "user8801@gmail.com",
+    "breach_source": "Canva2019",
+    "breach_severity": "moderate",
+    "days_since": 499,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0015",
+    "email": "ananya.gupta@company.com",
+    "breach_source": "RockYou2024",
+    "breach_severity": "critical",
+    "days_since": 119,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0015",
+    "email": "user6228@gmail.com",
+    "breach_source": "Collection1",
+    "breach_severity": "critical",
+    "days_since": 1182,
+    "plaintext_pw": true,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0015",
+    "email": "ananya.gupta@company.com",
+    "breach_source": "Canva2019",
+    "breach_severity": "moderate",
+    "days_since": 177,
+    "plaintext_pw": true,
+    "password_reuse_count": 2
+  },
+  {
+    "employee_id": "EMP0017",
+    "email": "vikram.sharma@company.com",
+    "breach_source": "Gravatar2020",
+    "breach_severity": "minor",
+    "days_since": 912,
+    "plaintext_pw": true,
+    "password_reuse_count": 2
+  },
+  {
+    "employee_id": "EMP0022",
+    "email": "sneha.patel@company.com",
+    "breach_source": "Dropbox2012",
+    "breach_severity": "major",
+    "days_since": 686,
+    "plaintext_pw": true,
+    "password_reuse_count": 2
+  },
+  {
+    "employee_id": "EMP0022",
+    "email": "sneha.patel@company.com",
+    "breach_source": "Collection1",
+    "breach_severity": "critical",
+    "days_since": 71,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0024",
+    "email": "ananya.kumar@gmail.com",
+    "breach_source": "Canva2019",
+    "breach_severity": "moderate",
+    "days_since": 161,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0027",
+    "email": "user8209@gmail.com",
+    "breach_source": "Twitter2022",
+    "breach_severity": "moderate",
+    "days_since": 202,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0031",
+    "email": "karan.singh@gmail.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 243,
+    "plaintext_pw": false,
+    "password_reuse_count": 2
+  },
+  {
+    "employee_id": "EMP0031",
+    "email": "karan.singh@company.com",
+    "breach_source": "Collection1",
+    "breach_severity": "critical",
+    "days_since": 1037,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0033",
+    "email": "rohan.shah@company.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 575,
+    "plaintext_pw": false,
+    "password_reuse_count": 2
+  },
+  {
+    "employee_id": "EMP0040",
+    "email": "user2238@gmail.com",
+    "breach_source": "RockYou2024",
+    "breach_severity": "critical",
+    "days_since": 59,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0040",
+    "email": "aarav.shah@gmail.com",
+    "breach_source": "LastPass2022",
+    "breach_severity": "critical",
+    "days_since": 953,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0044",
+    "email": "user8316@gmail.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 1076,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0046",
+    "email": "ananya.kumar@company.com",
+    "breach_source": "Dropbox2012",
+    "breach_severity": "major",
+    "days_since": 1081,
+    "plaintext_pw": false,
+    "password_reuse_count": 2
+  },
+  {
+    "employee_id": "EMP0048",
+    "email": "priya.shah@gmail.com",
+    "breach_source": "Trello2022",
+    "breach_severity": "minor",
+    "days_since": 909,
+    "plaintext_pw": true,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0048",
+    "email": "priya.shah@company.com",
+    "breach_source": "LinkedIn2021",
+    "breach_severity": "major",
+    "days_since": 438,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0048",
+    "email": "priya.shah@gmail.com",
+    "breach_source": "Twitter2022",
+    "breach_severity": "moderate",
+    "days_since": 36,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0049",
+    "email": "rohan.patel@company.com",
+    "breach_source": "LinkedIn2021",
+    "breach_severity": "major",
+    "days_since": 291,
+    "plaintext_pw": true,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0049",
+    "email": "user1942@gmail.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 792,
+    "plaintext_pw": true,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0053",
+    "email": "ananya.mehta@company.com",
+    "breach_source": "LastPass2022",
+    "breach_severity": "critical",
+    "days_since": 303,
+    "plaintext_pw": true,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0053",
+    "email": "user3460@gmail.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 46,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0053",
+    "email": "ananya.mehta@company.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 602,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0056",
+    "email": "sneha.gupta@company.com",
+    "breach_source": "Gravatar2020",
+    "breach_severity": "minor",
+    "days_since": 86,
+    "plaintext_pw": true,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0059",
+    "email": "sneha.singh@gmail.com",
+    "breach_source": "RockYou2024",
+    "breach_severity": "critical",
+    "days_since": 945,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0059",
+    "email": "user3644@gmail.com",
+    "breach_source": "RockYou2024",
+    "breach_severity": "critical",
+    "days_since": 535,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0059",
+    "email": "sneha.singh@company.com",
+    "breach_source": "Canva2019",
+    "breach_severity": "moderate",
+    "days_since": 40,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0063",
+    "email": "user1660@gmail.com",
+    "breach_source": "Gravatar2020",
+    "breach_severity": "minor",
+    "days_since": 340,
+    "plaintext_pw": false,
+    "password_reuse_count": 2
+  },
+  {
+    "employee_id": "EMP0068",
+    "email": "rohan.mehta@gmail.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 177,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0071",
+    "email": "priya.kumar@company.com",
+    "breach_source": "LinkedIn2021",
+    "breach_severity": "major",
+    "days_since": 532,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0072",
+    "email": "karan.mehta@company.com",
+    "breach_source": "Collection1",
+    "breach_severity": "critical",
+    "days_since": 1009,
+    "plaintext_pw": false,
+    "password_reuse_count": 3
+  },
+  {
+    "employee_id": "EMP0072",
+    "email": "karan.mehta@company.com",
+    "breach_source": "Dropbox2012",
+    "breach_severity": "major",
+    "days_since": 517,
+    "plaintext_pw": true,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0072",
+    "email": "karan.mehta@company.com",
+    "breach_source": "LastPass2022",
+    "breach_severity": "critical",
+    "days_since": 821,
+    "plaintext_pw": true,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0073",
+    "email": "karan.sharma@company.com",
+    "breach_source": "Twitter2022",
+    "breach_severity": "moderate",
+    "days_since": 149,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0075",
+    "email": "neha.singh@company.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 619,
+    "plaintext_pw": true,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0075",
+    "email": "neha.singh@gmail.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 881,
+    "plaintext_pw": false,
+    "password_reuse_count": 2
+  },
+  {
+    "employee_id": "EMP0076",
+    "email": "neha.patel@gmail.com",
+    "breach_source": "Collection1",
+    "breach_severity": "critical",
+    "days_since": 298,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0080",
+    "email": "rohan.sharma@company.com",
+    "breach_source": "LinkedIn2021",
+    "breach_severity": "major",
+    "days_since": 55,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0080",
+    "email": "rohan.sharma@company.com",
+    "breach_source": "Dropbox2012",
+    "breach_severity": "major",
+    "days_since": 130,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0081",
+    "email": "rohan.sharma@company.com",
+    "breach_source": "Dropbox2012",
+    "breach_severity": "major",
+    "days_since": 58,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0082",
+    "email": "sneha.mehta@company.com",
+    "breach_source": "Gravatar2020",
+    "breach_severity": "minor",
+    "days_since": 749,
+    "plaintext_pw": true,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0082",
+    "email": "sneha.mehta@company.com",
+    "breach_source": "RockYou2024",
+    "breach_severity": "critical",
+    "days_since": 143,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0087",
+    "email": "rohan.shah@company.com",
+    "breach_source": "Canva2019",
+    "breach_severity": "moderate",
+    "days_since": 222,
+    "plaintext_pw": false,
+    "password_reuse_count": 2
+  },
+  {
+    "employee_id": "EMP0087",
+    "email": "rohan.shah@company.com",
+    "breach_source": "Dropbox2012",
+    "breach_severity": "major",
+    "days_since": 89,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0087",
+    "email": "rohan.shah@company.com",
+    "breach_source": "LinkedIn2021",
+    "breach_severity": "major",
+    "days_since": 82,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0089",
+    "email": "neha.gupta@company.com",
+    "breach_source": "LastPass2022",
+    "breach_severity": "critical",
+    "days_since": 444,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0089",
+    "email": "neha.gupta@company.com",
+    "breach_source": "LinkedIn2021",
+    "breach_severity": "major",
+    "days_since": 1191,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0091",
+    "email": "vikram.patel@gmail.com",
+    "breach_source": "Twitter2022",
+    "breach_severity": "moderate",
+    "days_since": 473,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0091",
+    "email": "vikram.patel@company.com",
+    "breach_source": "Collection1",
+    "breach_severity": "critical",
+    "days_since": 829,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0091",
+    "email": "vikram.patel@company.com",
+    "breach_source": "Twitter2022",
+    "breach_severity": "moderate",
+    "days_since": 318,
+    "plaintext_pw": true,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0091",
+    "email": "vikram.patel@company.com",
+    "breach_source": "Gravatar2020",
+    "breach_severity": "minor",
+    "days_since": 1038,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0091",
+    "email": "vikram.patel@gmail.com",
+    "breach_source": "RockYou2024",
+    "breach_severity": "critical",
+    "days_since": 357,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0092",
+    "email": "sneha.singh@company.com",
+    "breach_source": "Dropbox2012",
+    "breach_severity": "major",
+    "days_since": 176,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0092",
+    "email": "sneha.singh@company.com",
+    "breach_source": "RockYou2024",
+    "breach_severity": "critical",
+    "days_since": 244,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0092",
+    "email": "user5978@gmail.com",
+    "breach_source": "Dropbox2012",
+    "breach_severity": "major",
+    "days_since": 111,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0093",
+    "email": "neha.kumar@company.com",
+    "breach_source": "RockYou2024",
+    "breach_severity": "critical",
+    "days_since": 178,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0093",
+    "email": "neha.kumar@company.com",
+    "breach_source": "LastPass2022",
+    "breach_severity": "critical",
+    "days_since": 286,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0094",
+    "email": "vikram.gupta@company.com",
+    "breach_source": "LastPass2022",
+    "breach_severity": "critical",
+    "days_since": 344,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  },
+  {
+    "employee_id": "EMP0095",
+    "email": "vikram.shah@company.com",
+    "breach_source": "Adobe2013",
+    "breach_severity": "major",
+    "days_since": 234,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0098",
+    "email": "sneha.shah@gmail.com",
+    "breach_source": "RockYou2024",
+    "breach_severity": "critical",
+    "days_since": 88,
+    "plaintext_pw": true,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0099",
+    "email": "vikram.gupta@company.com",
+    "breach_source": "Collection1",
+    "breach_severity": "critical",
+    "days_since": 42,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0099",
+    "email": "vikram.gupta@company.com",
+    "breach_source": "Gravatar2020",
+    "breach_severity": "minor",
+    "days_since": 362,
+    "plaintext_pw": false,
+    "password_reuse_count": 0
+  },
+  {
+    "employee_id": "EMP0099",
+    "email": "vikram.gupta@company.com",
+    "breach_source": "Twitter2022",
+    "breach_severity": "moderate",
+    "days_since": 52,
+    "plaintext_pw": false,
+    "password_reuse_count": 1
+  }
+]

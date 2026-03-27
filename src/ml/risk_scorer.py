@@ -26,7 +26,11 @@ def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
     df["leak_recency_days"] = df["latest_breach_date"].apply(days_since).clip(upper=3650)
 
     df["account_age_days"] = df["account_created"].apply(days_since).clip(lower=1)
-    df["exposure_frequency"] = df["breach_count"] / (df["account_age_days"] / 365.0).clip(lower=0.1)
+
+    # FIX: avoid division explosion
+    df["exposure_frequency"] = (
+        df["breach_count"] / (df["account_age_days"] / 365.0)
+    ).clip(0, 10)
 
     df["domain_match_flag"] = df.get("match_types", "").apply(
         lambda x: 1 if "exact_email" in str(x) or "domain_email" in str(x) else 0
@@ -60,8 +64,8 @@ class RiskScorer:
         load_config(config_path)
 
         self.model = RandomForestClassifier(
-            n_estimators=100,
-            max_depth=8,
+            n_estimators=150,
+            max_depth=10,
             random_state=42,
             class_weight="balanced"
         )
@@ -69,14 +73,14 @@ class RiskScorer:
         self.scaler = MinMaxScaler()
 
     # ─────────────────────────────────────────────
-    # LABEL CREATION
+    # LABEL CREATION (IMPROVED)
     # ─────────────────────────────────────────────
     def _create_labels(self, df):
         high_risk = (
-            (df["breach_count"] >= 5) |
-            ((df["role_sensitivity"] >= 8) & (df["breach_count"] >= 2)) |
-            (df["password_reuse_count"] >= 3) |
-            (df["leak_recency_days"] < 90)
+            (df["breach_count"] >= 4) |
+            ((df["role_sensitivity"] >= 7) & (df["breach_count"] >= 2)) |
+            (df["password_reuse_count"] >= 2) |
+            (df["leak_recency_days"] < 120)
         )
         return high_risk.astype(int)
 
@@ -89,7 +93,6 @@ class RiskScorer:
         X = df[FEATURE_COLUMNS].fillna(0)
         y = self._create_labels(df)
 
-        # ensure both classes exist
         if len(set(y)) < 2:
             logger.warning("Only one class found. Injecting diversity...")
             y.iloc[:len(y)//3] = 0
@@ -106,92 +109,93 @@ class RiskScorer:
         acc = accuracy_score(y_test, preds)
 
         logger.info(f"Model trained | Accuracy: {acc:.2f}")
-
         return {"accuracy": acc}
 
     # ─────────────────────────────────────────────
-    # 🔥 EXPLANATION ENGINE (NEW)
+    # EXPLANATION ENGINE (FIXED LOGIC)
     # ─────────────────────────────────────────────
     def generate_explanation(self, row):
         reasons = []
 
-        if row["breach_count"] >= 5:
-            reasons.append("High number of breaches")
+        if row["breach_count"] >= 4:
+            reasons.append("Multiple breaches detected")
 
         if row["password_reuse_count"] >= 2:
-            reasons.append("Password reuse detected")
+            reasons.append("Password reused across accounts")
 
-        if row["leak_recency_days"] < 90:
-            reasons.append("Recent breach (<90 days)")
+        if row["leak_recency_days"] < 120:
+            reasons.append("Recent breach activity")
 
-        if row["role_sensitivity"] >= 0.8:
+        if row["role_sensitivity"] >= 7:
             reasons.append("High privilege role")
 
         if row["sensitive_keyword_flag"] == 1:
-            reasons.append("Sensitive keywords found")
+            reasons.append("Sensitive keywords present")
 
-        if row["match_confidence"] > 0.8:
-            reasons.append("High confidence match")
+        if row["match_confidence"] > 0.75:
+            reasons.append("High confidence credential match")
 
-        # fallback
         if not reasons:
             if row["breach_count"] <= 1:
                 return "Minimal exposure detected"
-            else:
-                return "Low risk due to limited exposure"
+            return "Low risk with limited exposure"
 
         return "; ".join(reasons)
 
     # ─────────────────────────────────────────────
-    # 🔥 ACTION ENGINE (NEW)
+    # ACTION ENGINE
     # ─────────────────────────────────────────────
     def assign_action(self, risk_level):
         if risk_level == "CRITICAL":
-            return "🚨 Immediate action required"
+            return "🚨 Reset password + Enable MFA immediately"
         elif risk_level == "HIGH":
-            return "⚠️ Investigate within 24 hours"
+            return "⚠️ Investigate and enforce password reset"
         elif risk_level == "MEDIUM":
-            return "🔍 Monitor closely"
+            return "🔍 Monitor and recommend password update"
         else:
             return "✅ No immediate action needed"
 
     # ─────────────────────────────────────────────
-    # SCORE
+    # SCORE (MAJOR FIX HERE)
     # ─────────────────────────────────────────────
     def score(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.copy()
         df = engineer_features(df)
 
         X = df[FEATURE_COLUMNS].fillna(0)
-        X_scaled = self.scaler.transform(X)
 
-        # safe probability handling
+        # CRITICAL FIX: ensure scaler is fitted
+        try:
+            X_scaled = self.scaler.transform(X)
+        except:
+            logger.warning("Scaler not fitted. Fitting now...")
+            X_scaled = self.scaler.fit_transform(X)
+
         proba_mat = self.model.predict_proba(X_scaled)
 
         if proba_mat.shape[1] == 1:
-            logger.warning("Single-class model detected. Assigning low risk.")
+            logger.warning("Single-class model detected.")
             proba = np.zeros(len(X_scaled))
         else:
             proba = proba_mat[:, 1]
 
-        # smooth distribution
-        proba = np.clip(proba, 0.05, 0.95)
-        proba = proba * np.random.uniform(0.85, 1.0, size=len(proba))
+        # 🔥 FIX: remove randomness + stabilize scores
+        proba = np.clip(proba, 0.01, 0.99)
 
         df["risk_probability"] = proba
         df["risk_score"] = (proba * 100).round(1)
 
+        # 🔥 IMPROVED BUCKETING
         df["risk_level"] = pd.cut(
             df["risk_score"],
-            bins=[-1, 25, 50, 75, 100],
+            bins=[-1, 30, 60, 80, 100],
             labels=["LOW", "MEDIUM", "HIGH", "CRITICAL"]
         )
 
-        # 🔥 NEW FEATURES
         df["risk_explanation"] = df.apply(self.generate_explanation, axis=1)
         df["recommended_action"] = df["risk_level"].apply(self.assign_action)
 
-        logger.info(f"Risk distribution:\n{df['risk_level'].value_counts()}")
+        logger.info(f"\nRisk distribution:\n{df['risk_level'].value_counts()}")
 
         return df
 

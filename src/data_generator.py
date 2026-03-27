@@ -1,7 +1,8 @@
-import json
 import random
+import json
+import os
 from datetime import datetime
-from pathlib import Path
+
 
 # ─────────────────────────────────────────────
 # CONSTANTS
@@ -34,11 +35,6 @@ BREACH_SOURCES = [
     {"name": "Adobe2013", "severity": "major"},
     {"name": "Collection1", "severity": "critical"},
     {"name": "Dropbox2012", "severity": "major"},
-    {"name": "Canva2019", "severity": "moderate"},
-    {"name": "Gravatar2020", "severity": "minor"},
-    {"name": "Trello2022", "severity": "minor"},
-    {"name": "LastPass2022", "severity": "critical"},
-    {"name": "Twitter2022", "severity": "moderate"},
 ]
 
 FIRST_NAMES = ["Aarav","Priya","Rohan","Sneha","Vikram","Ananya","Karan","Neha"]
@@ -75,64 +71,50 @@ def generate_employees(n=100, seed=42):
 
 
 # ─────────────────────────────────────────────
-# FINAL BREACH GENERATOR (REALISTIC)
+# BREACH DATA GENERATOR
 # ─────────────────────────────────────────────
 
-def generate_breach_records(employees, seed=99):
-    random.seed(seed)
-    records = []
+def generate_breach_data(employees, n_records=70):
+    severities = ["minor", "moderate", "major", "critical"]
+    sources = ["LinkedIn", "Dropbox", "Adobe", "Facebook"]
 
-    for emp in employees:
+    breach_data = []
 
-        # realistic exposure probability
-        base_prob = 0.15
-        role_factor = emp["role_sensitivity"] * 0.25
-        dept_factor = emp["dept_criticality"] * 0.10
-        exposure_prob = min(base_prob + role_factor + dept_factor, 0.65)
+    for _ in range(n_records):
+        emp = random.choice(employees)
 
-        # skip non-exposed users
-        if random.random() > exposure_prob:
-            continue
+        breach_data.append({
+            "employee_id": emp["employee_id"],
+            "email": emp["email"],
+            "breach_source": random.choice(sources),
+            "breach_severity": random.choice(severities),
+            "days_since": random.randint(1, 365),
+            "plaintext_pw": random.choice([True, False])
+        })
 
-        # breach count distribution
-        breach_count = random.choices(
-            [1, 2, 3, 5],
-            weights=[50, 30, 15, 5]
-        )[0]
+    return breach_data
 
-        for _ in range(breach_count):
 
-            breach = random.choice(BREACH_SOURCES)
+# ─────────────────────────────────────────────
+# NLP BLOBS
+# ─────────────────────────────────────────────
 
-            # realistic email noise
-            rand = random.random()
-            if rand < 0.6:
-                email = emp["email"]  # exact match
-            elif rand < 0.8:
-                email = emp["email"].replace("@company.com", "@gmail.com")  # partial
-            else:
-                email = f"user{random.randint(1000,9999)}@gmail.com"  # external
+def generate_nlp_leak_blobs(employees, n=100):
+    blobs = []
 
-            # recency
-            if random.random() < 0.6:
-                days_ago = random.randint(30, 365)
-            else:
-                days_ago = random.randint(365, 1200)
+    for i in range(n):
+        emp = random.choice(employees)  # ✅ use real employees
 
-            records.append({
-                "employee_id": emp["employee_id"],
-                "email": email,
-                "breach_source": breach["name"],
-                "breach_severity": breach["severity"],
-                "days_since": days_ago,
-                "plaintext_pw": random.random() < 0.25,
-                "password_reuse_count": random.choices(
-                    [0, 1, 2, 3],
-                    weights=[50, 30, 15, 5]
-                )[0]
-            })
+        password = f"pass{i}{random.randint(100,999)}"
 
-    return records
+        text = f"Leaked credentials found: email={emp['email']}, password={password}"
+
+        blobs.append({
+            "id": i,
+            "text": text
+        })
+
+    return blobs
 
 
 # ─────────────────────────────────────────────
@@ -140,22 +122,32 @@ def generate_breach_records(employees, seed=99):
 # ─────────────────────────────────────────────
 
 def save_datasets():
-    base_dir = Path("data")
-    base_dir.mkdir(exist_ok=True)
+    os.makedirs("data", exist_ok=True)
 
+    # Employees
     employees = generate_employees()
-    breaches = generate_breach_records(employees)
-
-    with open(base_dir / "employees.json", "w") as f:
+    with open("data/employees.json", "w") as f:
         json.dump(employees, f, indent=2)
 
-    with open(base_dir / "breaches.json", "w") as f:
+    # Breach data
+    breaches = generate_breach_data(employees)
+    with open("data/breach_data.json", "w") as f:
         json.dump(breaches, f, indent=2)
+
+    # NLP blobs (REALISTIC NOW)
+    blobs = generate_nlp_leak_blobs(employees)
+    with open("data/nlp_leak_blobs.json", "w") as f:
+        json.dump(blobs, f, indent=2)
 
     print("✅ Data generated successfully")
     print(f"Employees: {len(employees)}")
     print(f"Breach records: {len(breaches)}")
+    print(f"NLP blobs: {len(blobs)}")
 
+
+# ─────────────────────────────────────────────
+# RUN
+# ─────────────────────────────────────────────
 
 if __name__ == "__main__":
     save_datasets()

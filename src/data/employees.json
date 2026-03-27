@@ -1,0 +1,1002 @@
+[
+  {
+    "employee_id": "EMP0001",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@company.com",
+    "department": "Sales",
+    "role": "VP",
+    "role_sensitivity": 0.9,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0002",
+    "name": "Sneha Patel",
+    "email": "sneha.patel@company.com",
+    "department": "Finance",
+    "role": "Associate",
+    "role_sensitivity": 0.4,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0003",
+    "name": "Priya Gupta",
+    "email": "priya.gupta@company.com",
+    "department": "IT Security",
+    "role": "CEO",
+    "role_sensitivity": 1.0,
+    "dept_criticality": 0.9,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0004",
+    "name": "Aarav Sharma",
+    "email": "aarav.sharma@company.com",
+    "department": "HR",
+    "role": "VP",
+    "role_sensitivity": 0.9,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0005",
+    "name": "Aarav Gupta",
+    "email": "aarav.gupta@company.com",
+    "department": "HR",
+    "role": "Coordinator",
+    "role_sensitivity": 0.35,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0006",
+    "name": "Karan Patel",
+    "email": "karan.patel@company.com",
+    "department": "Legal",
+    "role": "Analyst",
+    "role_sensitivity": 0.48,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0007",
+    "name": "Vikram Kumar",
+    "email": "vikram.kumar@company.com",
+    "department": "Engineering",
+    "role": "Intern",
+    "role_sensitivity": 0.2,
+    "dept_criticality": 0.85,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0008",
+    "name": "Rohan Shah",
+    "email": "rohan.shah@company.com",
+    "department": "IT Security",
+    "role": "Senior Manager",
+    "role_sensitivity": 0.75,
+    "dept_criticality": 0.9,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0009",
+    "name": "Vikram Patel",
+    "email": "vikram.patel@company.com",
+    "department": "HR",
+    "role": "Intern",
+    "role_sensitivity": 0.2,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0010",
+    "name": "Ananya Sharma",
+    "email": "ananya.sharma@company.com",
+    "department": "Finance",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0011",
+    "name": "Priya Singh",
+    "email": "priya.singh@company.com",
+    "department": "Marketing",
+    "role": "Analyst",
+    "role_sensitivity": 0.48,
+    "dept_criticality": 0.5,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0012",
+    "name": "Vikram Kumar",
+    "email": "vikram.kumar@company.com",
+    "department": "Engineering",
+    "role": "Coordinator",
+    "role_sensitivity": 0.35,
+    "dept_criticality": 0.85,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0013",
+    "name": "Neha Gupta",
+    "email": "neha.gupta@company.com",
+    "department": "Finance",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0014",
+    "name": "Priya Gupta",
+    "email": "priya.gupta@company.com",
+    "department": "Sales",
+    "role": "Associate",
+    "role_sensitivity": 0.4,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0015",
+    "name": "Ananya Gupta",
+    "email": "ananya.gupta@company.com",
+    "department": "HR",
+    "role": "Coordinator",
+    "role_sensitivity": 0.35,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0016",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@company.com",
+    "department": "HR",
+    "role": "Intern",
+    "role_sensitivity": 0.2,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0017",
+    "name": "Vikram Sharma",
+    "email": "vikram.sharma@company.com",
+    "department": "HR",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0018",
+    "name": "Karan Singh",
+    "email": "karan.singh@company.com",
+    "department": "Legal",
+    "role": "Associate",
+    "role_sensitivity": 0.4,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0019",
+    "name": "Ananya Patel",
+    "email": "ananya.patel@company.com",
+    "department": "Marketing",
+    "role": "Senior Manager",
+    "role_sensitivity": 0.75,
+    "dept_criticality": 0.5,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0020",
+    "name": "Sneha Shah",
+    "email": "sneha.shah@company.com",
+    "department": "Sales",
+    "role": "Coordinator",
+    "role_sensitivity": 0.35,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0021",
+    "name": "Priya Gupta",
+    "email": "priya.gupta@company.com",
+    "department": "Executive",
+    "role": "Engineer",
+    "role_sensitivity": 0.55,
+    "dept_criticality": 1.0,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0022",
+    "name": "Sneha Patel",
+    "email": "sneha.patel@company.com",
+    "department": "Legal",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0023",
+    "name": "Vikram Shah",
+    "email": "vikram.shah@company.com",
+    "department": "Operations",
+    "role": "VP",
+    "role_sensitivity": 0.9,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0024",
+    "name": "Ananya Kumar",
+    "email": "ananya.kumar@company.com",
+    "department": "Engineering",
+    "role": "VP",
+    "role_sensitivity": 0.9,
+    "dept_criticality": 0.85,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0025",
+    "name": "Aarav Kumar",
+    "email": "aarav.kumar@company.com",
+    "department": "Marketing",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 0.5,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0026",
+    "name": "Vikram Sharma",
+    "email": "vikram.sharma@company.com",
+    "department": "HR",
+    "role": "Analyst",
+    "role_sensitivity": 0.48,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0027",
+    "name": "Ananya Patel",
+    "email": "ananya.patel@company.com",
+    "department": "Legal",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0028",
+    "name": "Neha Patel",
+    "email": "neha.patel@company.com",
+    "department": "Sales",
+    "role": "CFO",
+    "role_sensitivity": 0.97,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0029",
+    "name": "Sneha Shah",
+    "email": "sneha.shah@company.com",
+    "department": "Operations",
+    "role": "Engineer",
+    "role_sensitivity": 0.55,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0030",
+    "name": "Vikram Shah",
+    "email": "vikram.shah@company.com",
+    "department": "Customer Support",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 0.45,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0031",
+    "name": "Karan Singh",
+    "email": "karan.singh@company.com",
+    "department": "HR",
+    "role": "CFO",
+    "role_sensitivity": 0.97,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0032",
+    "name": "Neha Sharma",
+    "email": "neha.sharma@company.com",
+    "department": "Engineering",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.85,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0033",
+    "name": "Rohan Shah",
+    "email": "rohan.shah@company.com",
+    "department": "Executive",
+    "role": "Intern",
+    "role_sensitivity": 0.2,
+    "dept_criticality": 1.0,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0034",
+    "name": "Karan Gupta",
+    "email": "karan.gupta@company.com",
+    "department": "Finance",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0035",
+    "name": "Karan Gupta",
+    "email": "karan.gupta@company.com",
+    "department": "Legal",
+    "role": "Engineer",
+    "role_sensitivity": 0.55,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0036",
+    "name": "Vikram Gupta",
+    "email": "vikram.gupta@company.com",
+    "department": "Engineering",
+    "role": "Associate",
+    "role_sensitivity": 0.4,
+    "dept_criticality": 0.85,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0037",
+    "name": "Priya Shah",
+    "email": "priya.shah@company.com",
+    "department": "Operations",
+    "role": "Intern",
+    "role_sensitivity": 0.2,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0038",
+    "name": "Vikram Kumar",
+    "email": "vikram.kumar@company.com",
+    "department": "Marketing",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.5,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0039",
+    "name": "Vikram Mehta",
+    "email": "vikram.mehta@company.com",
+    "department": "Executive",
+    "role": "Senior Engineer",
+    "role_sensitivity": 0.62,
+    "dept_criticality": 1.0,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0040",
+    "name": "Aarav Shah",
+    "email": "aarav.shah@company.com",
+    "department": "Sales",
+    "role": "Engineer",
+    "role_sensitivity": 0.55,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0041",
+    "name": "Rohan Gupta",
+    "email": "rohan.gupta@company.com",
+    "department": "Finance",
+    "role": "Associate",
+    "role_sensitivity": 0.4,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0042",
+    "name": "Vikram Kumar",
+    "email": "vikram.kumar@company.com",
+    "department": "Operations",
+    "role": "Analyst",
+    "role_sensitivity": 0.48,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0043",
+    "name": "Sneha Patel",
+    "email": "sneha.patel@company.com",
+    "department": "Marketing",
+    "role": "Intern",
+    "role_sensitivity": 0.2,
+    "dept_criticality": 0.5,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0044",
+    "name": "Rohan Gupta",
+    "email": "rohan.gupta@company.com",
+    "department": "Operations",
+    "role": "CEO",
+    "role_sensitivity": 1.0,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0045",
+    "name": "Ananya Mehta",
+    "email": "ananya.mehta@company.com",
+    "department": "Engineering",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.85,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0046",
+    "name": "Ananya Kumar",
+    "email": "ananya.kumar@company.com",
+    "department": "Sales",
+    "role": "VP",
+    "role_sensitivity": 0.9,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0047",
+    "name": "Aarav Patel",
+    "email": "aarav.patel@company.com",
+    "department": "Customer Support",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.45,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0048",
+    "name": "Priya Shah",
+    "email": "priya.shah@company.com",
+    "department": "Legal",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0049",
+    "name": "Rohan Patel",
+    "email": "rohan.patel@company.com",
+    "department": "Legal",
+    "role": "Engineer",
+    "role_sensitivity": 0.55,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0050",
+    "name": "Rohan Singh",
+    "email": "rohan.singh@company.com",
+    "department": "Operations",
+    "role": "Analyst",
+    "role_sensitivity": 0.48,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0051",
+    "name": "Karan Patel",
+    "email": "karan.patel@company.com",
+    "department": "Operations",
+    "role": "Intern",
+    "role_sensitivity": 0.2,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0052",
+    "name": "Sneha Shah",
+    "email": "sneha.shah@company.com",
+    "department": "Sales",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0053",
+    "name": "Ananya Mehta",
+    "email": "ananya.mehta@company.com",
+    "department": "Operations",
+    "role": "Senior Engineer",
+    "role_sensitivity": 0.62,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0054",
+    "name": "Priya Patel",
+    "email": "priya.patel@company.com",
+    "department": "HR",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0055",
+    "name": "Ananya Sharma",
+    "email": "ananya.sharma@company.com",
+    "department": "Customer Support",
+    "role": "Engineer",
+    "role_sensitivity": 0.55,
+    "dept_criticality": 0.45,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0056",
+    "name": "Sneha Gupta",
+    "email": "sneha.gupta@company.com",
+    "department": "HR",
+    "role": "CEO",
+    "role_sensitivity": 1.0,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0057",
+    "name": "Priya Shah",
+    "email": "priya.shah@company.com",
+    "department": "Engineering",
+    "role": "VP",
+    "role_sensitivity": 0.9,
+    "dept_criticality": 0.85,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0058",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@company.com",
+    "department": "Marketing",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.5,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0059",
+    "name": "Sneha Singh",
+    "email": "sneha.singh@company.com",
+    "department": "Legal",
+    "role": "VP",
+    "role_sensitivity": 0.9,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0060",
+    "name": "Rohan Shah",
+    "email": "rohan.shah@company.com",
+    "department": "Customer Support",
+    "role": "Analyst",
+    "role_sensitivity": 0.48,
+    "dept_criticality": 0.45,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0061",
+    "name": "Neha Patel",
+    "email": "neha.patel@company.com",
+    "department": "Legal",
+    "role": "Intern",
+    "role_sensitivity": 0.2,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0062",
+    "name": "Karan Patel",
+    "email": "karan.patel@company.com",
+    "department": "Finance",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0063",
+    "name": "Karan Singh",
+    "email": "karan.singh@company.com",
+    "department": "IT Security",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 0.9,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0064",
+    "name": "Neha Kumar",
+    "email": "neha.kumar@company.com",
+    "department": "Engineering",
+    "role": "Associate",
+    "role_sensitivity": 0.4,
+    "dept_criticality": 0.85,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0065",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@company.com",
+    "department": "IT Security",
+    "role": "Coordinator",
+    "role_sensitivity": 0.35,
+    "dept_criticality": 0.9,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0066",
+    "name": "Ananya Kumar",
+    "email": "ananya.kumar@company.com",
+    "department": "Finance",
+    "role": "VP",
+    "role_sensitivity": 0.9,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0067",
+    "name": "Sneha Patel",
+    "email": "sneha.patel@company.com",
+    "department": "Operations",
+    "role": "Senior Engineer",
+    "role_sensitivity": 0.62,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0068",
+    "name": "Rohan Mehta",
+    "email": "rohan.mehta@company.com",
+    "department": "Executive",
+    "role": "Director",
+    "role_sensitivity": 0.82,
+    "dept_criticality": 1.0,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0069",
+    "name": "Neha Patel",
+    "email": "neha.patel@company.com",
+    "department": "Finance",
+    "role": "Senior Engineer",
+    "role_sensitivity": 0.62,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0070",
+    "name": "Priya Sharma",
+    "email": "priya.sharma@company.com",
+    "department": "Operations",
+    "role": "CEO",
+    "role_sensitivity": 1.0,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0071",
+    "name": "Priya Kumar",
+    "email": "priya.kumar@company.com",
+    "department": "HR",
+    "role": "CFO",
+    "role_sensitivity": 0.97,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0072",
+    "name": "Karan Mehta",
+    "email": "karan.mehta@company.com",
+    "department": "Legal",
+    "role": "VP",
+    "role_sensitivity": 0.9,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0073",
+    "name": "Karan Sharma",
+    "email": "karan.sharma@company.com",
+    "department": "Executive",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 1.0,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0074",
+    "name": "Aarav Mehta",
+    "email": "aarav.mehta@company.com",
+    "department": "Sales",
+    "role": "Intern",
+    "role_sensitivity": 0.2,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0075",
+    "name": "Neha Singh",
+    "email": "neha.singh@company.com",
+    "department": "IT Security",
+    "role": "Coordinator",
+    "role_sensitivity": 0.35,
+    "dept_criticality": 0.9,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0076",
+    "name": "Neha Patel",
+    "email": "neha.patel@company.com",
+    "department": "HR",
+    "role": "Director",
+    "role_sensitivity": 0.82,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0077",
+    "name": "Sneha Sharma",
+    "email": "sneha.sharma@company.com",
+    "department": "Customer Support",
+    "role": "Coordinator",
+    "role_sensitivity": 0.35,
+    "dept_criticality": 0.45,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0078",
+    "name": "Aarav Shah",
+    "email": "aarav.shah@company.com",
+    "department": "Marketing",
+    "role": "CEO",
+    "role_sensitivity": 1.0,
+    "dept_criticality": 0.5,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0079",
+    "name": "Aarav Gupta",
+    "email": "aarav.gupta@company.com",
+    "department": "Legal",
+    "role": "Engineer",
+    "role_sensitivity": 0.55,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0080",
+    "name": "Rohan Sharma",
+    "email": "rohan.sharma@company.com",
+    "department": "Operations",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0081",
+    "name": "Rohan Sharma",
+    "email": "rohan.sharma@company.com",
+    "department": "Customer Support",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.45,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0082",
+    "name": "Sneha Mehta",
+    "email": "sneha.mehta@company.com",
+    "department": "Finance",
+    "role": "Analyst",
+    "role_sensitivity": 0.48,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0083",
+    "name": "Sneha Gupta",
+    "email": "sneha.gupta@company.com",
+    "department": "Customer Support",
+    "role": "CEO",
+    "role_sensitivity": 1.0,
+    "dept_criticality": 0.45,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0084",
+    "name": "Priya Mehta",
+    "email": "priya.mehta@company.com",
+    "department": "Customer Support",
+    "role": "Analyst",
+    "role_sensitivity": 0.48,
+    "dept_criticality": 0.45,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0085",
+    "name": "Ananya Singh",
+    "email": "ananya.singh@company.com",
+    "department": "HR",
+    "role": "Associate",
+    "role_sensitivity": 0.4,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0086",
+    "name": "Ananya Patel",
+    "email": "ananya.patel@company.com",
+    "department": "Sales",
+    "role": "Manager",
+    "role_sensitivity": 0.68,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0087",
+    "name": "Rohan Shah",
+    "email": "rohan.shah@company.com",
+    "department": "Sales",
+    "role": "Senior Engineer",
+    "role_sensitivity": 0.62,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0088",
+    "name": "Ananya Kumar",
+    "email": "ananya.kumar@company.com",
+    "department": "Finance",
+    "role": "CEO",
+    "role_sensitivity": 1.0,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0089",
+    "name": "Neha Gupta",
+    "email": "neha.gupta@company.com",
+    "department": "Customer Support",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.45,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0090",
+    "name": "Priya Gupta",
+    "email": "priya.gupta@company.com",
+    "department": "HR",
+    "role": "Engineer",
+    "role_sensitivity": 0.55,
+    "dept_criticality": 0.8,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0091",
+    "name": "Vikram Patel",
+    "email": "vikram.patel@company.com",
+    "department": "Marketing",
+    "role": "CTO",
+    "role_sensitivity": 0.98,
+    "dept_criticality": 0.5,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0092",
+    "name": "Sneha Singh",
+    "email": "sneha.singh@company.com",
+    "department": "Sales",
+    "role": "CFO",
+    "role_sensitivity": 0.97,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0093",
+    "name": "Neha Kumar",
+    "email": "neha.kumar@company.com",
+    "department": "Operations",
+    "role": "Coordinator",
+    "role_sensitivity": 0.35,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0094",
+    "name": "Vikram Gupta",
+    "email": "vikram.gupta@company.com",
+    "department": "Operations",
+    "role": "CEO",
+    "role_sensitivity": 1.0,
+    "dept_criticality": 0.65,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0095",
+    "name": "Vikram Shah",
+    "email": "vikram.shah@company.com",
+    "department": "Finance",
+    "role": "CFO",
+    "role_sensitivity": 0.97,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0096",
+    "name": "Vikram Sharma",
+    "email": "vikram.sharma@company.com",
+    "department": "Finance",
+    "role": "Coordinator",
+    "role_sensitivity": 0.35,
+    "dept_criticality": 0.95,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0097",
+    "name": "Rohan Singh",
+    "email": "rohan.singh@company.com",
+    "department": "Sales",
+    "role": "Analyst",
+    "role_sensitivity": 0.48,
+    "dept_criticality": 0.6,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0098",
+    "name": "Sneha Shah",
+    "email": "sneha.shah@company.com",
+    "department": "Marketing",
+    "role": "VP",
+    "role_sensitivity": 0.9,
+    "dept_criticality": 0.5,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0099",
+    "name": "Vikram Gupta",
+    "email": "vikram.gupta@company.com",
+    "department": "Legal",
+    "role": "Director",
+    "role_sensitivity": 0.82,
+    "dept_criticality": 0.88,
+    "account_created": "2026-03-26"
+  },
+  {
+    "employee_id": "EMP0100",
+    "name": "Aarav Sharma",
+    "email": "aarav.sharma@company.com",
+    "department": "IT Security",
+    "role": "Director",
+    "role_sensitivity": 0.82,
+    "dept_criticality": 0.9,
+    "account_created": "2026-03-26"
+  }
+]

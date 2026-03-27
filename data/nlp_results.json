@@ -1,0 +1,1890 @@
+{
+  "total_blobs": 100,
+  "total_emails_found": 100,
+  "employee_hits": {
+    "neha.gupta@company.com": [
+      0,
+      20,
+      62
+    ],
+    "sneha.gupta@company.com": [
+      1
+    ],
+    "karan.singh@company.com": [
+      2,
+      45
+    ],
+    "priya.gupta@company.com": [
+      3,
+      13,
+      37,
+      66,
+      75
+    ],
+    "vikram.kumar@company.com": [
+      4,
+      33,
+      34,
+      42,
+      72
+    ],
+    "sneha.shah@company.com": [
+      5,
+      48,
+      52,
+      83,
+      84,
+      93
+    ],
+    "neha.sharma@company.com": [
+      6
+    ],
+    "ananya.singh@company.com": [
+      7,
+      65,
+      80
+    ],
+    "priya.shah@company.com": [
+      8,
+      26,
+      39,
+      57,
+      90
+    ],
+    "priya.kumar@company.com": [
+      9
+    ],
+    "ananya.mehta@company.com": [
+      10
+    ],
+    "vikram.sharma@company.com": [
+      11,
+      35,
+      81,
+      88
+    ],
+    "sneha.patel@company.com": [
+      12,
+      30,
+      38
+    ],
+    "karan.gupta@company.com": [
+      14,
+      78
+    ],
+    "rohan.shah@company.com": [
+      15,
+      86,
+      91
+    ],
+    "priya.sharma@company.com": [
+      16,
+      18,
+      51,
+      69,
+      70,
+      94
+    ],
+    "aarav.kumar@company.com": [
+      17,
+      21,
+      27
+    ],
+    "neha.patel@company.com": [
+      19,
+      24,
+      31,
+      58,
+      64
+    ],
+    "vikram.shah@company.com": [
+      22,
+      28,
+      29,
+      67,
+      73,
+      98
+    ],
+    "vikram.gupta@company.com": [
+      23,
+      32
+    ],
+    "rohan.mehta@company.com": [
+      25
+    ],
+    "rohan.singh@company.com": [
+      36
+    ],
+    "karan.patel@company.com": [
+      40,
+      43,
+      97
+    ],
+    "rohan.gupta@company.com": [
+      41
+    ],
+    "vikram.patel@company.com": [
+      44,
+      74
+    ],
+    "aarav.mehta@company.com": [
+      46
+    ],
+    "ananya.kumar@company.com": [
+      47,
+      77
+    ],
+    "karan.sharma@company.com": [
+      49,
+      89
+    ],
+    "priya.singh@company.com": [
+      50,
+      96
+    ],
+    "aarav.shah@company.com": [
+      53,
+      59,
+      87,
+      99
+    ],
+    "rohan.sharma@company.com": [
+      54,
+      60,
+      79
+    ],
+    "aarav.sharma@company.com": [
+      55
+    ],
+    "rohan.patel@company.com": [
+      56
+    ],
+    "aarav.gupta@company.com": [
+      61
+    ],
+    "ananya.patel@company.com": [
+      63,
+      85
+    ],
+    "ananya.sharma@company.com": [
+      68
+    ],
+    "sneha.sharma@company.com": [
+      71
+    ],
+    "sneha.singh@company.com": [
+      76
+    ],
+    "ananya.gupta@company.com": [
+      82
+    ],
+    "vikram.mehta@company.com": [
+      92
+    ],
+    "neha.kumar@company.com": [
+      95
+    ]
+  },
+  "per_blob_results": [
+    {
+      "blob_index": 0,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "neha.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 1,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 2,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "karan.singh@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 3,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 4,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 5,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 6,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "neha.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 7,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "ananya.singh@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 8,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 9,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 10,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "ananya.mehta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 11,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 12,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 13,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 14,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "karan.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 15,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "rohan.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 16,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 17,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "aarav.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 18,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 19,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "neha.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 20,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "neha.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 21,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "aarav.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 22,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 23,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 24,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "neha.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 25,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "rohan.mehta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 26,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 27,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "aarav.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 28,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 29,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 30,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 31,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "neha.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 32,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 33,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 34,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 35,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 36,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "rohan.singh@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 37,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 38,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 39,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 40,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "karan.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 41,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "rohan.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 42,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 43,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "karan.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 44,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 45,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "karan.singh@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 46,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "aarav.mehta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 47,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "ananya.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 48,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 49,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "karan.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 50,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.singh@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 51,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 52,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 53,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "aarav.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 54,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "rohan.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 55,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "aarav.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 56,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "rohan.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 57,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 58,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "neha.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 59,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "aarav.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 60,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "rohan.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 61,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "aarav.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 62,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "neha.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 63,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "ananya.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 64,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "neha.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 65,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "ananya.singh@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 66,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 67,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 68,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "ananya.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 69,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 70,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 71,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 72,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 73,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 74,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 75,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 76,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.singh@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 77,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "ananya.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 78,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "karan.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 79,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "rohan.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 80,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "ananya.singh@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 81,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 82,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "ananya.gupta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 83,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 84,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 85,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "ananya.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 86,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "rohan.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 87,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "aarav.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 88,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 89,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "karan.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 90,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 91,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "rohan.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 92,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.mehta@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 93,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "sneha.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 94,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.sharma@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 95,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "neha.kumar@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 96,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "priya.singh@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 97,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "karan.patel@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 98,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "vikram.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    },
+    {
+      "blob_index": 99,
+      "confidence": "HIGH",
+      "emails_found": 1,
+      "employee_matches": [
+        "aarav.shah@company.com"
+      ],
+      "has_plaintext_pw": true,
+      "has_hashes": false,
+      "entity_summary": {
+        "emails": 1,
+        "ips": 0,
+        "md5_hashes": 0,
+        "sha_hashes": 0,
+        "passwords": 1
+      }
+    }
+  ]
+}

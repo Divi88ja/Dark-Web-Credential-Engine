@@ -1,0 +1,562 @@
+[
+  {
+    "employee_id": "EMP0006",
+    "email": "karan.patel@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "major",
+    "days_since": 67,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0021",
+    "email": "priya.gupta@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "critical",
+    "days_since": 288,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0015",
+    "email": "ananya.gupta@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "moderate",
+    "days_since": 280,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0048",
+    "email": "priya.shah@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "critical",
+    "days_since": 66,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0040",
+    "email": "aarav.shah@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "minor",
+    "days_since": 184,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0088",
+    "email": "ananya.kumar@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "minor",
+    "days_since": 182,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0080",
+    "email": "rohan.sharma@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "moderate",
+    "days_since": 84,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0053",
+    "email": "ananya.mehta@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "moderate",
+    "days_since": 171,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0086",
+    "email": "ananya.patel@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "major",
+    "days_since": 82,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0049",
+    "email": "rohan.patel@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "critical",
+    "days_since": 114,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0059",
+    "email": "sneha.singh@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "major",
+    "days_since": 117,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0004",
+    "email": "aarav.sharma@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "critical",
+    "days_since": 169,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0009",
+    "email": "vikram.patel@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "major",
+    "days_since": 329,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0087",
+    "email": "rohan.shah@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "minor",
+    "days_since": 60,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0023",
+    "email": "vikram.shah@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "minor",
+    "days_since": 56,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0045",
+    "email": "ananya.mehta@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "critical",
+    "days_since": 311,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0050",
+    "email": "rohan.singh@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "major",
+    "days_since": 23,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0001",
+    "email": "priya.sharma@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "major",
+    "days_since": 221,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0086",
+    "email": "ananya.patel@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "major",
+    "days_since": 340,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0093",
+    "email": "neha.kumar@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "major",
+    "days_since": 342,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0042",
+    "email": "vikram.kumar@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "major",
+    "days_since": 284,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0025",
+    "email": "aarav.kumar@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "critical",
+    "days_since": 347,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0079",
+    "email": "aarav.gupta@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "critical",
+    "days_since": 281,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0039",
+    "email": "vikram.mehta@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "moderate",
+    "days_since": 221,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0060",
+    "email": "rohan.shah@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "critical",
+    "days_since": 346,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0066",
+    "email": "ananya.kumar@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "moderate",
+    "days_since": 338,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0037",
+    "email": "priya.shah@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "minor",
+    "days_since": 121,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0029",
+    "email": "sneha.shah@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "moderate",
+    "days_since": 13,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0032",
+    "email": "neha.sharma@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "minor",
+    "days_since": 234,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0081",
+    "email": "rohan.sharma@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "critical",
+    "days_since": 254,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0032",
+    "email": "neha.sharma@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "minor",
+    "days_since": 55,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0029",
+    "email": "sneha.shah@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "critical",
+    "days_since": 26,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0016",
+    "email": "priya.sharma@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "moderate",
+    "days_since": 238,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0097",
+    "email": "rohan.singh@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "critical",
+    "days_since": 281,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0021",
+    "email": "priya.gupta@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "critical",
+    "days_since": 133,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0082",
+    "email": "sneha.mehta@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "critical",
+    "days_since": 321,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0036",
+    "email": "vikram.gupta@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "minor",
+    "days_since": 147,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0035",
+    "email": "karan.gupta@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "major",
+    "days_since": 277,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0018",
+    "email": "karan.singh@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "moderate",
+    "days_since": 197,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0091",
+    "email": "vikram.patel@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "minor",
+    "days_since": 213,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0043",
+    "email": "sneha.patel@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "critical",
+    "days_since": 32,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0054",
+    "email": "priya.patel@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "minor",
+    "days_since": 295,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0062",
+    "email": "karan.patel@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "major",
+    "days_since": 153,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0054",
+    "email": "priya.patel@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "critical",
+    "days_since": 113,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0056",
+    "email": "sneha.gupta@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "minor",
+    "days_since": 200,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0086",
+    "email": "ananya.patel@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "moderate",
+    "days_since": 240,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0080",
+    "email": "rohan.sharma@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "critical",
+    "days_since": 304,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0011",
+    "email": "priya.singh@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "moderate",
+    "days_since": 237,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0007",
+    "email": "vikram.kumar@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "critical",
+    "days_since": 168,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0059",
+    "email": "sneha.singh@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "major",
+    "days_since": 195,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0097",
+    "email": "rohan.singh@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "major",
+    "days_since": 42,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0003",
+    "email": "priya.gupta@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "major",
+    "days_since": 115,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0100",
+    "email": "aarav.sharma@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "minor",
+    "days_since": 127,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0003",
+    "email": "priya.gupta@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "moderate",
+    "days_since": 65,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0086",
+    "email": "ananya.patel@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "moderate",
+    "days_since": 239,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0099",
+    "email": "vikram.gupta@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "moderate",
+    "days_since": 311,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0100",
+    "email": "aarav.sharma@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "major",
+    "days_since": 56,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0040",
+    "email": "aarav.shah@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "critical",
+    "days_since": 102,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0076",
+    "email": "neha.patel@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "minor",
+    "days_since": 357,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0088",
+    "email": "ananya.kumar@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "minor",
+    "days_since": 178,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0085",
+    "email": "ananya.singh@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "minor",
+    "days_since": 260,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0002",
+    "email": "sneha.patel@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "critical",
+    "days_since": 55,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0047",
+    "email": "aarav.patel@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "moderate",
+    "days_since": 223,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0094",
+    "email": "vikram.gupta@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "critical",
+    "days_since": 239,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0094",
+    "email": "vikram.gupta@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "major",
+    "days_since": 126,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0036",
+    "email": "vikram.gupta@company.com",
+    "breach_source": "Facebook",
+    "breach_severity": "moderate",
+    "days_since": 238,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0044",
+    "email": "rohan.gupta@company.com",
+    "breach_source": "LinkedIn",
+    "breach_severity": "critical",
+    "days_since": 167,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0063",
+    "email": "karan.singh@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "major",
+    "days_since": 133,
+    "plaintext_pw": false
+  },
+  {
+    "employee_id": "EMP0036",
+    "email": "vikram.gupta@company.com",
+    "breach_source": "Adobe",
+    "breach_severity": "minor",
+    "days_since": 265,
+    "plaintext_pw": true
+  },
+  {
+    "employee_id": "EMP0011",
+    "email": "priya.singh@company.com",
+    "breach_source": "Dropbox",
+    "breach_severity": "critical",
+    "days_since": 251,
+    "plaintext_pw": true
+  }
+]

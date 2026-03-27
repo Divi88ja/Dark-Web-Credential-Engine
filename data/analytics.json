@@ -1,0 +1,378 @@
+{
+  "generated_at": "2026-03-27T00:12:13.855857",
+  "risk_distribution": {
+    "counts": {
+      "LOW": 58,
+      "MEDIUM": 23,
+      "HIGH": 15,
+      "CRITICAL": 4
+    },
+    "percentages": {
+      "LOW": 58.0,
+      "MEDIUM": 23.0,
+      "HIGH": 15.0,
+      "CRITICAL": 4.0
+    },
+    "total": 100
+  },
+  "department_summary": [
+    {
+      "department": "Legal",
+      "employee_count": 12,
+      "exposed_count": 8,
+      "exposure_rate": 66.7,
+      "avg_risk_score": 44.8,
+      "max_risk_score": 83.8,
+      "avg_breach_count": 0.75,
+      "critical_count": 1,
+      "high_count": 3,
+      "medium_count": 4,
+      "low_count": 4
+    },
+    {
+      "department": "Operations",
+      "employee_count": 13,
+      "exposed_count": 10,
+      "exposure_rate": 76.9,
+      "avg_risk_score": 44.7,
+      "max_risk_score": 81.0,
+      "avg_breach_count": 1.0,
+      "critical_count": 1,
+      "high_count": 3,
+      "medium_count": 3,
+      "low_count": 6
+    },
+    {
+      "department": "IT Security",
+      "employee_count": 6,
+      "exposed_count": 3,
+      "exposure_rate": 50.0,
+      "avg_risk_score": 39.9,
+      "max_risk_score": 78.2,
+      "avg_breach_count": 0.83,
+      "critical_count": 0,
+      "high_count": 2,
+      "medium_count": 1,
+      "low_count": 3
+    },
+    {
+      "department": "Engineering",
+      "employee_count": 8,
+      "exposed_count": 4,
+      "exposure_rate": 50.0,
+      "avg_risk_score": 35.9,
+      "max_risk_score": 73.7,
+      "avg_breach_count": 0.88,
+      "critical_count": 0,
+      "high_count": 1,
+      "medium_count": 3,
+      "low_count": 4
+    },
+    {
+      "department": "Finance",
+      "employee_count": 12,
+      "exposed_count": 5,
+      "exposure_rate": 41.7,
+      "avg_risk_score": 31.0,
+      "max_risk_score": 70.8,
+      "avg_breach_count": 0.5,
+      "critical_count": 0,
+      "high_count": 2,
+      "medium_count": 3,
+      "low_count": 7
+    },
+    {
+      "department": "Executive",
+      "employee_count": 5,
+      "exposed_count": 2,
+      "exposure_rate": 40.0,
+      "avg_risk_score": 30.7,
+      "max_risk_score": 84.1,
+      "avg_breach_count": 0.6,
+      "critical_count": 1,
+      "high_count": 0,
+      "medium_count": 1,
+      "low_count": 3
+    },
+    {
+      "department": "Sales",
+      "employee_count": 12,
+      "exposed_count": 5,
+      "exposure_rate": 41.7,
+      "avg_risk_score": 30.5,
+      "max_risk_score": 80.0,
+      "avg_breach_count": 0.83,
+      "critical_count": 1,
+      "high_count": 2,
+      "medium_count": 1,
+      "low_count": 8
+    },
+    {
+      "department": "Marketing",
+      "employee_count": 9,
+      "exposed_count": 4,
+      "exposure_rate": 44.4,
+      "avg_risk_score": 28.2,
+      "max_risk_score": 64.8,
+      "avg_breach_count": 0.56,
+      "critical_count": 0,
+      "high_count": 0,
+      "medium_count": 3,
+      "low_count": 6
+    },
+    {
+      "department": "HR",
+      "employee_count": 14,
+      "exposed_count": 8,
+      "exposure_rate": 57.1,
+      "avg_risk_score": 27.3,
+      "max_risk_score": 73.0,
+      "avg_breach_count": 0.64,
+      "critical_count": 0,
+      "high_count": 2,
+      "medium_count": 1,
+      "low_count": 11
+    },
+    {
+      "department": "Customer Support",
+      "employee_count": 9,
+      "exposed_count": 3,
+      "exposure_rate": 33.3,
+      "avg_risk_score": 21.2,
+      "max_risk_score": 59.7,
+      "avg_breach_count": 0.33,
+      "critical_count": 0,
+      "high_count": 0,
+      "medium_count": 3,
+      "low_count": 6
+    }
+  ],
+  "top_risky_employees": [
+    {
+      "rank": 1,
+      "name": "Priya Gupta",
+      "email": "priya.gupta@company.com",
+      "department": "Executive",
+      "role": "Engineer",
+      "risk_score": 84.1,
+      "risk_level": "CRITICAL",
+      "breach_count": 2,
+      "risk_reason": "Exposed in 2 breaches | 2 critical-severity leak(s) | recent exposure (<6 months) | critical department (Executive) | plaintext password in 2 source(s) | MFA not enabled",
+      "mfa_enabled": false
+    },
+    {
+      "rank": 2,
+      "name": "Priya Shah",
+      "email": "priya.shah@company.com",
+      "department": "Legal",
+      "role": "CTO",
+      "risk_score": 83.8,
+      "risk_level": "CRITICAL",
+      "breach_count": 1,
+      "risk_reason": "Found in 1 breach | 1 critical-severity leak(s) | very recent exposure (<90 days) | high-privilege role (CTO) | plaintext password in 1 source(s) | MFA not enabled",
+      "mfa_enabled": false
+    },
+    {
+      "rank": 3,
+      "name": "Rohan Sharma",
+      "email": "rohan.sharma@company.com",
+      "department": "Operations",
+      "role": "CTO",
+      "risk_score": 81.0,
+      "risk_level": "CRITICAL",
+      "breach_count": 2,
+      "risk_reason": "Exposed in 2 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | high-privilege role (CTO) | plaintext password in 2 source(s) | MFA not enabled",
+      "mfa_enabled": false
+    },
+    {
+      "rank": 4,
+      "name": "Ananya Patel",
+      "email": "ananya.patel@company.com",
+      "department": "Sales",
+      "role": "Manager",
+      "risk_score": 80.0,
+      "risk_level": "CRITICAL",
+      "breach_count": 4,
+      "risk_reason": "Exposed in 4 breaches | 2 major leak(s) | very recent exposure (<90 days) | plaintext password in 3 source(s) | MFA not enabled",
+      "mfa_enabled": false
+    },
+    {
+      "rank": 5,
+      "name": "Sneha Shah",
+      "email": "sneha.shah@company.com",
+      "department": "Operations",
+      "role": "Engineer",
+      "risk_score": 78.8,
+      "risk_level": "HIGH",
+      "breach_count": 2,
+      "risk_reason": "Exposed in 2 breaches | 1 critical-severity leak(s) | very recent exposure (<90 days) | plaintext password in 2 source(s) | MFA not enabled",
+      "mfa_enabled": false
+    },
+    {
+      "rank": 6,
+      "name": "Vikram Gupta",
+      "email": "vikram.gupta@company.com",
+      "department": "Operations",
+      "role": "CEO",
+      "risk_score": 78.8,
+      "risk_level": "HIGH",
+      "breach_count": 2,
+      "risk_reason": "Exposed in 2 breaches | 1 critical-severity leak(s) | recent exposure (<6 months) | high-privilege role (CEO) | plaintext password in 1 source(s) | MFA not enabled",
+      "mfa_enabled": false
+    },
+    {
+      "rank": 7,
+      "name": "Priya Gupta",
+      "email": "priya.gupta@company.com",
+      "department": "IT Security",
+      "role": "CEO",
+      "risk_score": 78.2,
+      "risk_level": "HIGH",
+      "breach_count": 2,
+      "risk_reason": "Exposed in 2 breaches | 1 major leak(s) | very recent exposure (<90 days) | high-privilege role (CEO) | plaintext password in 1 source(s) | MFA not enabled",
+      "mfa_enabled": false
+    },
+    {
+      "rank": 8,
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@company.com",
+      "department": "IT Security",
+      "role": "Director",
+      "risk_score": 77.7,
+      "risk_level": "HIGH",
+      "breach_count": 2,
+      "risk_reason": "Exposed in 2 breaches | 1 major leak(s) | very recent exposure (<90 days) | critical department (IT Security) | plaintext password in 2 source(s) | MFA not enabled",
+      "mfa_enabled": false
+    },
+    {
+      "rank": 9,
+      "name": "Sneha Singh",
+      "email": "sneha.singh@company.com",
+      "department": "Legal",
+      "role": "VP",
+      "risk_score": 77.1,
+      "risk_level": "HIGH",
+      "breach_count": 2,
+      "risk_reason": "Exposed in 2 breaches | 2 major leak(s) | recent exposure (<6 months) | high-privilege role (VP) | plaintext password in 1 source(s) | MFA not enabled",
+      "mfa_enabled": false
+    },
+    {
+      "rank": 10,
+      "name": "Rohan Gupta",
+      "email": "rohan.gupta@company.com",
+      "department": "Operations",
+      "role": "CEO",
+      "risk_score": 76.1,
+      "risk_level": "HIGH",
+      "breach_count": 1,
+      "risk_reason": "Found in 1 breach | 1 critical-severity leak(s) | recent exposure (<6 months) | high-privilege role (CEO) | plaintext password in 1 source(s) | MFA not enabled",
+      "mfa_enabled": false
+    }
+  ],
+  "mfa_adoption_by_risk": {
+    "CRITICAL": {
+      "total": 4,
+      "mfa_enabled": 0,
+      "mfa_missing": 4,
+      "adoption_pct": 0.0
+    },
+    "HIGH": {
+      "total": 15,
+      "mfa_enabled": 0,
+      "mfa_missing": 15,
+      "adoption_pct": 0.0
+    },
+    "MEDIUM": {
+      "total": 23,
+      "mfa_enabled": 0,
+      "mfa_missing": 23,
+      "adoption_pct": 0.0
+    },
+    "LOW": {
+      "total": 58,
+      "mfa_enabled": 0,
+      "mfa_missing": 58,
+      "adoption_pct": 0.0
+    }
+  },
+  "breach_source_frequency": [
+    {
+      "source": "Dropbox",
+      "exposed_employees": 18
+    },
+    {
+      "source": "Adobe",
+      "exposed_employees": 18
+    },
+    {
+      "source": "Facebook",
+      "exposed_employees": 17
+    },
+    {
+      "source": "LinkedIn",
+      "exposed_employees": 11
+    }
+  ],
+  "score_histogram": [
+    {
+      "range": "0\u201310",
+      "min": 0.0,
+      "max": 10.0,
+      "count": 39
+    },
+    {
+      "range": "10\u201320",
+      "min": 10.0,
+      "max": 20.0,
+      "count": 9
+    },
+    {
+      "range": "20\u201330",
+      "min": 20.0,
+      "max": 30.0,
+      "count": 4
+    },
+    {
+      "range": "30\u201340",
+      "min": 30.0,
+      "max": 40.0,
+      "count": 6
+    },
+    {
+      "range": "40\u201350",
+      "min": 40.0,
+      "max": 50.0,
+      "count": 7
+    },
+    {
+      "range": "50\u201360",
+      "min": 50.0,
+      "max": 60.0,
+      "count": 11
+    },
+    {
+      "range": "60\u201370",
+      "min": 60.0,
+      "max": 70.0,
+      "count": 8
+    },
+    {
+      "range": "70\u201380",
+      "min": 70.0,
+      "max": 80.0,
+      "count": 12
+    },
+    {
+      "range": "80\u201390",
+      "min": 80.0,
+      "max": 90.0,
+      "count": 4
+    },
+    {
+      "range": "90\u2013100",
+      "min": 90.0,
+      "max": 100.0,
+      "count": 0
+    }
+  ]
+}
