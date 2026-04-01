@@ -736,7 +736,7 @@ with tab5:
     if results.empty:
         st.warning("No employees found matching your search.")
     else:
-        for _, row in results.iterrows():
+        for loop_idx, (_, row) in enumerate(results.iterrows()):
             level = row["risk_level"]
             name = row.get("name", row.get("employee_id", "Unknown"))
             score = row["risk_score"]
@@ -777,7 +777,7 @@ with tab5:
                 ))
                 fig.update_layout(paper_bgcolor="rgba(0,0,0,0)", height=220,
                                   margin=dict(t=30, b=10, l=20, r=20))
-                st.plotly_chart(fig, use_container_width=True, key="chart_11")
+                st.plotly_chart(fig, use_container_width=True, key=f"gauge_chart_{loop_idx}")
 
 # ══════════════════════════════════════════════
 # TAB 6: PREDICTION
