@@ -484,7 +484,7 @@ with tab1:
         )
         fig.update_layout(**PLOTLY_THEME, bargap=0.1, showlegend=True,
                           legend=dict(orientation="h", y=-0.2))
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True, key="chart_1")
 
     with c2:
         st.subheader("Risk Level Breakdown")
@@ -498,7 +498,7 @@ with tab1:
         )
         fig2.update_layout(**PLOTLY_THEME)
         fig2.update_traces(textfont_color="#e2e8f0", textfont_size=11)
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, use_container_width=True, key="chart_2")
 
     # Breach count trend (simulated timeline)
     st.subheader("Breach Exposure Over Time")
@@ -513,7 +513,7 @@ with tab1:
                           color_discrete_map=LEVEL_COLORS,
                           labels={"month": "Month", "count": "Employees"})
             fig3.update_layout(**PLOTLY_THEME, bargap=0.2)
-            st.plotly_chart(fig3, use_container_width=True)
+            st.plotly_chart(fig3, use_container_width=True, key="chart_3")
         else:
             st.info("No breach date data available.")
     else:
@@ -532,7 +532,7 @@ with tab1:
         fig3 = px.bar(sim_data, x="month", y="count", color="risk_level",
                       color_discrete_map=LEVEL_COLORS)
         fig3.update_layout(**PLOTLY_THEME, bargap=0.2)
-        st.plotly_chart(fig3, use_container_width=True)
+        st.plotly_chart(fig3, use_container_width=True, key="chart_4")
 
 # ══════════════════════════════════════════════
 # TAB 2: RISK ANALYSIS
@@ -551,7 +551,7 @@ with tab2:
                 labels={"breach_count": "Breach Count", "risk_score": "Risk Score"},
             )
             fig.update_layout(**PLOTLY_THEME)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="chart_5")
 
     with c2:
         st.subheader("Role Sensitivity vs Risk Score")
@@ -562,7 +562,7 @@ with tab2:
                 labels={"role_sensitivity": "Role Sensitivity (1–10)", "risk_score": "Risk Score"},
             )
             fig2.update_layout(**PLOTLY_THEME)
-            st.plotly_chart(fig2, use_container_width=True)
+            st.plotly_chart(fig2, use_container_width=True, key="chart_6")
 
     st.subheader("Feature Importance (ML Risk Factors)")
     features = {
@@ -580,7 +580,7 @@ with tab2:
     fig3 = px.bar(feat_df, x="Importance", y="Feature", orientation="h",
                   color="Importance", color_continuous_scale=["#1e3a5f", "#38bdf8", "#818cf8"])
     fig3.update_layout(**PLOTLY_THEME, coloraxis_showscale=False)
-    st.plotly_chart(fig3, use_container_width=True)
+    st.plotly_chart(fig3, use_container_width=True, key="chart_7")
 
     st.subheader("⚠️ High Risk Employees (Score ≥ 70)")
     high_risk = filtered[filtered["risk_score"] >= 70].sort_values("risk_score", ascending=False)
@@ -626,7 +626,7 @@ with tab3:
                          color_continuous_scale=["#22d68a", "#f5c518", "#ff7b35", "#ff3b5c"],
                          range_color=[0, 100])
             fig.update_layout(**PLOTLY_THEME, coloraxis_showscale=False)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, use_container_width=True, key="chart_8")
 
         with c2:
             st.subheader("Critical & High Count by Department")
@@ -635,7 +635,7 @@ with tab3:
                           color_discrete_map={"critical": "#ff3b5c", "high": "#ff7b35"})
             fig2.update_layout(**PLOTLY_THEME, bargap=0.3,
                                legend=dict(orientation="h", y=-0.25))
-            st.plotly_chart(fig2, use_container_width=True)
+            st.plotly_chart(fig2, use_container_width=True, key="chart_9")
 
         st.subheader("Department Summary Table")
         st.dataframe(dept_stats.sort_values("avg_score", ascending=False),
@@ -654,7 +654,7 @@ with tab3:
                 aspect="auto", text_auto=".0f",
             )
             fig3.update_layout(**PLOTLY_THEME)
-            st.plotly_chart(fig3, use_container_width=True)
+            st.plotly_chart(fig3, use_container_width=True, key="chart_10")
     else:
         st.info("Department data not available in current dataset.")
 
@@ -777,7 +777,7 @@ with tab5:
                 ))
                 fig.update_layout(paper_bgcolor="rgba(0,0,0,0)", height=220,
                                   margin=dict(t=30, b=10, l=20, r=20))
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, use_container_width=True, key="chart_11")
 
 # ══════════════════════════════════════════════
 # TAB 6: PREDICTION
@@ -909,7 +909,7 @@ with tab6:
         )
         fig_proba.update_traces(texttemplate="%{text}%", textposition="outside")
         fig_proba.update_layout(**PLOTLY_THEME, yaxis_range=[0, 110], showlegend=False)
-        st.plotly_chart(fig_proba, use_container_width=True)
+        st.plotly_chart(fig_proba, use_container_width=True, key="chart_12")
 
         # ── SHAP-style explanation ──
         st.markdown("#### 🧠 SHAP-style Feature Contribution")
@@ -938,7 +938,7 @@ with tab6:
         )
         fig_shap.update_layout(**PLOTLY_THEME, showlegend=False)
         fig_shap.add_vline(x=0, line_color="#64748b", line_width=1)
-        st.plotly_chart(fig_shap, use_container_width=True)
+        st.plotly_chart(fig_shap, use_container_width=True, key="chart_13")
 
         st.info("🔴 Red bars = factors increasing risk · 🟢 Green bars = factors reducing risk")
 
@@ -1004,7 +1004,7 @@ with tab6:
                     title="Bulk Prediction — Risk Level Distribution",
                 )
                 fig_bulk.update_layout(**PLOTLY_THEME)
-                st.plotly_chart(fig_bulk, use_container_width=True)
+                st.plotly_chart(fig_bulk, use_container_width=True, key="chart_14")
 
         except Exception as e:
             st.error(f"Error processing file: {e}")
@@ -1034,7 +1034,7 @@ with tab6:
             aspect="auto",
         )
         fig_cm.update_layout(**PLOTLY_THEME, coloraxis_showscale=False)
-        st.plotly_chart(fig_cm, use_container_width=True)
+        st.plotly_chart(fig_cm, use_container_width=True, key="chart_15")
 
     with mc2:
         st.markdown("#### Feature Importances")
@@ -1049,7 +1049,7 @@ with tab6:
             color_continuous_scale=["#1e3a5f", "#38bdf8", "#818cf8"],
         )
         fig_fi.update_layout(**PLOTLY_THEME, coloraxis_showscale=False)
-        st.plotly_chart(fig_fi, use_container_width=True)
+        st.plotly_chart(fig_fi, use_container_width=True, key="chart_16")
 
     # Classification report
     with st.expander("📋 Full Classification Report"):
