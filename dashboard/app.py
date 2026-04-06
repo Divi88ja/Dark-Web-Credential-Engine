@@ -459,13 +459,14 @@ st.divider()
 # ─────────────────────────────────────────────
 # TABS
 # ─────────────────────────────────────────────
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
     "📊 Overview",
     "🎯 Risk Analysis",
     "🏢 Departments",
     "⚠️ Alerts",
     "🔍 Employee Lookup",
     "🤖 Prediction",
+    "🔎 Bulk Scanner",
 ])
 
 # ══════════════════════════════════════════════
@@ -1058,6 +1059,277 @@ with tab6:
             target_names=model_metrics["labels"], output_dict=False
         )
         st.code(report, language="text")
+
+# ══════════════════════════════════════════════
+# TAB 7: BULK SCANNER
+# ══════════════════════════════════════════════
+with tab7:
+    st.subheader("🔎 Bulk Credential Scanner")
+    st.caption("Scan multiple emails or upload a CSV to check exposure against breach database.")
+
+    scan_tab1, scan_tab2 = st.tabs(["📧 Email Scanner", "📂 CSV Upload Scanner"])
+
+    # ── Known breach sources (simulated database) ──
+    KNOWN_BREACHES = {
+        "linkedin": ["LinkedIn2021", "LinkedIn2012"],
+        "adobe": ["Adobe2013"],
+        "gmail": ["Collection#1", "RockYou2024"],
+        "yahoo": ["Yahoo2013", "Yahoo2014"],
+        "hotmail": ["Collection#1", "AntiPublic"],
+        "outlook": ["Collection#1"],
+        "facebook": ["Facebook2021"],
+        "twitter": ["Twitter2022"],
+        "dropbox": ["Dropbox2012"],
+        "myspace": ["MySpace2016"],
+    }
+
+    BREACH_DETAILS = {
+        "LinkedIn2021": {"date": "2021-06-22", "records": "700M", "data": "Emails, Phone, Names"},
+        "LinkedIn2012": {"date": "2012-06-05", "records": "117M", "data": "Emails, Passwords"},
+        "Adobe2013":    {"date": "2013-10-04", "records": "153M", "data": "Emails, Encrypted Passwords"},
+        "Collection#1": {"date": "2019-01-07", "records": "773M", "data": "Emails, Passwords"},
+        "RockYou2024":  {"date": "2024-06-04", "records": "10B",  "data": "Plaintext Passwords"},
+        "Yahoo2013":    {"date": "2013-08-01", "records": "3B",   "data": "Emails, Passwords, Security Q&A"},
+        "Yahoo2014":    {"date": "2014-09-01", "records": "500M", "data": "Emails, Hashed Passwords"},
+        "Facebook2021": {"date": "2021-04-03", "records": "533M", "data": "Phone, Email, Names"},
+        "Twitter2022":  {"date": "2022-07-22", "records": "5.4M", "data": "Emails, Phone Numbers"},
+        "Dropbox2012":  {"date": "2012-07-01", "records": "68M",  "data": "Emails, Hashed Passwords"},
+        "MySpace2016":  {"date": "2016-05-27", "records": "360M", "data": "Emails, Passwords"},
+        "AntiPublic":   {"date": "2016-12-01", "records": "458M", "data": "Emails, Passwords"},
+    }
+
+    def scan_email(email: str):
+        """Simulate breach lookup for an email."""
+        email = email.strip().lower()
+        if not email or "@" not in email:
+            return None, []
+
+        domain = email.split("@")[1].split(".")[0]
+        matched = []
+
+        # Match on domain keywords
+        for key, breaches in KNOWN_BREACHES.items():
+            if key in domain or key in email:
+                matched.extend(breaches)
+
+        # Deterministic extra breaches based on email hash
+        h = int(hashlib.md5(email.encode()).hexdigest(), 16)
+        all_breaches = list(BREACH_DETAILS.keys())
+        extra_count = h % 4
+        for i in range(extra_count):
+            b = all_breaches[(h + i * 7) % len(all_breaches)]
+            if b not in matched:
+                matched.append(b)
+
+        matched = list(set(matched))
+        risk = "CRITICAL" if len(matched) >= 4 else "HIGH" if len(matched) >= 2 else "MEDIUM" if len(matched) == 1 else "LOW"
+        return risk, matched
+
+    # ── EMAIL SCANNER ──
+    with scan_tab1:
+        st.markdown("##### Paste up to 50 emails (one per line)")
+
+        email_input = st.text_area(
+            "Enter emails",
+            placeholder="john@example.com\njane@company.org\n...",
+            height=180,
+            label_visibility="collapsed",
+        )
+
+        col_btn1, col_btn2 = st.columns([1, 4])
+        with col_btn1:
+            scan_clicked = st.button("🔍 Scan Emails", use_container_width=True)
+
+        if scan_clicked and email_input.strip():
+            emails = [e.strip() for e in email_input.strip().splitlines() if e.strip()]
+            emails = emails[:50]  # cap at 50
+
+            if not emails:
+                st.warning("Please enter at least one email.")
+            else:
+                results_list = []
+                progress = st.progress(0, text="Scanning...")
+
+                for i, email in enumerate(emails):
+                    risk, breaches = scan_email(email)
+                    if risk is None:
+                        continue
+                    results_list.append({
+                        "email": email,
+                        "risk_level": risk,
+                        "breach_count": len(breaches),
+                        "breaches_found": ", ".join(breaches) if breaches else "None",
+                        "latest_breach": max(
+                            [BREACH_DETAILS[b]["date"] for b in breaches if b in BREACH_DETAILS],
+                            default="N/A"
+                        ),
+                        "exposed_data": " | ".join(set(
+                            BREACH_DETAILS[b]["data"] for b in breaches if b in BREACH_DETAILS
+                        )) or "N/A",
+                    })
+                    progress.progress((i + 1) / len(emails), text=f"Scanning {i+1}/{len(emails)}...")
+
+                progress.empty()
+
+                if not results_list:
+                    st.warning("No valid emails found.")
+                else:
+                    scan_df = pd.DataFrame(results_list)
+
+                    # Summary metrics
+                    s1, s2, s3, s4 = st.columns(4)
+                    s1.metric("📧 Emails Scanned", len(scan_df))
+                    s2.metric("🔓 Exposed", int((scan_df["breach_count"] > 0).sum()))
+                    s3.metric("🔴 Critical", int((scan_df["risk_level"] == "CRITICAL").sum()))
+                    s4.metric("🟠 High", int((scan_df["risk_level"] == "HIGH").sum()))
+
+                    st.divider()
+
+                    # Color coded results
+                    def highlight_scan(row):
+                        if row["risk_level"] == "CRITICAL":
+                            return ["background-color: rgba(255,59,92,0.12)"] * len(row)
+                        elif row["risk_level"] == "HIGH":
+                            return ["background-color: rgba(255,123,53,0.10)"] * len(row)
+                        elif row["risk_level"] == "MEDIUM":
+                            return ["background-color: rgba(245,197,24,0.08)"] * len(row)
+                        return [""] * len(row)
+
+                    st.dataframe(
+                        scan_df.style.apply(highlight_scan, axis=1),
+                        use_container_width=True,
+                    )
+
+                    # Chart
+                    level_counts = scan_df["risk_level"].value_counts()
+                    fig_scan = px.pie(
+                        values=level_counts.values, names=level_counts.index,
+                        color=level_counts.index, color_discrete_map=LEVEL_COLORS,
+                        hole=0.55, title="Scan Results — Risk Distribution",
+                    )
+                    fig_scan.update_layout(**PLOTLY_THEME)
+                    st.plotly_chart(fig_scan, use_container_width=True, key="scan_email_pie")
+
+                    # Download
+                    st.download_button(
+                        "📥 Download Scan Results CSV",
+                        data=scan_df.to_csv(index=False),
+                        file_name=f"email_scan_{datetime.now().strftime('%Y%m%d_%H%M')}.csv",
+                        mime="text/csv",
+                        key="dl_email_scan",
+                    )
+
+                    # Breach detail expander
+                    with st.expander("📋 Breach Details Reference"):
+                        breach_detail_rows = []
+                        found_breaches = set(
+                            b for row in results_list for b in row["breaches_found"].split(", ") if b != "None"
+                        )
+                        for b in found_breaches:
+                            if b in BREACH_DETAILS:
+                                breach_detail_rows.append({"Breach": b, **BREACH_DETAILS[b]})
+                        if breach_detail_rows:
+                            st.dataframe(pd.DataFrame(breach_detail_rows), use_container_width=True)
+
+    # ── CSV UPLOAD SCANNER ──
+    with scan_tab2:
+        st.markdown("##### Upload a CSV file with an `email` column")
+
+        # Sample template
+        sample_scan = pd.DataFrame({
+            "email": ["alice@company.com", "bob@linkedin.com", "carol@yahoo.com", "dave@gmail.com"],
+            "name": ["Alice Smith", "Bob Jones", "Carol White", "Dave Brown"],
+            "department": ["Engineering", "Finance", "HR", "IT Security"],
+        })
+        st.download_button(
+            "📥 Download Sample CSV Template",
+            data=sample_scan.to_csv(index=False),
+            file_name="sample_scan_template.csv",
+            mime="text/csv",
+            key="dl_scan_template",
+        )
+
+        uploaded_scan = st.file_uploader("Upload CSV for scanning", type=["csv"], key="bulk_scan_upload")
+
+        if uploaded_scan:
+            try:
+                scan_input_df = pd.read_csv(uploaded_scan)
+
+                if "email" not in scan_input_df.columns:
+                    st.error("❌ CSV must have an 'email' column.")
+                else:
+                    emails_to_scan = scan_input_df["email"].dropna().astype(str).tolist()
+                    emails_to_scan = emails_to_scan[:500]  # cap at 500
+
+                    st.info(f"Found {len(emails_to_scan)} emails. Scanning...")
+                    progress2 = st.progress(0)
+
+                    csv_results = []
+                    for i, email in enumerate(emails_to_scan):
+                        risk, breaches = scan_email(email)
+                        if risk is None:
+                            continue
+                        row_data = {"email": email, "risk_level": risk,
+                                    "breach_count": len(breaches),
+                                    "breaches_found": ", ".join(breaches) if breaches else "None",
+                                    "latest_breach": max(
+                                        [BREACH_DETAILS[b]["date"] for b in breaches if b in BREACH_DETAILS],
+                                        default="N/A"
+                                    )}
+                        # Merge with original columns
+                        orig_row = scan_input_df[scan_input_df["email"] == email]
+                        if not orig_row.empty:
+                            for col in scan_input_df.columns:
+                                if col != "email":
+                                    row_data[col] = orig_row.iloc[0][col]
+                        csv_results.append(row_data)
+                        progress2.progress((i + 1) / len(emails_to_scan))
+
+                    progress2.empty()
+                    csv_scan_df = pd.DataFrame(csv_results)
+
+                    # Summary
+                    cs1, cs2, cs3, cs4 = st.columns(4)
+                    cs1.metric("📧 Scanned", len(csv_scan_df))
+                    cs2.metric("🔓 Exposed", int((csv_scan_df["breach_count"] > 0).sum()))
+                    cs3.metric("🔴 Critical", int((csv_scan_df["risk_level"] == "CRITICAL").sum()))
+                    cs4.metric("🟠 High", int((csv_scan_df["risk_level"] == "HIGH").sum()))
+
+                    st.dataframe(csv_scan_df, use_container_width=True)
+
+                    # Charts
+                    cc1, cc2 = st.columns(2)
+                    with cc1:
+                        lc = csv_scan_df["risk_level"].value_counts()
+                        fig_csv_pie = px.pie(
+                            values=lc.values, names=lc.index,
+                            color=lc.index, color_discrete_map=LEVEL_COLORS,
+                            hole=0.55, title="Risk Level Distribution",
+                        )
+                        fig_csv_pie.update_layout(**PLOTLY_THEME)
+                        st.plotly_chart(fig_csv_pie, use_container_width=True, key="csv_scan_pie")
+
+                    with cc2:
+                        fig_csv_bar = px.histogram(
+                            csv_scan_df, x="breach_count", color="risk_level",
+                            color_discrete_map=LEVEL_COLORS,
+                            title="Breach Count Distribution",
+                            labels={"breach_count": "Number of Breaches"},
+                        )
+                        fig_csv_bar.update_layout(**PLOTLY_THEME)
+                        st.plotly_chart(fig_csv_bar, use_container_width=True, key="csv_scan_hist")
+
+                    # Download results
+                    st.download_button(
+                        "📥 Download Full Scan Results",
+                        data=csv_scan_df.to_csv(index=False),
+                        file_name=f"bulk_scan_{datetime.now().strftime('%Y%m%d_%H%M')}.csv",
+                        mime="text/csv",
+                        key="dl_csv_scan",
+                    )
+
+            except Exception as e:
+                st.error(f"Error processing file: {e}")
 
 # ─────────────────────────────────────────────
 # FOOTER
