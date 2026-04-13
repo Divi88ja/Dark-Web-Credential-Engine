@@ -159,3 +159,24 @@ class BreachDataCleaner:
 
     def get_stats(self) -> dict:
         return self.stats
+
+from pathlib import Path
+
+def clean_breach_data(df, cfg):
+    cleaner = BreachDataCleaner()
+    cleaned_df = cleaner.run(df)
+    return cleaned_df, pd.DataFrame()  # (cleaned, rejected)
+
+
+def clean_employee_data(df):
+    return df  # keep simple, no change
+
+
+def compute_breach_frequency(df):
+    return df.groupby("email").size().reset_index(name="breach_count")
+
+
+def save_processed(df, filename, cfg):
+    output_path = cfg["paths"]["processed"]
+    Path(output_path).mkdir(parents=True, exist_ok=True)
+    df.to_csv(Path(output_path) / filename, index=False)

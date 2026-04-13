@@ -197,3 +197,8 @@ class EntityExtractor:
             all_keywords.extend([k.strip() for k in kw_str.split(",") if k.strip()])
         from collections import Counter
         return dict(Counter(all_keywords).most_common(10))
+
+def enrich_breach_dataframe(df, known_domains):
+    # Minimal safe pass-through (won’t break pipeline)
+    extractor = EntityExtractor()
+    return extractor.extract_from_dataframe(df)

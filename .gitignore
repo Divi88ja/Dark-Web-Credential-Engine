@@ -6,3 +6,4 @@ logs/
 data/processed/
 reports/
 *.log
+*.pbix

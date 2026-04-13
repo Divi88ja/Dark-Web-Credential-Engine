@@ -154,6 +154,7 @@ class BreachDataIngestor:
         logger.info(f"Total records ingested: {len(combined)}")
         return combined
 
+
     def _normalize_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         """Rename columns to match our internal standard."""
         rename_map = {}
@@ -171,3 +172,12 @@ class BreachDataIngestor:
             "files":        self.loaded_files,
             "errors":       self.errors,
         }
+def ingest_all_breach_files(cfg):
+    ingestor = BreachDataIngestor()
+    return ingestor.ingest_all_from_directory()
+
+def load_employee_file(cfg):
+    path = cfg["paths"].get("employee_file", "")
+    if path and Path(path).exists():
+        return pd.read_csv(path)
+    return pd.DataFrame()

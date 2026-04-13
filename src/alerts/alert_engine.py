@@ -15,6 +15,7 @@ import os
 import json
 import pandas as pd
 from datetime import datetime
+from pathlib import Path
 from typing import List, Dict
 from src.utils.helpers import setup_logger, load_config, save_json, current_timestamp
 
@@ -48,6 +49,67 @@ RECOMMENDED_ACTIONS = {
     ],
 }
 
+
+# ═══════════════════════════════════════════════════════════════
+# STANDALONE FUNCTIONS (for backward compatibility with pipeline.py)
+# ═══════════════════════════════════════════════════════════════
+
+def generate_alerts(df: pd.DataFrame, cfg: Dict = None) -> pd.DataFrame:
+    """
+    Generate alerts for high-risk employees.
+    Returns a filtered DataFrame of high-risk employees.
+    """
+    if df.empty:
+        return pd.DataFrame()
+    
+    # Get threshold from config or use default
+    threshold = 60
+    if cfg and "alerts" in cfg and "risk_threshold" in cfg["alerts"]:
+        threshold = cfg["alerts"]["risk_threshold"]
+    
+    # Filter to high-risk employees
+    if "risk_score" in df.columns:
+        alert_df = df[df["risk_score"] >= threshold].copy()
+        return alert_df.sort_values("risk_score", ascending=False)
+    
+    return pd.DataFrame()
+
+
+def generate_html_report(df: pd.DataFrame, path: str) -> None:
+    """Generate HTML report from DataFrame"""
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    df.to_html(path, index=False)
+    logger.info(f"HTML report saved to {path}")
+
+
+def save_alerts_csv(df: pd.DataFrame, path: str) -> None:
+    """Save alerts to CSV"""
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(path, index=False)
+    logger.info(f"Alerts CSV saved to {path}")
+
+
+def get_high_risk_summary(df: pd.DataFrame) -> Dict:
+    """Get summary of high-risk employees"""
+    if df.empty:
+        return {"total_high_risk": 0}
+    
+    summary = {}
+    
+    if "risk_level" in df.columns:
+        summary["total_high_risk"] = int((df["risk_level"] == "HIGH").sum())
+        summary["total_critical"] = int((df["risk_level"] == "CRITICAL").sum())
+    
+    if "risk_score" in df.columns:
+        summary["avg_risk_score"] = float(df["risk_score"].mean())
+        summary["max_risk_score"] = float(df["risk_score"].max())
+    
+    return summary
+
+
+# ═══════════════════════════════════════════════════════════════
+# CLASS-BASED IMPLEMENTATION (original)
+# ═══════════════════════════════════════════════════════════════
 
 class AlertEngine:
     """

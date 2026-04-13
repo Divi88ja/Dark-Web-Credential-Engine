@@ -19,6 +19,16 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+import sys
+from pathlib import Path
+
+# Add project root to path
+ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(ROOT))
+
+# Import enhanced pipeline
+from pipeline import run_pipeline_core
+
 # ─────────────────────────────────────────────
 # PAGE CONFIG — MUST BE FIRST
 # ─────────────────────────────────────────────
@@ -1060,6 +1070,22 @@ with tab6:
         )
         st.code(report, language="text")
 
+def scan_emails_with_pipeline(email_list: list, config_path: str = "config/settings.yaml"):
+    """Real pipeline-based email scanner"""
+    try:
+        result_df = run_pipeline_core(
+            config_path=config_path,
+            input_emails=email_list,
+            use_simulated=True,
+            train_model=False,
+            verbose=False
+        )
+        return result_df
+    except Exception as e:
+        import pandas as pd
+        print(f"Pipeline error: {e}")
+        return pd.DataFrame(columns=['email', 'breach_count', 'risk_score', 'risk_label', 'sources'])
+    
 # ══════════════════════════════════════════════
 # TAB 7: BULK SCANNER
 # ══════════════════════════════════════════════
@@ -1142,94 +1168,29 @@ with tab7:
 
         if scan_clicked and email_input.strip():
             emails = [e.strip() for e in email_input.strip().splitlines() if e.strip()]
-            emails = emails[:50]  # cap at 50
-
+            emails = [e for e in emails if "@" in e]
+            emails = list(set(emails))[:100]
+    
             if not emails:
-                st.warning("Please enter at least one email.")
+                st.warning("Please enter valid emails.")
             else:
-                results_list = []
-                progress = st.progress(0, text="Scanning...")
-
-                for i, email in enumerate(emails):
-                    risk, breaches = scan_email(email)
-                    if risk is None:
-                        continue
-                    results_list.append({
-                        "email": email,
-                        "risk_level": risk,
-                        "breach_count": len(breaches),
-                        "breaches_found": ", ".join(breaches) if breaches else "None",
-                        "latest_breach": max(
-                            [BREACH_DETAILS[b]["date"] for b in breaches if b in BREACH_DETAILS],
-                            default="N/A"
-                        ),
-                        "exposed_data": " | ".join(set(
-                            BREACH_DETAILS[b]["data"] for b in breaches if b in BREACH_DETAILS
-                        )) or "N/A",
-                    })
-                    progress.progress((i + 1) / len(emails), text=f"Scanning {i+1}/{len(emails)}...")
-
-                progress.empty()
-
-                if not results_list:
-                    st.warning("No valid emails found.")
-                else:
-                    scan_df = pd.DataFrame(results_list)
-
-                    # Summary metrics
-                    s1, s2, s3, s4 = st.columns(4)
-                    s1.metric("📧 Emails Scanned", len(scan_df))
-                    s2.metric("🔓 Exposed", int((scan_df["breach_count"] > 0).sum()))
-                    s3.metric("🔴 Critical", int((scan_df["risk_level"] == "CRITICAL").sum()))
-                    s4.metric("🟠 High", int((scan_df["risk_level"] == "HIGH").sum()))
-
-                    st.divider()
-
-                    # Color coded results
-                    def highlight_scan(row):
-                        if row["risk_level"] == "CRITICAL":
-                            return ["background-color: rgba(255,59,92,0.12)"] * len(row)
-                        elif row["risk_level"] == "HIGH":
-                            return ["background-color: rgba(255,123,53,0.10)"] * len(row)
-                        elif row["risk_level"] == "MEDIUM":
-                            return ["background-color: rgba(245,197,24,0.08)"] * len(row)
-                        return [""] * len(row)
-
-                    st.dataframe(
-                        scan_df.style.apply(highlight_scan, axis=1),
-                        use_container_width=True,
-                    )
-
-                    # Chart
-                    level_counts = scan_df["risk_level"].value_counts()
-                    fig_scan = px.pie(
-                        values=level_counts.values, names=level_counts.index,
-                        color=level_counts.index, color_discrete_map=LEVEL_COLORS,
-                        hole=0.55, title="Scan Results — Risk Distribution",
-                    )
-                    fig_scan.update_layout(**PLOTLY_THEME)
-                    st.plotly_chart(fig_scan, use_container_width=True, key="scan_email_pie")
-
-                    # Download
-                    st.download_button(
-                        "📥 Download Scan Results CSV",
-                        data=scan_df.to_csv(index=False),
-                        file_name=f"email_scan_{datetime.now().strftime('%Y%m%d_%H%M')}.csv",
-                        mime="text/csv",
-                        key="dl_email_scan",
-                    )
-
-                    # Breach detail expander
-                    with st.expander("📋 Breach Details Reference"):
-                        breach_detail_rows = []
-                        found_breaches = set(
-                            b for row in results_list for b in row["breaches_found"].split(", ") if b != "None"
-                        )
-                        for b in found_breaches:
-                            if b in BREACH_DETAILS:
-                                breach_detail_rows.append({"Breach": b, **BREACH_DETAILS[b]})
-                        if breach_detail_rows:
-                            st.dataframe(pd.DataFrame(breach_detail_rows), use_container_width=True)
+                with st.spinner(f"Scanning {len(emails)} emails..."):
+                    result_df = scan_emails_with_pipeline(emails)  # ← NEW: real pipeline
+        
+                if result_df is not None and len(result_df) > 0:
+                    st.success(f"✅ Scanned {len(result_df)} emails!")
+            
+            # KPIs
+            col1, col2, col3, col4 = st.columns(4)
+            col1.metric("📧 Total", len(result_df))
+            col2.metric("🔴 High Risk", len(result_df[result_df["risk_label"] == "HIGH"]))
+            col3.metric("🟡 Medium", len(result_df[result_df["risk_label"] == "MEDIUM"]))
+            col4.metric("✅ Safe", len(result_df[result_df["risk_label"] == "LOW"]))
+            
+            st.divider()
+            
+            # Display results
+            st.dataframe(result_df, use_container_width=True)
 
     # ── CSV UPLOAD SCANNER ──
     with scan_tab2:

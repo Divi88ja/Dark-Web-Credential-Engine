@@ -16,7 +16,7 @@ logger = setup_logger(__name__)
 # FEATURE ENGINEERING
 # ─────────────────────────────────────────────
 
-def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
+def engineer_features_original(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
 
     df["breach_count"] = df.get("breach_count", 0).fillna(0).astype(int)
@@ -210,3 +210,34 @@ class RiskScorer:
     def load(self, path="models/"):
         self.model = joblib.load(path + "risk_model.pkl")
         self.scaler = joblib.load(path + "scaler.pkl")
+
+import pandas as pd
+
+def train_risk_model(df, cfg):
+    # dummy model + placeholders
+    model = None
+    scaler = None
+    X_train, X_test = None, None
+    feature_names = []
+    return model, scaler, X_train, X_test, feature_names
+
+
+def compute_risk_scores(df, model, scaler, feature_names, cfg):
+    df["risk_score"] = 0.0
+    df["risk_label"] = "LOW"
+    return df
+
+
+def generate_shap_explanations(df, model, feature_names):
+    return df
+
+
+def save_model(model, feature_names, path):
+    pass
+
+
+def load_model(path):
+    return None, None, []
+
+def engineer_features(df, breach_freq=None):
+    return engineer_features_original(df)
