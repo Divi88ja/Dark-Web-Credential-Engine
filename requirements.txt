@@ -9,3 +9,4 @@ faker
 joblib
 python-dotenv
 tqdm
+loguru
