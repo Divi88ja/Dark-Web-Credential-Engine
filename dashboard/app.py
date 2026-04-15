@@ -338,33 +338,85 @@ def generate_demo_data(n=120, seed=42):
 @st.cache_data
 def load_pipeline_data():
     """Try to load real pipeline output; fall back to demo data."""
-    ROOT = Path(__file__).parent.parent
-    risk_path = ROOT / "data" / "processed" / "risk_scored_employees.csv"
+    import os
+    
+    # Try multiple possible root paths
+    possible_roots = [
+        Path(__file__).parent.parent,  # Relative to app.py
+        Path(os.getcwd()),  # Current working directory
+        Path("/mount/src/dark-web-credential-engine"),  # Streamlit Cloud path
+        Path.home(),  # Home directory
+    ]
+    
+    ROOT = None
+    risk_path = None
+    
+    # Find the correct root by checking which one has the data files
+    for root_candidate in possible_roots:
+        candidate_risk = root_candidate / "data" / "processed" / "risk_scored_employees.csv"
+        if candidate_risk.exists():
+            ROOT = root_candidate
+            risk_path = candidate_risk
+            print(f"✅ Found data files at: {ROOT}")
+            break
+    
+    # If still not found, use the first candidate as ROOT and generate demo data
+    if ROOT is None:
+        ROOT = possible_roots[0]
+        risk_path = ROOT / "data" / "processed" / "risk_scored_employees.csv"
+        print(f"⚠️ Data files not found in any of: {[str(r) for r in possible_roots]}")
+    
     alerts_path = ROOT / "reports" / "alerts.json"
     dept_path = ROOT / "reports" / "department_summary.csv"
     meta_path = ROOT / "data" / "processed" / "ingestion_metadata.json"
 
     using_demo = False
 
+    # Load risk data
     if risk_path.exists():
-        risk_df = pd.read_csv(risk_path)
+        try:
+            risk_df = pd.read_csv(risk_path)
+            print(f"✅ Loaded real risk data from {risk_path}")
+        except Exception as e:
+            print(f"⚠️ Error loading {risk_path}: {e}")
+            risk_df = generate_demo_data()
+            using_demo = True
     else:
+        print(f"❌ Risk data not found at {risk_path}, using demo data")
         risk_df = generate_demo_data()
         using_demo = True
 
+    # Load alerts
     alerts = []
     if alerts_path.exists():
-        with open(alerts_path) as f:
-            alerts = json.load(f)
+        try:
+            with open(alerts_path) as f:
+                alerts = json.load(f)
+            print(f"✅ Loaded alerts from {alerts_path}")
+        except Exception as e:
+            print(f"⚠️ Error loading alerts: {e}")
+            alerts = []
 
+    # Load department summary
     dept_summary = None
     if dept_path.exists():
-        dept_summary = pd.read_csv(dept_path)
+        try:
+            dept_summary = pd.read_csv(dept_path)
+            print(f"✅ Loaded department summary from {dept_path}")
+        except Exception as e:
+            print(f"⚠️ Error loading department summary: {e}")
+            dept_summary = None
 
+    # Load metadata
     metadata = {}
     if meta_path.exists():
-        with open(meta_path) as f:
-            metadata = json.load(f)
+        try:
+            with open(meta_path) as f:
+                metadata = json.load(f)
+            print(f"✅ Loaded metadata from {meta_path}")
+        except Exception as e:
+            print(f"⚠️ Error loading metadata: {e}")
+            metadata = {}
 
     return risk_df, alerts, dept_summary, metadata, using_demo
 
