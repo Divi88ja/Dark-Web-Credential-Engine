@@ -302,7 +302,19 @@ def run_pipeline_core(
         console.print("\n[bold green]✅ Pipeline complete![/bold green]")
         console.print(f"[dim]Outputs: {cfg['paths']['processed']} | {cfg['paths']['reports']}[/dim]")
 
-    # ✅ RETURN DATAFRAME (key change for UI integration)
+    from pathlib import Path
+
+    # FORCE correct filename for Streamlit app
+    BASE_DIR = Path(__file__).resolve().parent
+
+    output_path = BASE_DIR / "data" / "processed" / "risk_scored_employees.csv"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    scored_df.to_csv(output_path, index=False)
+
+    print(f"✅ FINAL FILE SAVED AT: {output_path}")
+
+    # RETURN DATAFRAME (key change for UI integration)
     return scored_df
 
 
