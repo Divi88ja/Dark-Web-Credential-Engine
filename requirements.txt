@@ -10,3 +10,4 @@ joblib
 python-dotenv
 tqdm
 loguru
+pyyaml
