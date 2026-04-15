@@ -19,9 +19,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-import sys
-from pathlib import Path
-
 # Add project root to path
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
@@ -373,19 +370,44 @@ def load_pipeline_data():
     using_demo = False
 
     # Load risk data
+    if not risk_path.exists():
+        print(f"❌ Risk data not found at {risk_path}")
+        try:
+            print("🚀 Running pipeline (cloud)...")
+            run_pipeline_core(
+                config_path="config/settings.yaml",
+                use_simulated=True,
+                train_model=False,
+                verbose=True
+            )
+
+        # 🔥 RE-CHECK PATHS AFTER PIPELINE RUN
+            for root_candidate in possible_roots:
+                candidate_risk = root_candidate / "data" / "processed" / "risk_scored_employees.csv"
+                if candidate_risk.exists():
+                    ROOT = root_candidate
+                    risk_path = candidate_risk
+                    print(f"✅ Found data AFTER pipeline at: {ROOT}")
+                    break
+
+        except Exception as e:
+            print(f"❌ Pipeline failed: {e}")
+
+    # Try loading after pipeline attempt
     if risk_path.exists():
         try:
             risk_df = pd.read_csv(risk_path)
             print(f"✅ Loaded real risk data from {risk_path}")
+            using_demo = False
         except Exception as e:
             print(f"⚠️ Error loading {risk_path}: {e}")
             risk_df = generate_demo_data()
             using_demo = True
     else:
-        print(f"❌ Risk data not found at {risk_path}, using demo data")
+        print("⚠️ Falling back to demo data")
         risk_df = generate_demo_data()
         using_demo = True
-
+            
     # Load alerts
     alerts = []
     if alerts_path.exists():
@@ -497,16 +519,15 @@ with col_h2:
 
 st.divider()
 
-# ─────────────────────────────────────────────
-# KPI METRICS
-# ─────────────────────────────────────────────
 k1, k2, k3, k4, k5, k6 = st.columns(6)
 
 total = len(filtered)
+
 exposed = int((filtered["breach_count"] > 0).sum()) if "breach_count" in filtered.columns else 0
-critical_cnt = int((filtered["risk_level"] == "CRITICAL").sum())
-high_cnt = int((filtered["risk_level"] == "HIGH").sum())
-avg_score = round(filtered["risk_score"].mean(), 1) if len(filtered) else 0
+critical_cnt = int((filtered["risk_level"] == "CRITICAL").sum()) if "risk_level" in filtered.columns else 0
+high_cnt = int((filtered["risk_level"] == "HIGH").sum()) if "risk_level" in filtered.columns else 0
+avg_score = round(filtered["risk_score"].mean(), 1) if ("risk_score" in filtered.columns and len(filtered)) else 0
+
 exposure_pct = round(exposed / total * 100, 1) if total else 0
 
 k1.metric("👥 Total Employees", f"{total:,}")
@@ -517,7 +538,6 @@ k5.metric("📊 Avg Risk Score", f"{avg_score}")
 k6.metric("✅ Safe", f"{total - exposed:,}", delta_color="normal")
 
 st.divider()
-
 # ─────────────────────────────────────────────
 # TABS
 # ─────────────────────────────────────────────
@@ -1218,6 +1238,7 @@ with tab7:
         with col_btn1:
             scan_clicked = st.button("🔍 Scan Emails", use_container_width=True)
 
+        result_df = pd.DataFrame()
         if scan_clicked and email_input.strip():
             emails = [e.strip() for e in email_input.strip().splitlines() if e.strip()]
             emails = [e for e in emails if "@" in e]
